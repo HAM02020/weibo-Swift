@@ -9,19 +9,32 @@
 import UIKit
 
 class WBBaseViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
     
+    ///自定义导航条
+    var navigationBar:UINavigationBar = UINavigationBar()
+    
+    lazy var navItem = UINavigationItem()
+    
+   
+    override var title: String? {
+        didSet {
+            navItem.title = title
+        }
+    }
 }
 
 
 extension WBBaseViewController {
     
     @objc func setupUI() {
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.red
+        navigationBar.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44)
+        
+        
+        //navigationBar.backgroundColor = UIColor.white
+        //view.addSubview(navigationBar)
+        navigationBar.items = [navItem]
+        navigationBar.barTintColor = UIColor.white
+        
     }
 }
