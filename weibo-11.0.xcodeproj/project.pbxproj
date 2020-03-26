@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012B9CC4242CFAA30006AFDC /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012B9CC3242CFAA30006AFDC /* UIButton+Extensions.swift */; };
+		012B9CC6242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */; };
 		01628E8C242BD138004A313B /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E83242BD138004A313B /* WBHomeViewController.swift */; };
 		01628E8D242BD138004A313B /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E85242BD138004A313B /* WBDiscoverViewController.swift */; };
 		01628E8E242BD138004A313B /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E87242BD138004A313B /* WBProfileViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		012B9CC3242CFAA30006AFDC /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		01628E83242BD138004A313B /* WBHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
 		01628E85242BD138004A313B /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		01628E87242BD138004A313B /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +52,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		012B9CC0242CFA5B0006AFDC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				012B9CC3242CFAA30006AFDC /* UIButton+Extensions.swift */,
+				012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		01628E7D242BD138004A313B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +82,7 @@
 		01628E7F242BD138004A313B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				012B9CC0242CFA5B0006AFDC /* Extensions */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -247,6 +261,8 @@
 				01628EA0242CAA82004A313B /* WBDemoViewController.swift in Sources */,
 				01628E91242BD138004A313B /* WBBaseViewController.swift in Sources */,
 				01628E96242C5443004A313B /* WBMainViewController.swift in Sources */,
+				012B9CC6242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift in Sources */,
+				012B9CC4242CFAA30006AFDC /* UIButton+Extensions.swift in Sources */,
 				01628E8C242BD138004A313B /* WBHomeViewController.swift in Sources */,
 				01628E8E242BD138004A313B /* WBProfileViewController.swift in Sources */,
 				01628E94242C4A80004A313B /* WBNavigationController.swift in Sources */,

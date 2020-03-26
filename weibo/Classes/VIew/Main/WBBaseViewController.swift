@@ -22,6 +22,6 @@ class WBBaseViewController: UIViewController {
 extension WBBaseViewController {
     
     @objc func setupUI() {
-        
+        view.backgroundColor = UIColor.white
     }
 }

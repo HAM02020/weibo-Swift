@@ -10,21 +10,14 @@ import UIKit
 
 class WBNavigationController: UINavigationController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+
+        //判断不是根控制器才隐藏
+        if viewControllers.count > 0 {
+            viewController.hidesBottomBarWhenPushed = true
+        }
         
-        // Do any additional setup after loading the view.
+        super.pushViewController(viewController, animated: true)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
