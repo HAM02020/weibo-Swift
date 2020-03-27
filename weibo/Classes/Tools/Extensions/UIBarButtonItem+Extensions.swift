@@ -10,8 +10,15 @@ import UIKit
 
 extension UIBarButtonItem {
     
-    convenience init(title:String,target:AnyObject?,action:Selector){
+    convenience init(title:String,target:AnyObject?,action:Selector,isBack:Bool = false){
         let btn = UIButton.creatTextButton(title: title, colornormal: UIColor.gray, colorhighligh: UIColor.orange)
+        
+        if(isBack) {
+            let imageName = "back"
+            btn.setImage(UIImage(named: imageName), for: .normal)
+            btn.setImage(UIImage(named: imageName+"_highlighted"), for: .highlighted)
+        }
+        
         btn.addTarget(target, action: action, for: .touchUpInside)
         self.init(customView: btn)
         

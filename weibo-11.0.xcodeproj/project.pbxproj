@@ -16,7 +16,6 @@
 		01628E94242C4A80004A313B /* WBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E93242C4A80004A313B /* WBNavigationController.swift */; };
 		01628E96242C5443004A313B /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E95242C5443004A313B /* WBMainViewController.swift */; };
 		01628E99242C5F8E004A313B /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E98242C5F8E004A313B /* WBMessageViewController.swift */; };
-		01628E9D242C65B2004A313B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01628E9C242C65B2004A313B /* Default-568h@2x.png */; };
 		01628EA0242CAA82004A313B /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E9F242CAA82004A313B /* WBDemoViewController.swift */; };
 		01FCB118242BABB900E1524F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCB117242BABB900E1524F /* AppDelegate.swift */; };
 		01FCB121242BABBB00E1524F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01FCB120242BABBB00E1524F /* Assets.xcassets */; };
@@ -33,7 +32,6 @@
 		01628E93242C4A80004A313B /* WBNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNavigationController.swift; sourceTree = "<group>"; };
 		01628E95242C5443004A313B /* WBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMainViewController.swift; sourceTree = "<group>"; };
 		01628E98242C5F8E004A313B /* WBMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
-		01628E9C242C65B2004A313B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		01628E9F242CAA82004A313B /* WBDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 		01FCB114242BABB900E1524F /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01FCB117242BABB900E1524F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 		01FCB10B242BABB900E1524F = {
 			isa = PBXGroup;
 			children = (
-				01628E9C242C65B2004A313B /* Default-568h@2x.png */,
 				01FCB116242BABB900E1524F /* weibo */,
 				01FCB115242BABB900E1524F /* Products */,
 			);
@@ -255,7 +252,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				01FCB121242BABBB00E1524F /* Assets.xcassets in Resources */,
-				01628E9D242C65B2004A313B /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +398,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
 				INFOPLIST_FILE = weibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -421,6 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
 				INFOPLIST_FILE = weibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -19,7 +19,7 @@ class WBMainViewController: UITabBarController {
     }
     
     // MARK: - 私有控件
-    lazy private var composeButton:UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    lazy private var composeButton:UIButton = UIButton()
     
     
     //MARK: - 监听方法
@@ -41,11 +41,12 @@ extension WBMainViewController {
         }
         composeButton.setImage(image1, for: .normal)
         composeButton.setImage(image2, for: .highlighted)
+
         let count = CGFloat(integerLiteral: viewControllers?.count ?? 0)
         //设置每个tabbbar宽度 -1 可以防止穿帮（w手指误触）
-        let w = tabBar.bounds.width/count-1
-        
-        composeButton.frame = tabBar.bounds.insetBy(dx: 2*w, dy: 0)
+        //let w = tabBar.bounds.width/count-1
+        composeButton.frame = CGRect(x: UIScreen.main.bounds.width/2 - 32, y: 4, width: 64, height: 64)
+        //composeButton.frame = tabBar.bounds.insetBy(dx: 2*w, dy: -10)
         
         tabBar.addSubview(composeButton)
         
@@ -85,7 +86,7 @@ extension WBMainViewController {
         //设置tabbar的标题颜色 和字体
         vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.orange], for: .highlighted)
         //字体 默认为12 号
-        vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)], for: .normal)
+        vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray,NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)], for: .normal)
         //3. 设置图像
         vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)
         vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
