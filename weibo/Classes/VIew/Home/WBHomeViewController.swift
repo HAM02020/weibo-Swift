@@ -26,11 +26,18 @@ class WBHomeViewController: WBBaseViewController {
         // 模拟 延时 加载数据 -> dispatch_after
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2, execute: {
             for i in 0..<20 {
+                if self.isPullup {
+                    //将数据追加到d底部
+                    self.statusList.append("上拉\(i)")
+                }
                 self.statusList.insert(i.description, at: 0)
             }
             //刷新表格
-            print("刷新表格")
+            print("加载数据结束")
+            //k结束刷新控件
             self.refreshControl?.endRefreshing()
+            //恢复刷新标记
+            self.isPullup = false
             self.tableView?.reloadData()
         })
         

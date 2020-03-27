@@ -99,6 +99,10 @@ extension WBBaseViewController:UITableViewDataSource,UITableViewDelegate {
         
         if row == (count - 1) && !isPullup {
             print("上拉刷新")
+            isPullup = true
+            
+            //开始刷新
+            loadData()
         }
         
     }
