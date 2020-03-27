@@ -10,6 +10,7 @@ import UIKit
 //继承协议
 class WBBaseViewController: UIViewController {
     
+    var userLogon = true
     
     /// 表格视图  如果用户没有登陆就不显示
     var tableView : UITableView?
@@ -32,7 +33,7 @@ class WBBaseViewController: UIViewController {
 //    }
     override func viewDidLoad() {
         
-        setupTalbeView()
+        userLogon ? setupTalbeView() : setupVisitorView()
     }
 }
 
@@ -40,18 +41,20 @@ class WBBaseViewController: UIViewController {
 
 extension WBBaseViewController {
     
+    
+    
     @objc func setupUI() {
         view.backgroundColor = UIColor.white
         loadData()
     }
-    //设置d表格视图
+    ///设置d表格视图
     func setupTalbeView() {
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.addSubview(tableView!)
         
         //设置数据源 和 代理 -> 目的 子类直接实现h数据源方法
         tableView?.dataSource = self
-        tableView?.delegate = self as? UITableViewDelegate
+        tableView?.delegate = self
         
         //设置刷新控件
         //1> 实例化控件
@@ -66,9 +69,17 @@ extension WBBaseViewController {
         //设置内容缩进 我这里没必要 因为我没有自定义navigationbar
         //tableView?.contentInset = UIEdgeInsets(top: self.navigationController?.navigationBar.bounds.height ?? 0, left: 0, bottom: tabBarController?.tabBar.bounds.heigt ?? 49, right: 0)
     }
+    
+    ///设置访客视图
+    private func setupVisitorView() {
+        let visitorView = UIView(frame: view.bounds)
+        visitorView.backgroundColor = UIColor.black
+        view.addSubview(visitorView)
+    }
+    
     ///加载数据 - 由子类去实现
     @objc func loadData() {
-        
+        refreshControl?.endRefreshing()
     }
 }
 //MARK: -实现基类数据源方法 子类实现不用super
