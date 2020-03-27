@@ -43,11 +43,11 @@ extension WBBaseViewController {
         view.addSubview(tableView!)
         
         //设置数据源 和 代理 -> 目的 子类直接实现h数据源方法
-        //tableView?.dataSource = self
-        //tableView?.delegate = self
+        tableView?.dataSource = self
+        tableView?.delegate = self as? UITableViewDelegate
     }
     ///加载数据 - 由子类去实现
-    func loadData() {
+    @objc func loadData() {
         
     }
 }
