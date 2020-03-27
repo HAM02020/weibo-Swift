@@ -25,6 +25,7 @@ class WBBaseViewController: UIViewController {
 //        }
 //    }
     override func viewDidLoad() {
+        
         setupTalbeView()
     }
 }
@@ -45,6 +46,9 @@ extension WBBaseViewController {
         //设置数据源 和 代理 -> 目的 子类直接实现h数据源方法
         tableView?.dataSource = self
         tableView?.delegate = self as? UITableViewDelegate
+        
+        //设置内容缩进 我这里没必要 因为我没有自定义navigationbar
+        //tableView?.contentInset = UIEdgeInsets(top: self.navigationController?.navigationBar.bounds.height ?? 0, left: 0, bottom: tabBarController?.tabBar.bounds.heigt ?? 49, right: 0)
     }
     ///加载数据 - 由子类去实现
     @objc func loadData() {

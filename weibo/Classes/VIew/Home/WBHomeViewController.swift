@@ -22,7 +22,7 @@ class WBHomeViewController: WBBaseViewController {
     }
     ///加载数据
     override func loadData() {
-        for i in 0..<10 {
+        for i in 0..<100 {
             statusList.insert(i.description, at: 0)
         }
     }
