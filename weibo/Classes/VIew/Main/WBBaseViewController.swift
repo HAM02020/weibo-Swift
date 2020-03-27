@@ -10,7 +10,7 @@ import UIKit
 //继承协议
 class WBBaseViewController: UIViewController {
     
-    var userLogon = true
+    var userLogon = false
     
     /// 表格视图  如果用户没有登陆就不显示
     var tableView : UITableView?
@@ -72,8 +72,8 @@ extension WBBaseViewController {
     
     ///设置访客视图
     private func setupVisitorView() {
-        let visitorView = UIView(frame: view.bounds)
-        visitorView.backgroundColor = UIColor.black
+        let visitorView = WBVisitorView(frame: view.bounds)
+        
         view.addSubview(visitorView)
     }
     

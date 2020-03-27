@@ -17,6 +17,8 @@
 		01628E96242C5443004A313B /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E95242C5443004A313B /* WBMainViewController.swift */; };
 		01628E99242C5F8E004A313B /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E98242C5F8E004A313B /* WBMessageViewController.swift */; };
 		01628EA0242CAA82004A313B /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E9F242CAA82004A313B /* WBDemoViewController.swift */; };
+		017B2FE4242E57FA003286E5 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017B2FE3242E57FA003286E5 /* WBVisitorView.swift */; };
+		017B2FE7242E5AE1003286E5 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017B2FE6242E5AE1003286E5 /* UILabel+Extensions.swift */; };
 		01F9C9B0242E221500118B4E /* start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01F9C9AF242E221500118B4E /* start.storyboard */; };
 		01FCB118242BABB900E1524F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCB117242BABB900E1524F /* AppDelegate.swift */; };
 		01FCB121242BABBB00E1524F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01FCB120242BABBB00E1524F /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 		01628E95242C5443004A313B /* WBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMainViewController.swift; sourceTree = "<group>"; };
 		01628E98242C5F8E004A313B /* WBMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
 		01628E9F242CAA82004A313B /* WBDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
+		017B2FE3242E57FA003286E5 /* WBVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
+		017B2FE6242E5AE1003286E5 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		01F9C9AF242E221500118B4E /* start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = start.storyboard; sourceTree = "<group>"; };
 		01FCB114242BABB900E1524F /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01FCB117242BABB900E1524F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +61,7 @@
 			children = (
 				012B9CC3242CFAA30006AFDC /* UIButton+Extensions.swift */,
 				012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */,
+				017B2FE6242E5AE1003286E5 /* UILabel+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 		01628E81242BD138004A313B /* VIew */ = {
 			isa = PBXGroup;
 			children = (
+				017B2FE5242E5930003286E5 /* Visitor */,
 				01628E88242BD138004A313B /* Main */,
 				01628E82242BD138004A313B /* Home */,
 				01628E97242C5F5E004A313B /* Message */,
@@ -172,6 +178,14 @@
 				01628E9F242CAA82004A313B /* WBDemoViewController.swift */,
 			);
 			path = "测试";
+			sourceTree = "<group>";
+		};
+		017B2FE5242E5930003286E5 /* Visitor */ = {
+			isa = PBXGroup;
+			children = (
+				017B2FE3242E57FA003286E5 /* WBVisitorView.swift */,
+			);
+			path = Visitor;
 			sourceTree = "<group>";
 		};
 		01FCB10B242BABB900E1524F = {
@@ -276,6 +290,8 @@
 			files = (
 				01628EA0242CAA82004A313B /* WBDemoViewController.swift in Sources */,
 				01628E91242BD138004A313B /* WBBaseViewController.swift in Sources */,
+				017B2FE4242E57FA003286E5 /* WBVisitorView.swift in Sources */,
+				017B2FE7242E5AE1003286E5 /* UILabel+Extensions.swift in Sources */,
 				01628E96242C5443004A313B /* WBMainViewController.swift in Sources */,
 				012B9CC6242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift in Sources */,
 				012B9CC4242CFAA30006AFDC /* UIButton+Extensions.swift in Sources */,
