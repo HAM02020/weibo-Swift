@@ -22,7 +22,9 @@ class WBBaseViewController: UIViewController {
 //            navItem.title = title
 //        }
 //    }
-    
+    override func viewDidLoad() {
+        setupTalbeView()
+    }
 }
 
 
@@ -31,8 +33,11 @@ extension WBBaseViewController {
     
     @objc func setupUI() {
         view.backgroundColor = UIColor.white
-        
-        
-        
+
+    }
+    //设置d表格视图
+    func setupTalbeView() {
+        tableView = UITableView(frame: view.bounds, style: .plain)
+        view.addSubview(tableView!)
     }
 }
