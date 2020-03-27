@@ -17,6 +17,7 @@
 		01628E96242C5443004A313B /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E95242C5443004A313B /* WBMainViewController.swift */; };
 		01628E99242C5F8E004A313B /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E98242C5F8E004A313B /* WBMessageViewController.swift */; };
 		01628EA0242CAA82004A313B /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E9F242CAA82004A313B /* WBDemoViewController.swift */; };
+		01F9C9B0242E221500118B4E /* start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01F9C9AF242E221500118B4E /* start.storyboard */; };
 		01FCB118242BABB900E1524F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCB117242BABB900E1524F /* AppDelegate.swift */; };
 		01FCB121242BABBB00E1524F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01FCB120242BABBB00E1524F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,7 @@
 		01628E95242C5443004A313B /* WBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMainViewController.swift; sourceTree = "<group>"; };
 		01628E98242C5F8E004A313B /* WBMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
 		01628E9F242CAA82004A313B /* WBDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
+		01F9C9AF242E221500118B4E /* start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = start.storyboard; sourceTree = "<group>"; };
 		01FCB114242BABB900E1524F /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01FCB117242BABB900E1524F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01FCB120242BABBB00E1524F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = /Users/haoxinru/code/ios/weibo/weibo/weibo/Assets.xcassets; sourceTree = "<absolute>"; };
@@ -195,6 +197,7 @@
 				01FCB117242BABB900E1524F /* AppDelegate.swift */,
 				01628E92242C4560004A313B /* Weibo-Bridge.h */,
 				01FCB120242BABBB00E1524F /* Assets.xcassets */,
+				01F9C9AF242E221500118B4E /* start.storyboard */,
 				01FCB125242BABBB00E1524F /* Info.plist */,
 			);
 			path = weibo;
@@ -203,9 +206,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		01FCB113242BABB900E1524F /* weibo-11.0 */ = {
+		01FCB113242BABB900E1524F /* weibo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 01FCB128242BABBB00E1524F /* Build configuration list for PBXNativeTarget "weibo-11.0" */;
+			buildConfigurationList = 01FCB128242BABBB00E1524F /* Build configuration list for PBXNativeTarget "weibo" */;
 			buildPhases = (
 				01FCB110242BABB900E1524F /* Sources */,
 				01FCB111242BABB900E1524F /* Frameworks */,
@@ -215,7 +218,7 @@
 			);
 			dependencies = (
 			);
-			name = "weibo-11.0";
+			name = weibo;
 			productName = weibo;
 			productReference = 01FCB114242BABB900E1524F /* weibo.app */;
 			productType = "com.apple.product-type.application";
@@ -236,7 +239,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 01FCB10F242BABB900E1524F /* Build configuration list for PBXProject "weibo-11.0" */;
+			buildConfigurationList = 01FCB10F242BABB900E1524F /* Build configuration list for PBXProject "weibo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -249,7 +252,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				01FCB113242BABB900E1524F /* weibo-11.0 */,
+				01FCB113242BABB900E1524F /* weibo */,
 			);
 		};
 /* End PBXProject section */
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01FCB121242BABBB00E1524F /* Assets.xcassets in Resources */,
+				01F9C9B0242E221500118B4E /* start.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +448,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		01FCB10F242BABB900E1524F /* Build configuration list for PBXProject "weibo-11.0" */ = {
+		01FCB10F242BABB900E1524F /* Build configuration list for PBXProject "weibo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				01FCB126242BABBB00E1524F /* Debug */,
@@ -453,7 +457,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		01FCB128242BABBB00E1524F /* Build configuration list for PBXNativeTarget "weibo-11.0" */ = {
+		01FCB128242BABBB00E1524F /* Build configuration list for PBXNativeTarget "weibo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				01FCB129242BABBB00E1524F /* Debug */,

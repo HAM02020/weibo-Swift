@@ -22,9 +22,20 @@ class WBHomeViewController: WBBaseViewController {
     }
     ///加载数据
     override func loadData() {
-        for i in 0..<100 {
-            statusList.insert(i.description, at: 0)
-        }
+        print("开始加载数据")
+        // 模拟 延时 加载数据 -> dispatch_after
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2, execute: {
+            for i in 0..<20 {
+                self.statusList.insert(i.description, at: 0)
+            }
+            //刷新表格
+            print("刷新表格")
+            self.refreshControl?.endRefreshing()
+            self.tableView?.reloadData()
+        })
+        
+        
+        
     }
     ///显示好友
     @objc private func showFriends() {
