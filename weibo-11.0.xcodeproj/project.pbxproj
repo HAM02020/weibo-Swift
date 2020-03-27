@@ -66,13 +66,22 @@
 			path = reactor;
 			sourceTree = "<group>";
 		};
+		012B9CD2242DC1AC0006AFDC /* 主控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				01628E95242C5443004A313B /* WBMainViewController.swift */,
+				01628E93242C4A80004A313B /* WBNavigationController.swift */,
+			);
+			path = "主控制器";
+			sourceTree = "<group>";
+		};
 		01628E7D242BD138004A313B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				01628E81242BD138004A313B /* VIew */,
 				01628E7E242BD138004A313B /* ViewModel */,
 				01628E7F242BD138004A313B /* Tools */,
 				01628E80242BD138004A313B /* Model */,
-				01628E81242BD138004A313B /* VIew */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -140,8 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				01628E9E242CAA5A004A313B /* 测试 */,
-				01628E95242C5443004A313B /* WBMainViewController.swift */,
-				01628E93242C4A80004A313B /* WBNavigationController.swift */,
+				012B9CD2242DC1AC0006AFDC /* 主控制器 */,
 				01628E8B242BD138004A313B /* WBBaseViewController.swift */,
 			);
 			path = Main;

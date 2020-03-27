@@ -17,6 +17,10 @@ class WBMainViewController: UITabBarController {
         setupChildControllers()
         setupComposeButton()
     }
+    //MARK: - 支持横屏
+    //  protrait    竖屏
+    //  landscape   竖屏
+    //override var supportedInterfaceOrientations: UIInterfaceOrientationMask = tabBarControllerSupportedInterfaceOrientations()
     
     // MARK: - 私有控件
     lazy private var composeButton:UIButton = UIButton()
@@ -42,7 +46,7 @@ extension WBMainViewController {
         composeButton.setImage(image1, for: .normal)
         composeButton.setImage(image2, for: .highlighted)
 
-        let count = CGFloat(integerLiteral: viewControllers?.count ?? 0)
+        //let count = CGFloat(integerLiteral: viewControllers?.count ?? 0)
         //设置每个tabbbar宽度 -1 可以防止穿帮（w手指误触）
         //let w = tabBar.bounds.width/count-1
         composeButton.frame = CGRect(x: UIScreen.main.bounds.width/2 - 32, y: 4, width: 64, height: 64)
@@ -86,7 +90,7 @@ extension WBMainViewController {
         //设置tabbar的标题颜色 和字体
         vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.orange], for: .highlighted)
         //字体 默认为12 号
-        vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray,NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)], for: .normal)
+        vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray,NSAttributedString.Key.font:UIFont.systemFont(ofSize: 14)], for: .normal)
         //3. 设置图像
         vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)
         vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_selected")?.withRenderingMode(.alwaysOriginal)

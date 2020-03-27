@@ -9,25 +9,28 @@
 import UIKit
 
 class WBBaseViewController: UIViewController {
+    /// 表格视图  如果用户没有登陆就不显示
+    var tableView : UITableView?
     
 //    ///自定义导航条
 //    var navigationBar:UINavigationBar = UINavigationBar()
 //
 //    lazy var navItem = UINavigationItem()
-//
-//
+
 //    override var title: String? {
 //        didSet {
 //            navItem.title = title
 //        }
 //    }
+    
 }
+
 
 
 extension WBBaseViewController {
     
     @objc func setupUI() {
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = UIColor.white
         
         
         

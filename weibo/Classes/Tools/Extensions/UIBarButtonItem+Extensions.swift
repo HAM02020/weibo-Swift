@@ -11,7 +11,7 @@ import UIKit
 extension UIBarButtonItem {
     
     convenience init(title:String,target:AnyObject?,action:Selector,isBack:Bool = false){
-        let btn = UIButton.creatTextButton(title: title, colornormal: UIColor.gray, colorhighligh: UIColor.orange)
+        let btn = UIButton.creatTextButton(title: title, colornormal: UIColor.systemGray, colorhighligh: UIColor.orange)
         
         if(isBack) {
             let imageName = "back"

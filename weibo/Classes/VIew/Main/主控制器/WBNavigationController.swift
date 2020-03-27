@@ -15,7 +15,9 @@ class WBNavigationController: UINavigationController {
         //隐藏默认的NavigationBar
         //navigationBar.isHidden = true
         navigationBar.titleTextAttributes=[NSAttributedString.Key.foregroundColor:UIColor.darkGray,NSAttributedString.Key.font:UIFont.systemFont(ofSize: 20)]
-        navigationBar.tintColor=UIColor.white
+        navigationBar.tintColor=UIColor.darkGray
+        ///设置渲染颜色
+        navigationBar.barTintColor = UIColor.white
     }
     
     
@@ -28,11 +30,11 @@ class WBNavigationController: UINavigationController {
         }
         
         if let vc = viewController as? WBBaseViewController {
+            var title = "返回"
             if viewControllers.count == 1 {
-                vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "首页", target: self, action: #selector(popBack))
-            }else{
-                vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", target: self, action: #selector(popBack),isBack: true)
+                title = viewControllers.first?.title ?? "返回"
             }
+            vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(popBack),isBack: true)
 
         }
         
