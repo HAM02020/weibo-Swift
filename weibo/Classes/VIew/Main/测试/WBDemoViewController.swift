@@ -11,7 +11,7 @@ import UIKit
 class WBDemoViewController: WBBaseViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        //super.viewDidLoad()
         setupUI()
         //设置标题
         title = "第\(navigationController?.viewControllers.count ?? 0)个"

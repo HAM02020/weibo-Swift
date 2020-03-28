@@ -35,6 +35,8 @@ class WBBaseViewController: UIViewController {
         
         userLogon ? setupTalbeView() : setupVisitorView()
     }
+    
+    
 }
 
 
