@@ -19,6 +19,7 @@
 		01628EA0242CAA82004A313B /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E9F242CAA82004A313B /* WBDemoViewController.swift */; };
 		017B2FE4242E57FA003286E5 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017B2FE3242E57FA003286E5 /* WBVisitorView.swift */; };
 		017B2FE7242E5AE1003286E5 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017B2FE6242E5AE1003286E5 /* UILabel+Extensions.swift */; };
+		017B2FE9242F26FF003286E5 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 017B2FE8242F26FF003286E5 /* main.json */; };
 		01F9C9B0242E221500118B4E /* start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01F9C9AF242E221500118B4E /* start.storyboard */; };
 		01FCB118242BABB900E1524F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCB117242BABB900E1524F /* AppDelegate.swift */; };
 		01FCB121242BABBB00E1524F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01FCB120242BABBB00E1524F /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		01628E9F242CAA82004A313B /* WBDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 		017B2FE3242E57FA003286E5 /* WBVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		017B2FE6242E5AE1003286E5 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		017B2FE8242F26FF003286E5 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		01F9C9AF242E221500118B4E /* start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = start.storyboard; sourceTree = "<group>"; };
 		01FCB114242BABB900E1524F /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01FCB117242BABB900E1524F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		012B9CD2242DC1AC0006AFDC /* 主控制器 */ = {
 			isa = PBXGroup;
 			children = (
+				017B2FE8242F26FF003286E5 /* main.json */,
 				01628E95242C5443004A313B /* WBMainViewController.swift */,
 				01628E93242C4A80004A313B /* WBNavigationController.swift */,
 			);
@@ -276,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				017B2FE9242F26FF003286E5 /* main.json in Resources */,
 				01FCB121242BABBB00E1524F /* Assets.xcassets in Resources */,
 				01F9C9B0242E221500118B4E /* start.storyboard in Resources */,
 			);

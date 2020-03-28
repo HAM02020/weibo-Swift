@@ -75,7 +75,10 @@ extension WBMainViewController {
             ],
         ]
         
-        (array as NSArray).write(toFile: "/Users/haoxinru/Desktop/demo.plist", atomically: true)
+        //(array as NSArray).write(toFile: "/Users/haoxinru/Desktop/demo.plist", atomically: true)
+        
+        let data = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
+        (data as NSData).write(toFile: "/Users/haoxinru/Desktop/demo.json", atomically: true)
         
         var arrayM = [UIViewController]()
         for dict in array {
