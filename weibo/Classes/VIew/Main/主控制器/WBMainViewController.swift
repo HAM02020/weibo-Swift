@@ -58,28 +58,39 @@ extension WBMainViewController {
         composeButton.addTarget(self, action: #selector(composeStatus), for: .touchUpInside)
     }
     
+    
     private func setupChildControllers() {
-        let array : [[String:Any]] = [
-            ["clsName":"WBHomeViewController","title":"首页","imageName":"home",
-            "visitorInfo":["imageName":"","message":"关注一些人，回这里看看有什么惊喜"]
-            ],
-            ["clsName":"WBMessageViewController","title":"消息","imageName":"message_center",
-            "visitorInfo":["imageName":"visitordiscover_image_message","message":"登陆后，别人评论你的微博，发给你的消息，都会在这里收到通知"]
-            ],
-            ["clsName":"UIViewController"],
-            ["clsName":"WBDiscoverViewController","title":"发现","imageName":"discover",
-            "visitorInfo":["imageName":"visitordiscover_image_discover","message":"登陆后，最新，最热微博，尽在掌握，不再会与实事潮流擦肩而过"]
-            ],
-            ["clsName":"WBProfileViewController","title":"我","imageName":"profile",
-            "visitorInfo":["imageName":"visitordiscover_image_profile","message":"登陆后，你的微博、相册、个人资料会显示在这里，展示给别人"]
-            ],
-        ]
         
-        //(array as NSArray).write(toFile: "/Users/haoxinru/Desktop/demo.plist", atomically: true)
+        //从bundle 加载配置 json
+        guard  let path = Bundle.main.path(forResource: "main.json", ofType: nil),
+            let data = NSData(contentsOfFile: path),
+            
+            let array = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [[String:Any]] else {
+            return
+        }
         
-        let data = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
-        (data as NSData).write(toFile: "/Users/haoxinru/Desktop/demo.json", atomically: true)
         
+//        let array : [[String:Any]] = [
+//            ["clsName":"WBHomeViewController","title":"首页","imageName":"home",
+//            "visitorInfo":["imageName":"","message":"关注一些人，回这里看看有什么惊喜"]
+//            ],
+//            ["clsName":"WBMessageViewController","title":"消息","imageName":"message_center",
+//            "visitorInfo":["imageName":"visitordiscover_image_message","message":"登陆后，别人评论你的微博，发给你的消息，都会在这里收到通知"]
+//            ],
+//            ["clsName":"UIViewController"],
+//            ["clsName":"WBDiscoverViewController","title":"发现","imageName":"discover",
+//            "visitorInfo":["imageName":"visitordiscover_image_discover","message":"登陆后，最新，最热微博，尽在掌握，不再会与实事潮流擦肩而过"]
+//            ],
+//            ["clsName":"WBProfileViewController","title":"我","imageName":"profile",
+//            "visitorInfo":["imageName":"visitordiscover_image_profile","message":"登陆后，你的微博、相册、个人资料会显示在这里，展示给别人"]
+//            ],
+//        ]
+//
+//        //(array as NSArray).write(toFile: "/Users/haoxinru/Desktop/demo.plist", atomically: true)
+//
+//        let data = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
+//        (data as NSData).write(toFile: "/Users/haoxinru/Desktop/demo.json", atomically: true)
+//
         var arrayM = [UIViewController]()
         for dict in array {
             arrayM.append(controller(dict:dict))

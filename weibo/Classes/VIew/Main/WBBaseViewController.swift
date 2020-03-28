@@ -10,7 +10,7 @@ import UIKit
 //继承协议
 class WBBaseViewController: UIViewController {
     
-    var userLogon = true
+    var userLogon = false
     
     var visitorInfoDictionary:[String:String]?
     
