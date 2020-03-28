@@ -12,6 +12,8 @@ class WBBaseViewController: UIViewController {
     
     var userLogon = false
     
+    var visitorInfoDictionary:[String:String]?
+    
     /// 表格视图  如果用户没有登陆就不显示
     var tableView : UITableView?
     
@@ -77,6 +79,10 @@ extension WBBaseViewController {
         let visitorView = WBVisitorView(frame: view.bounds)
         
         view.addSubview(visitorView)
+        
+        //设置访客视图信息
+        visitorView.visitorInfo = visitorInfoDictionary
+        
     }
     
     ///加载数据 - 由子类去实现

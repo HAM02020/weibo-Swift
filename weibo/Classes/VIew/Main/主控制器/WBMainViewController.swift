@@ -59,8 +59,10 @@ extension WBMainViewController {
     }
     
     private func setupChildControllers() {
-        let array = [
-            ["clsName":"WBHomeViewController","title":"首页","imageName":"home"],
+        let array : [[String:Any]] = [
+            ["clsName":"WBHomeViewController","title":"首页","imageName":"home",
+            "visitorInfo":["imageName":"","message":"哈哈"]
+            ],
             ["clsName":"WBMessageViewController","title":"消息","imageName":"message_center"],
             ["clsName":"UIViewController"],
             ["clsName":"WBDiscoverViewController","title":"发现","imageName":"discover"],
@@ -76,24 +78,24 @@ extension WBMainViewController {
     ///使用字典创建一个子控制器
     ///
     /// - parameter dict 信息字典[clsName,title,image]
-    private func controller(dict: [String:String])->UIViewController {
-        guard let clsName = dict["clsName"],
-        let title = dict["title"],
-        let imageName = dict["imageName"],
+    private func controller(dict: [String:Any])->UIViewController {
+        guard let clsName = dict["clsName"] as? String,
+        let title = dict["title"] as? String,
+        let imageName = dict["imageName"] as? String,
         //利用反射生生成类
         let cls = NSClassFromString("\(Bundle.main.infoDictionary?["CFBundleName"] as? String ?? "").\(clsName)") as? UIViewController.Type else {
             return UIViewController()
         }
         //2. 创建视图控制器
         let vc = cls.init()
-        vc.title = title
+        vc.title = title as? String
         //设置tabbar的标题颜色 和字体
         vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.orange], for: .highlighted)
         //字体 默认为12 号
         vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray,NSAttributedString.Key.font:UIFont.systemFont(ofSize: 14)], for: .normal)
         //3. 设置图像
-        vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)
-        vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
+        vc.tabBarItem.image = UIImage(named: "tabbar_\(imageName)")
+        vc.tabBarItem.selectedImage = UIImage(named: "tabbar_\(imageName)_selected")?.withRenderingMode(.alwaysOriginal)
         let nav = WBNavigationController(rootViewController: vc)
         return nav
     }

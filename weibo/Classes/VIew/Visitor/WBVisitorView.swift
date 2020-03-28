@@ -11,6 +11,25 @@ import UIKit
 ///访客视图
 
 class WBVisitorView: UIView {
+    
+    //访客z视图的信息j字典
+    var visitorInfo:[String:String]? {
+        didSet {
+            //1> 取字典信息
+            guard let imageName = visitorInfo?["imageName"],
+                let message = visitorInfo?["message"] else {
+                   return
+           }
+           
+           //2> 设置消息
+           lab_tip.text = message
+           if imageName == "" {
+               return
+           }
+           iconView.image = UIImage(named: imageName)
+        }
+    }
+    
     ///图像视图
     private lazy var iconView = UIImageView(image: UIImage(named:"visitordiscover_feed_image_smallicon"))
     
@@ -28,7 +47,7 @@ class WBVisitorView: UIView {
     
     
 
-    
+    //MARK： - 构造函数
     override init(frame: CGRect) {
         super.init(frame:frame)
         setupUI()
@@ -39,24 +58,8 @@ class WBVisitorView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    ///使用字典设置访客视图的信息
-    ///
-    /// - parameter dict:[imageName/messgage]
-    func setupInfo(dict:[String:String]) {
-        
-        //1> 取字典信息
-        guard let imageName = dict["imageName"],
-        let message = dict["message"] else {
-            return
-        }
-        
-        //2> 设置消息
-        lab_tip.text = message
-        if imageName == "" {
-            return
-        }
-        iconView.image = UIImage(named: imageName)
-    }
+
+    
     
 }
 
