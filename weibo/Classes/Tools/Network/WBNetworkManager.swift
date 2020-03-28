@@ -19,7 +19,7 @@ class WBNetworkManager: AFHTTPSessionManager {
     /// 静态区 单l例
     static let shared = WBNetworkManager()
     
-    ///访问令牌
+    ///访问令牌。有时限
     var accessToken:String? = "2.00S7fvUGU1U7fEba8e1add890UizGg"
     
     
@@ -28,6 +28,8 @@ class WBNetworkManager: AFHTTPSessionManager {
         
         //0>判断token是否为nil 如果为nil直接返回
         guard let token = accessToken else {
+            
+            //FIXME: 发送通知 提醒用户登陆
             print("没有token 需要登陆！")
             completion(nil,false)
             return
@@ -62,6 +64,14 @@ class WBNetworkManager: AFHTTPSessionManager {
         
         //失败回调
         let failure = {(task:URLSessionDataTask?,error:Error)->() in
+            
+            //针对403 token过期 做处理
+            if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
+                print("Token 过期了")
+                
+                //FIXME: 发送通知(本方法不知道被谁调用，谁接收到通知，谁处理)
+            }
+            
             print("网络请求错误\(error)")
             completion(nil,false)
         }
