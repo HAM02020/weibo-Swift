@@ -61,11 +61,23 @@ extension WBMainViewController {
     
     private func setupChildControllers() {
         
+        //0 获取沙盒json 路径
+        let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let jsonPath = (docDir as NSString).appendingPathComponent("main.json")
+        
+        //加载data
+        var data = NSData(contentsOfFile: jsonPath)
+        
+        //判断 data 是否有内容 如果没有 说明本地沙盒没有文件
+        if data == nil {
+            //从Bundle加载data
+            let path = Bundle.main.path(forResource: "main.json", ofType: nil)
+            data = NSData(contentsOfFile: path!)
+        }
+        
+        
         //从bundle 加载配置 json
-        guard  let path = Bundle.main.path(forResource: "main.json", ofType: nil),
-            let data = NSData(contentsOfFile: path),
-            
-            let array = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [[String:Any]] else {
+        guard let array = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as? [[String:Any]] else {
             return
         }
         
