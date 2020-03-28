@@ -25,11 +25,11 @@ class WBNetworkManager: AFHTTPSessionManager {
     ///   - URLString: URLString
     ///   - parameters: 参数字典
     ///   - completion: 完成回调[json(字典/数组),是否成功]
-    func request(method:WBHTTPMethod = .GET,URLString:String,parameters:[String:Any],completion:@escaping( _ json:Any?,_ isSuccess:Bool)->()) {
+    func request(method:WBHTTPMethod = .GET,URLString:String,parameters:[String:Any],completion:@escaping( _ json:AnyObject?,_ isSuccess:Bool)->()) {
         
         // 成功回调
         let success = {(task:URLSessionDataTask,json:Any?)->() in
-            completion(json,true)
+            completion(json as AnyObject?,true)
         }
         
         //失败回调
