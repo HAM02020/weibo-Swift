@@ -18,15 +18,17 @@ class WBVisitorView: UIView {
             //1> 取字典信息
             guard let imageName = visitorInfo?["imageName"],
                 let message = visitorInfo?["message"] else {
+                       return
+               }
+               
+               //2> 设置消息
+               lab_tip.text = message
+               if imageName == "" {
+                startAnimation()
                    return
-           }
-           
-           //2> 设置消息
-           lab_tip.text = message
-           if imageName == "" {
-               return
-           }
-           iconView.image = UIImage(named: imageName)
+               }
+               houseIconView.image = UIImage(named: imageName)
+            iconView.isHidden = true
         }
     }
     
@@ -58,6 +60,24 @@ class WBVisitorView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    ///首页旋转图标动画
+    private func startAnimation() {
+         let anim = CABasicAnimation(keyPath: "transform.rotation")
+        
+        anim.toValue = 2 * Double.pi
+        anim.repeatCount = MAXFLOAT
+        //旋转一圈的时间
+        anim.duration = 15
+        
+        //从其他页面回来继续转
+        anim.isRemovedOnCompletion = false
+        
+        //将动画添加到图层
+        iconView.layer.add(anim, forKey: nil)
+        
+        
+    }
+        
 
     
     
@@ -72,9 +92,13 @@ extension WBVisitorView {
         backgroundColor = UIColor.white
         
         setupLabel(withText: "关注一些人，回这里看看有什么惊喜，关注一些人，回这里看看有什么惊喜", fontSize: 16, color: UIColor.gray)
+        self.addSubview(iconView)
         self.addSubview(lab_tip)
         self.addSubview(houseIconView)
         setupButton()
+        
+        //文本居中
+        lab_tip.textAlignment = .center
         
         //2. 取消autoResizing 与 自动布局不能共存
         for v in subviews {
@@ -98,6 +122,22 @@ extension WBVisitorView {
                                          attribute: .centerY,
                                          multiplier: 1.0,
                                          constant: -100))
+        
+        //0> 圈圈
+        addConstraint(NSLayoutConstraint(item: iconView,
+                                         attribute: .centerX,
+                                         relatedBy: .equal,
+                                         toItem: houseIconView,
+                                         attribute: .centerX,
+                                         multiplier: 1.0,
+                                         constant: 0))
+        addConstraint(NSLayoutConstraint(item: iconView,
+                                         attribute: .centerY,
+                                         relatedBy: .equal,
+                                         toItem: houseIconView,
+                                         attribute: .centerY,
+                                         multiplier: 1.0,
+                                         constant: 0))
         let margin : CGFloat = 20
         //2> 提示标签
         addConstraint(NSLayoutConstraint(item: lab_tip,

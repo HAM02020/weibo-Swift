@@ -34,8 +34,7 @@ class WBNavigationController: UINavigationController {
             if viewControllers.count == 1 {
                 title = viewControllers.first?.title ?? "返回"
             }
-            vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(popBack),isBack: true)
-
+            vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(popBack),isBack: true)
         }
         
         super.pushViewController(viewController, animated: true)

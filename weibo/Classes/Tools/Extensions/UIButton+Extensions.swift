@@ -12,6 +12,7 @@ extension UIButton {
     
     class func creatTextButton(title: String , colornormal: UIColor , colorhighligh :UIColor) -> UIButton {
         let btn : UIButton = UIButton()
+        btn.frame = CGRect(x: 0, y: 0, width: 64, height: 44)
         btn.setTitle(title, for: .normal)
         btn.setTitleColor(colornormal, for: .normal)
         btn.setTitleColor(colorhighligh, for: .highlighted)

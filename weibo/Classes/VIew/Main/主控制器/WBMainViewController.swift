@@ -61,13 +61,22 @@ extension WBMainViewController {
     private func setupChildControllers() {
         let array : [[String:Any]] = [
             ["clsName":"WBHomeViewController","title":"首页","imageName":"home",
-            "visitorInfo":["imageName":"","message":"哈哈"]
+            "visitorInfo":["imageName":"","message":"关注一些人，回这里看看有什么惊喜"]
             ],
-            ["clsName":"WBMessageViewController","title":"消息","imageName":"message_center"],
+            ["clsName":"WBMessageViewController","title":"消息","imageName":"message_center",
+            "visitorInfo":["imageName":"visitordiscover_image_message","message":"登陆后，别人评论你的微博，发给你的消息，都会在这里收到通知"]
+            ],
             ["clsName":"UIViewController"],
-            ["clsName":"WBDiscoverViewController","title":"发现","imageName":"discover"],
-            ["clsName":"WBProfileViewController","title":"我","imageName":"profile"],
+            ["clsName":"WBDiscoverViewController","title":"发现","imageName":"discover",
+            "visitorInfo":["imageName":"visitordiscover_image_discover","message":"登陆后，最新，最热微博，尽在掌握，不再会与实事潮流擦肩而过"]
+            ],
+            ["clsName":"WBProfileViewController","title":"我","imageName":"profile",
+            "visitorInfo":["imageName":"visitordiscover_image_profile","message":"登陆后，你的微博、相册、个人资料会显示在这里，展示给别人"]
+            ],
         ]
+        
+        (array as NSArray).write(toFile: "/Users/haoxinru/Desktop/demo.plist", atomically: true)
+        
         var arrayM = [UIViewController]()
         for dict in array {
             arrayM.append(controller(dict:dict))
@@ -83,12 +92,17 @@ extension WBMainViewController {
         let title = dict["title"] as? String,
         let imageName = dict["imageName"] as? String,
         //利用反射生生成类
-        let cls = NSClassFromString("\(Bundle.main.infoDictionary?["CFBundleName"] as? String ?? "").\(clsName)") as? UIViewController.Type else {
+        let cls = NSClassFromString("\(Bundle.main.infoDictionary?["CFBundleName"] as? String ?? "").\(clsName)") as? WBBaseViewController.Type,
+        let visitorDict = dict["visitorInfo"] as? [String:String] else {
             return UIViewController()
         }
         //2. 创建视图控制器
         let vc = cls.init()
-        vc.title = title as? String
+        vc.title = title
+        
+        //设置控制器的访客信息字典
+        vc.visitorInfoDictionary = visitorDict
+        
         //设置tabbar的标题颜色 和字体
         vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.orange], for: .highlighted)
         //字体 默认为12 号
