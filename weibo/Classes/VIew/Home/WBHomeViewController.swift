@@ -17,7 +17,6 @@ class WBHomeViewController: WBBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
         //loadData()
     }
     ///加载数据
@@ -75,14 +74,14 @@ extension WBHomeViewController {
 ///MARK: - 设置界面
 extension WBHomeViewController {
     
-    @objc override func setupUI() {
-        super.setupUI()
-        
+    override func setupTalbeView() {
+        super.setupTalbeView()
         //设置导航栏按钮
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
         
         //注册原型cell
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
+
     
 }

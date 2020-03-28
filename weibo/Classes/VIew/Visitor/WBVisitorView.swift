@@ -42,10 +42,10 @@ class WBVisitorView: UIView {
     private lazy var lab_tip = UILabel()
     
     ///注册按钮
-    private var btn_register :UIButton?
+    var btn_register :UIButton?
     
     ///登陆按钮
-    private var btn_login : UIButton?
+    var btn_login : UIButton?
     
     
 

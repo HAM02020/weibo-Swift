@@ -12,9 +12,10 @@ class WBDemoViewController: WBBaseViewController {
 
     override func viewDidLoad() {
         //super.viewDidLoad()
-        setupUI()
         //设置标题
         title = "第\(navigationController?.viewControllers.count ?? 0)个"
+        view.backgroundColor = UIColor.white
+        setupTalbeView()
     }
     
     //MARK: - 监听方法
@@ -28,9 +29,9 @@ class WBDemoViewController: WBBaseViewController {
 
 extension WBDemoViewController {
         
-        override func setupUI() {
-            super.setupUI()
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(showNext))
-            
-        }
+        ///重写父类方法
+    override func setupTalbeView() {
+        super.setupTalbeView()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(showNext))
+    }
 }

@@ -41,18 +41,31 @@ class WBBaseViewController: UIViewController {
     
 }
 
+//MARK: - 访客视图监听方法
+extension WBBaseViewController {
+    
+    @objc private func login(){
+        print("用户登陆")
+    }
+    
+    @objc private func register(){
+        print("用户注册")
+    }
+}
 
 
+
+//MARK: - 设置界面
 extension WBBaseViewController {
     
     
     
-    @objc func setupUI() {
+    private func setupUI() {
         view.backgroundColor = UIColor.white
         loadData()
     }
-    ///设置d表格视图
-    func setupTalbeView() {
+    ///设置d表格视图 用户登陆之后执行
+    @objc func setupTalbeView() {
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.addSubview(tableView!)
         
@@ -70,6 +83,8 @@ extension WBBaseViewController {
         //3> 添加监听方法
         refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
         
+        //hidesBottomBarWhenPushed = true
+        
         //设置内容缩进 我这里没必要 因为我没有自定义navigationbar
         //tableView?.contentInset = UIEdgeInsets(top: self.navigationController?.navigationBar.bounds.height ?? 0, left: 0, bottom: tabBarController?.tabBar.bounds.heigt ?? 49, right: 0)
     }
@@ -82,6 +97,14 @@ extension WBBaseViewController {
         
         //设置访客视图信息
         visitorView.visitorInfo = visitorInfoDictionary
+        
+        //设置访客z视图的监听方法
+        visitorView.btn_register?.addTarget(self, action: #selector(register), for: .touchUpInside)
+        visitorView.btn_login?.addTarget(self, action: #selector(login), for: .touchUpInside)
+        
+        //设置导航条按钮
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登陆", style: .plain, target: self, action: #selector(login))
         
     }
     

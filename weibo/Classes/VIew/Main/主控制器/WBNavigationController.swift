@@ -29,12 +29,12 @@ class WBNavigationController: UINavigationController {
             viewController.hidesBottomBarWhenPushed = true
         }
         
-        if let vc = viewController as? WBBaseViewController {
+        if let vc = viewController as? WBHomeViewController  {
             var title = "返回"
             if viewControllers.count == 1 {
-                title = viewControllers.first?.title ?? "返回"
+                title = viewControllers.first?.title ?? "首页"
             }
-            vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(popBack),isBack: true)
+            vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: title, target: self, action: #selector(popBack),isBack: true)
         }
         
         super.pushViewController(viewController, animated: true)
