@@ -18,9 +18,9 @@ extension WBNetworkManager {
         
             //用网络工具加载微博数据
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-        let params = ["access_token":"2.00S7fvUGU1U7fEba8e1add890UizGg"]
+
         
-        request(URLString: urlString, parameters: params) { (json, isSuccess) in
+        tokenRequest(URLString: urlString, parameters: nil) { (json, isSuccess) in
             let result = json?["statuses"] as? [[String:AnyObject]]
             
             completion(result,isSuccess)
