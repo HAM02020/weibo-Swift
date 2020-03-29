@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let accountFile = "userAccount.json"
+
 ///用户账户信息
 class WBUserAccount: NSObject {
     
@@ -17,9 +19,47 @@ class WBUserAccount: NSObject {
     //过期日期
     //开发者5年
     //使用者3天
-    @objc var expires_in:TimeInterval = 0
+    @objc var expires_in:TimeInterval = 0 {
+        didSet {
+            expiresDate = Date(timeIntervalSinceNow: expires_in)
+        }
+    }
+    
+    @objc var expiresDate :Date?
     
     override var description: String {
         return yy_modelDescription()
+    }
+    
+    override init() {
+        super.init()
+        
+        //从磁盘加载保存的文件
+        let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let filePath = (docDir as NSString).appendingPathComponent(accountFile)
+        guard let data = NSData(contentsOfFile: filePath),
+            let dict = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [String:AnyObject] else {
+            return
+        }
+        yy_modelSet(with: dict )
+        
+    }
+    
+    func saveAccount() {
+        var dict = self.yy_modelToJSONObject() as? [String:AnyObject]  ?? [:]
+        
+        dict.removeValue(forKey: "expires_in")
+        
+        // 字典序列化
+        
+        guard let data =  try? JSONSerialization.data(withJSONObject: dict, options: [.prettyPrinted]) else {
+            return
+        }
+        // 写入磁盘
+        let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let filePath = (docDir as NSString).appendingPathComponent(accountFile)
+        
+        (data as NSData).write(toFile: filePath, atomically: true)
+        print("用户账户保存z成功\(filePath)")
     }
 }
