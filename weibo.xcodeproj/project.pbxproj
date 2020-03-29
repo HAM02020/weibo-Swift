@@ -24,6 +24,8 @@
 		01D19B92242F9A9E00AE4C46 /* WBNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D19B91242F9A9E00AE4C46 /* WBNetworkManager+Extension.swift */; };
 		01D19B94242FB9C800AE4C46 /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D19B93242FB9C800AE4C46 /* WBStatus.swift */; };
 		01D19B96242FBBF500AE4C46 /* WBStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D19B95242FBBF500AE4C46 /* WBStatusListViewModel.swift */; };
+		01D19B9A2430946B00AE4C46 /* WeiboCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D19B992430946B00AE4C46 /* WeiboCommon.swift */; };
+		01D19B9D2430970200AE4C46 /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D19B9C2430970200AE4C46 /* WBOAuthViewController.swift */; };
 		01F9C9B0242E221500118B4E /* start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01F9C9AF242E221500118B4E /* start.storyboard */; };
 		01FCB118242BABB900E1524F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCB117242BABB900E1524F /* AppDelegate.swift */; };
 		01FCB121242BABBB00E1524F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01FCB120242BABBB00E1524F /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 		01D19B91242F9A9E00AE4C46 /* WBNetworkManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WBNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		01D19B93242FB9C800AE4C46 /* WBStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatus.swift; sourceTree = "<group>"; };
 		01D19B95242FBBF500AE4C46 /* WBStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusListViewModel.swift; sourceTree = "<group>"; };
+		01D19B992430946B00AE4C46 /* WeiboCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboCommon.swift; sourceTree = "<group>"; };
+		01D19B9C2430970200AE4C46 /* WBOAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
 		01F9C9AF242E221500118B4E /* start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = start.storyboard; sourceTree = "<group>"; };
 		01FCB114242BABB900E1524F /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01FCB117242BABB900E1524F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 				01D19B8E242F8D7800AE4C46 /* Network */,
 				012B9CC7242D19390006AFDC /* reactor */,
 				012B9CC0242CFA5B0006AFDC /* Extensions */,
+				01D19B992430946B00AE4C46 /* WeiboCommon.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 		01628E88242BD138004A313B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				01D19B9B243096D600AE4C46 /* OAuth */,
 				01628E9E242CAA5A004A313B /* 测试 */,
 				012B9CD2242DC1AC0006AFDC /* 主控制器 */,
 				01628E8B242BD138004A313B /* WBBaseViewController.swift */,
@@ -214,6 +220,14 @@
 				01D19B91242F9A9E00AE4C46 /* WBNetworkManager+Extension.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		01D19B9B243096D600AE4C46 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				01D19B9C2430970200AE4C46 /* WBOAuthViewController.swift */,
+			);
+			path = OAuth;
 			sourceTree = "<group>";
 		};
 		01FCB10B242BABB900E1524F = {
@@ -395,8 +409,10 @@
 				01628E94242C4A80004A313B /* WBNavigationController.swift in Sources */,
 				01628E99242C5F8E004A313B /* WBMessageViewController.swift in Sources */,
 				01FCB118242BABB900E1524F /* AppDelegate.swift in Sources */,
+				01D19B9A2430946B00AE4C46 /* WeiboCommon.swift in Sources */,
 				01D19B92242F9A9E00AE4C46 /* WBNetworkManager+Extension.swift in Sources */,
 				01628E8D242BD138004A313B /* WBDiscoverViewController.swift in Sources */,
+				01D19B9D2430970200AE4C46 /* WBOAuthViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,6 @@ import UIKit
 //继承协议
 class WBBaseViewController: UIViewController {
     
-    var userLogon = true
     
     var visitorInfoDictionary:[String:String]?
     
@@ -35,7 +34,7 @@ class WBBaseViewController: UIViewController {
 //    }
     override func viewDidLoad() {
         
-        userLogon ? setupTalbeView() : setupVisitorView()
+        WBNetworkManager.shared.userLogon ? setupTalbeView() : setupVisitorView()
     }
     
     
@@ -46,6 +45,9 @@ extension WBBaseViewController {
     
     @objc private func login(){
         print("用户登陆")
+        
+        //发送通知
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
     }
     
     @objc private func register(){
@@ -62,7 +64,7 @@ extension WBBaseViewController {
     
     private func setupUI() {
         view.backgroundColor = UIColor.white
-        loadData()
+        WBNetworkManager.shared.userLogon ? loadData() : ()
     }
     ///设置d表格视图 用户登陆之后执行
     @objc func setupTalbeView() {

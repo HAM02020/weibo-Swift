@@ -21,8 +21,11 @@ class WBMainViewController: UITabBarController {
         setupComposeButton()
         setupTimer()
         
-        //设置代理
+        //设置代理 页面之间转换
         delegate = self
+        
+        // 注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
         
         
     }
@@ -30,6 +33,9 @@ class WBMainViewController: UITabBarController {
     deinit {
         //销毁时钟
         timer?.invalidate()
+        
+        //注销通知
+        NotificationCenter.default.removeObserver(self)
     }
     
     
@@ -48,6 +54,16 @@ class WBMainViewController: UITabBarController {
     @objc private func composeStatus() {
         print("撰写微博")
     }
+    
+    @objc private func userLogin(n:Notification) {
+        print("用户登陆通知\(n)")
+        
+        //展现登陆控制器
+        let nav = UINavigationController(rootViewController: WBOAuthViewController())
+        
+        present(nav, animated: true, completion: nil)
+    }
+    
 }
 
 extension WBMainViewController: UITabBarControllerDelegate {
@@ -90,13 +106,17 @@ extension WBMainViewController {
     ///定义时钟
     private func setupTimer() {
         
-        timer = Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(updataTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(updataTimer), userInfo: nil, repeats: true)
         
     }
     
     /// 时钟触发方法
     @objc private func updataTimer() {
-        //测试未读数量
+        
+        if !WBNetworkManager.shared.userLogon{
+            return
+        }
+        
         WBNetworkManager.shared.unreadCount{(count) in
             print("有\(count)条新微博")
             
