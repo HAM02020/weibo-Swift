@@ -60,21 +60,23 @@ class WBMainViewController: UITabBarController {
         print("用户登陆通知\(n)")
         
         //如果有值 判断 提示用户重新登陆
-//        if n.object != nil {
-//            //渐变样式
-//            SVProgressHUD.setDefaultMaskType(.gradient)
-//
-//            SVProgressHUD.showInfo(withStatus: "用户登陆已经超时，需要重新登陆")
-//        }
-        
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2) {
-//            SVProgressHUD.setDefaultMaskType(.clear)
-//            //展现登陆控制器
-            let nav = UINavigationController(rootViewController: WBOAuthViewController())
+        if n.object != nil {
+            //渐变样式
+            SVProgressHUD.setDefaultMaskType(.gradient)
+
+            SVProgressHUD.showInfo(withStatus: "用户登陆已经超时，需要重新登陆")
             
-            self.present(nav, animated: true, completion: nil)
-//        }
-//        
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
+                SVProgressHUD.setDefaultMaskType(.clear)
+                //展现登陆控制器
+                
+            }
+            
+        }
+        let nav = UINavigationController(rootViewController: WBOAuthViewController())
+        
+        self.present(nav, animated: true, completion: nil)
+        
         
     }
     

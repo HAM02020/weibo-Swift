@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+
 //MARK: - 封装新浪微博的网络请求方法
 extension WBNetworkManager {
     
@@ -57,6 +59,24 @@ extension WBNetworkManager {
 
 }
 
+extension WBNetworkManager {
+    
+    func loadUserInfo(completion: @escaping(_ dict:[String:AnyObject])->()) {
+        guard let uid = userAccount.uid else {
+            return
+        }
+        
+        let urlString = "https://api.weibo.com/2/users/show.json"
+        
+        let pararms = ["uid":uid]
+        
+        //发起网络请求
+        tokenRequest(URLString: urlString, parameters: pararms as [String : AnyObject]) { (json, isSuccess) in
+            completion(json as?[String:AnyObject] ?? [:])
+        }
+    }
+}
+
 //OAuth相关方法
 extension WBNetworkManager {
     /// 获取token
@@ -81,7 +101,14 @@ extension WBNetworkManager {
             //保存模型
             self.userAccount.saveAccount()
             
-            completion(isSuccess)
+            //加载当前用户信息
+            self.loadUserInfo { (dict) in
+                print(dict)
+                //加载完成再完成回调
+                completion(isSuccess)
+            }
+            
+            
         }
     }
 }
