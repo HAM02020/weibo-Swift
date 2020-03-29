@@ -34,8 +34,8 @@ class WBBaseViewController: UIViewController {
 //    }
     override func viewDidLoad() {
         
-        //WBNetworkManager.shared().userLogon ? setupTalbeView() : setupVisitorView()
-        setupTalbeView()
+        WBNetworkManager.shared().userLogon ? setupTalbeView() : setupVisitorView()
+        //setupTalbeView()
         //注册通知
         NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(WBUserLoginSuccessNotification), object: nil)
     }

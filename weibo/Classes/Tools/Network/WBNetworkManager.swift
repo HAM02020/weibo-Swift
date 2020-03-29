@@ -87,7 +87,7 @@ class WBNetworkManager: AFHTTPSessionManager {
                 print("Token 过期了")
                 
                 //FIXME: 发送通知(本方法不知道被谁调用，谁接收到通知，谁处理)
-                NotificationCenter.default.post(name: NSNotification.Name(WBUserShouldLoginNotification), object: "bad token")
+                //NotificationCenter.default.post(name: NSNotification.Name(WBUserShouldLoginNotification), object: "bad token")
             }
             
             print("网络请求错误\(error)")

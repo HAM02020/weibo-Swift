@@ -41,9 +41,9 @@ class WBUserAccount: NSObject {
             let dict = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [String:AnyObject] else {
             return
         }
-        yy_modelSet(with: dict )
+        yy_modelSet(with: dict)
         
-        print("从沙盒取到的用户信息\(dict)")
+        print("从沙盒取到的用户信息！！！！！！！\(self)")
         //expiresDate = Date(timeIntervalSinceNow: -3600 * 24 * 10)
         //  处理token过期
         if expiresDate?.compare(Date()) != ComparisonResult.orderedDescending {
@@ -57,7 +57,7 @@ class WBUserAccount: NSObject {
             _ = try? FileManager.default.removeItem(atPath: filePath)
         }
     }
-    
+   
     
     func saveAccount() {
         var dict = self.yy_modelToJSONObject() as? [String:AnyObject]  ?? [:]
