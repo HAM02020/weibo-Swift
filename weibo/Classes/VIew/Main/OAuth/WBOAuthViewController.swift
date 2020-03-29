@@ -96,8 +96,21 @@ extension WBOAuthViewController : UIWebViewDelegate {
         print("获取授权码\(code)")
         
         //4> 使用授权吗 获取AccessToken
-        WBNetworkManager.shared().getAccessToken(code: code)
-        close()
+        WBNetworkManager.shared().getAccessToken(code: code) { (isSuccess) in
+            
+            if !isSuccess {
+                SVProgressHUD.showInfo(withStatus: "登陆失败")
+            }else {
+                SVProgressHUD.showInfo(withStatus: "登陆成功")
+                
+                //1> 通过通知跳转 发送登陆成功消息
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUserLoginSuccessNotification), object: nil)
+                
+                
+                self.close()
+                
+            }
+        }
         return false
     }
     

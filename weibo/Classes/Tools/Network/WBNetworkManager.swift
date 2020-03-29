@@ -16,8 +16,11 @@ enum WBHTTPMethod {
 
 class WBNetworkManager: AFHTTPSessionManager {
     
+    
+    lazy var userAccount = WBUserAccount()
+    
     /// 静态区 单l例
-    static let shared = { () -> WBNetworkManager in
+        static let shared = { () -> WBNetworkManager in
         
         let instance = WBNetworkManager()
         
@@ -28,7 +31,7 @@ class WBNetworkManager: AFHTTPSessionManager {
         
     }
     
-    lazy var userAccount = WBUserAccount()
+
     
     var userLogon :Bool {
         return userAccount.access_token != nil
@@ -42,6 +45,9 @@ class WBNetworkManager: AFHTTPSessionManager {
             
             //FIXME: 发送通知 提醒用户登陆
             print("没有token 需要登陆！")
+            
+            //NotificationCenter.default.post(name: NSNotification.Name(WBUserShouldLoginNotification), object: nil)
+            
             completion(nil,false)
             return
         }
@@ -81,6 +87,7 @@ class WBNetworkManager: AFHTTPSessionManager {
                 print("Token 过期了")
                 
                 //FIXME: 发送通知(本方法不知道被谁调用，谁接收到通知，谁处理)
+                NotificationCenter.default.post(name: NSNotification.Name(WBUserShouldLoginNotification), object: "bad token")
             }
             
             print("网络请求错误\(error)")

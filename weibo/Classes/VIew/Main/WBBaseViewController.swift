@@ -34,18 +34,36 @@ class WBBaseViewController: UIViewController {
 //    }
     override func viewDidLoad() {
         
-        WBNetworkManager.shared().userLogon ? setupTalbeView() : setupVisitorView()
+        //WBNetworkManager.shared().userLogon ? setupTalbeView() : setupVisitorView()
+        setupTalbeView()
+        //注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(WBUserLoginSuccessNotification), object: nil)
     }
-    
+    deinit {
+        //销毁通知
+        NotificationCenter.default.removeObserver(self)
+    }
     
 }
 
 //MARK: - 访客视图监听方法
 extension WBBaseViewController {
     
+    @objc private func loginSuccess(n:Notification) {
+        print("登陆成功\(n)")
+        //更新UI
+        //在访问view的getter 时 如果 view == nil 会调用loadview -> viewdidLoad
+        navigationItem.leftBarButtonItem = nil
+        navigationItem.rightBarButtonItem = nil
+        
+        viewDidLoad()
+        
+        //注销通知 避免通知被重复注册
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     @objc private func login(){
         print("用户登陆")
-        
         //发送通知
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
     }

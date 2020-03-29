@@ -43,7 +43,21 @@ class WBUserAccount: NSObject {
         }
         yy_modelSet(with: dict )
         
+        print("从沙盒取到的用户信息\(dict)")
+        //expiresDate = Date(timeIntervalSinceNow: -3600 * 24 * 10)
+        //  处理token过期
+        if expiresDate?.compare(Date()) != ComparisonResult.orderedDescending {
+            print("账户过期")
+            
+            //清空token
+            access_token = nil
+            uid = nil
+            
+            //删除账户文件
+            _ = try? FileManager.default.removeItem(atPath: filePath)
+        }
     }
+    
     
     func saveAccount() {
         var dict = self.yy_modelToJSONObject() as? [String:AnyObject]  ?? [:]

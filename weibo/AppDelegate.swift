@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import SVProgressHUD
+import AFNetworking
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,16 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
         [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        //取得用户授权显示通知[]
-        //过期了 ios11不支持
-//        let notifySettiings = UIUserNotificationSettings(types: [.alert,.badge,.sound], categories: nil)
-//        application.registerUserNotificationSettings(notifySettiings)
-        //新写法
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge,.carPlay]) {
-         (success, error) in
-         //Parse errors and track state
-    
-        }
+        setupAdditions()
+
         
         // Override point for customization after application launch.
         window = UIWindow()
@@ -38,6 +31,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+}
+
+//MARK: - 设置应用程序额外信息
+extension AppDelegate   {
+    private func setupAdditions(){
+        
+        // 1. 设置SVDProguressHUD 最小解除时间
+        SVProgressHUD.setMinimumDismissTimeInterval(1)
+        
+        //2 .设置网络加载 指示器
+        AFNetworkActivityIndicatorManager.shared().isEnabled = true
+        
+        //3 .设置通知权限获取
+        
+        //取得用户授权显示通知[]
+        //过期了 ios11不支持
+//        let notifySettiings = UIUserNotificationSettings(types: [.alert,.badge,.sound], categories: nil)
+//        application.registerUserNotificationSettings(notifySettiings)
+        //新写法
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge,.carPlay]) {
+         (success, error) in
+         //Parse errors and track state
+            
+                }
+        
+    }
 }
 
 //MARK - 从服务器加载应用程序信息
