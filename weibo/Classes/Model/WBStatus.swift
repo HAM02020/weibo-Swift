@@ -13,9 +13,10 @@ import YYModel
 class WBStatus: NSObject {
     
     /// Int在64位机器是64位，在32位机器是32位
-    var id:Int64 = 0
+    ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!一定要在属性上 加 @objc 不然 无法识别！！！！！！！！！！！！！！！！！！！！
+    @objc var id:Int64 = 0
     //微博的内容
-    var text :String?
+    @objc var text :String?
     
     ///重写description 的计算型 属性
     override var description: String {

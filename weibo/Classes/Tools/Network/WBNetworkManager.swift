@@ -20,7 +20,7 @@ class WBNetworkManager: AFHTTPSessionManager {
     static let shared = WBNetworkManager()
     
     ///访问令牌。有时限
-    var accessToken:String? = "2.00S7fvUGU1U7fEba8e1add890UizGg"
+    var accessToken:String? = "2.00S7fvUGniFLgDaf931b7642dfht9E"
     
     
     ///专门负责拼接 token 的网络请求方法
