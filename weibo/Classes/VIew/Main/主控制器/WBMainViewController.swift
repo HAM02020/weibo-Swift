@@ -59,6 +59,24 @@ extension WBMainViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         print("将要切换到\(viewController)")
         
+        //1> 获取控制器在数组中的索引
+        let index = (viewControllers! as NSArray).index(of:viewController)
+        
+        //2> 获取当前索引,同时 index也是首页 进行下拉刷新
+        if selectedIndex == 0 && index == selectedIndex {
+            print("点击首页")
+            //3> 让表格滚动到顶部
+            let nav = viewControllers?[0] as! UINavigationController
+            let vc = nav.viewControllers[0] as! WBHomeViewController
+            //滚动到顶部
+            vc.tableView?.setContentOffset(CGPoint(x: 0, y: -88), animated: true)
+            
+            //4> 刷新数据
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
+                vc.loadData()
+            }
+        }
+        
         //容错 按钮旁边的空白区域 点了不跳转
         return !viewController.isMember(of: UIViewController.self)
     }
