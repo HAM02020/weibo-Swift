@@ -21,6 +21,9 @@ class WBMainViewController: UITabBarController {
         setupComposeButton()
         setupTimer()
         
+        //设置代理
+        delegate = self
+        
         
     }
     
@@ -46,13 +49,30 @@ class WBMainViewController: UITabBarController {
         print("撰写微博")
     }
 }
+
+extension WBMainViewController: UITabBarControllerDelegate {
+    
+    /// 将要选择 TabBarItem
+    /// - Parameters:
+    ///   - tabBarController: tabbarcontroller
+    ///   - viewController: 目标控制器
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        print("将要切换到\(viewController)")
+        
+        //容错 按钮旁边的空白区域 点了不跳转
+        return !viewController.isMember(of: UIViewController.self)
+    }
+    
+}
+
+
 //MARK: - 时钟相关方法
 extension WBMainViewController {
     
     ///定义时钟
     private func setupTimer() {
         
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(updataTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(updataTimer), userInfo: nil, repeats: true)
         
     }
     
