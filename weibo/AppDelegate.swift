@@ -13,7 +13,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window:UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
+        [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        //取得用户授权显示通知[]
+        //过期了 ios11不支持
+//        let notifySettiings = UIUserNotificationSettings(types: [.alert,.badge,.sound], categories: nil)
+//        application.registerUserNotificationSettings(notifySettiings)
+        //新写法
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge,.carPlay]) {
+         (success, error) in
+         //Parse errors and track state
+    
+        }
+        
         // Override point for customization after application launch.
         window = UIWindow()
         window?.backgroundColor=UIColor.white

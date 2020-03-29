@@ -52,7 +52,7 @@ extension WBMainViewController {
     ///定义时钟
     private func setupTimer() {
         
-        timer = Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(updataTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(updataTimer), userInfo: nil, repeats: true)
         
     }
     
@@ -65,6 +65,8 @@ extension WBMainViewController {
             // 设置 tabbaritem 的 badgeNumber
             self.tabBar.items?[0].badgeValue = count > 0 ? "\(count)" : nil
             
+            //设置 App 的 badgeNumber
+            UIApplication.shared.applicationIconBadgeNumber = count
         }
     }
     
