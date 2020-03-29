@@ -28,21 +28,17 @@ class WBNetworkManager: AFHTTPSessionManager {
         
     }
     
-    ///访问令牌。有时限
-    var accessToken:String? // = "2.00S7fvUGniFLgDcd03b19156PB8cyD"
-    
-    ///用户微博 id
-    var uid : String? = "5953831002"
+    lazy var userAccount = WBUserAccount()
     
     var userLogon :Bool {
-        return accessToken != nil
+        return userAccount.access_token != nil
     }
     
     ///专门负责拼接 token 的网络请求方法
     func tokenRequest(method:WBHTTPMethod = .GET,URLString:String,parameters:[String:AnyObject]?,completion:@escaping( _ json:AnyObject?,_ isSuccess:Bool)->()) {
         
         //0>判断token是否为nil 如果为nil直接返回
-        guard let token = accessToken else {
+        guard let token = userAccount.access_token else {
             
             //FIXME: 发送通知 提醒用户登陆
             print("没有token 需要登陆！")

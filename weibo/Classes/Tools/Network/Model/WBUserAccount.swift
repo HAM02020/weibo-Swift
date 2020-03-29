@@ -11,7 +11,7 @@ import UIKit
 ///用户账户信息
 class WBUserAccount: NSObject {
     
-    @objc var access_token:String?
+    @objc var access_token:String? //= "2.00S7fvUGniFLgDcd03b19156PB8cyD"
     
     @objc var uid : String?
     //过期日期
