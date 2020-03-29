@@ -113,11 +113,11 @@ extension WBMainViewController {
     /// 时钟触发方法
     @objc private func updataTimer() {
         
-        if !WBNetworkManager.shared.userLogon{
+        if !WBNetworkManager.shared().userLogon{
             return
         }
         
-        WBNetworkManager.shared.unreadCount{(count) in
+        WBNetworkManager.shared().getUnreadCount{(count) in
             print("有\(count)条新微博")
             
             // 设置 tabbaritem 的 badgeNumber

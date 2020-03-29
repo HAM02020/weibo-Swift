@@ -41,7 +41,7 @@ class WBStatusListViewModel {
         //上拉刷新取出 z数组最后一条微博的id
         let max_id = !isPullup ? 0 : (statusList.last?.id ?? 0)
         
-        WBNetworkManager.shared.statusList(since_id:since_id,max_id: max_id) { (list, isSuccess) in
+        WBNetworkManager.shared().statusList(since_id:since_id,max_id: max_id) { (list, isSuccess) in
             
             //1. 字典转模型
             guard let array = NSArray.yy_modelArray(with: WBStatus.self, json: list ?? []) as? [WBStatus] else {

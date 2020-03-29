@@ -34,7 +34,7 @@ class WBBaseViewController: UIViewController {
 //    }
     override func viewDidLoad() {
         
-        WBNetworkManager.shared.userLogon ? setupTalbeView() : setupVisitorView()
+        WBNetworkManager.shared().userLogon ? setupTalbeView() : setupVisitorView()
     }
     
     
@@ -64,7 +64,7 @@ extension WBBaseViewController {
     
     private func setupUI() {
         view.backgroundColor = UIColor.white
-        WBNetworkManager.shared.userLogon ? loadData() : ()
+        WBNetworkManager.shared().userLogon ? loadData() : ()
     }
     ///设置d表格视图 用户登陆之后执行
     @objc func setupTalbeView() {

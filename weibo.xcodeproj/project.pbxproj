@@ -26,6 +26,7 @@
 		01D19B96242FBBF500AE4C46 /* WBStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D19B95242FBBF500AE4C46 /* WBStatusListViewModel.swift */; };
 		01D19B9A2430946B00AE4C46 /* WeiboCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D19B992430946B00AE4C46 /* WeiboCommon.swift */; };
 		01D19B9D2430970200AE4C46 /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D19B9C2430970200AE4C46 /* WBOAuthViewController.swift */; };
+		01D19BA02430D6B200AE4C46 /* WBUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D19B9F2430D6B200AE4C46 /* WBUserAccount.swift */; };
 		01F9C9B0242E221500118B4E /* start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01F9C9AF242E221500118B4E /* start.storyboard */; };
 		01FCB118242BABB900E1524F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FCB117242BABB900E1524F /* AppDelegate.swift */; };
 		01FCB121242BABBB00E1524F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01FCB120242BABBB00E1524F /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		01D19B95242FBBF500AE4C46 /* WBStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusListViewModel.swift; sourceTree = "<group>"; };
 		01D19B992430946B00AE4C46 /* WeiboCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiboCommon.swift; sourceTree = "<group>"; };
 		01D19B9C2430970200AE4C46 /* WBOAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
+		01D19B9F2430D6B200AE4C46 /* WBUserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBUserAccount.swift; sourceTree = "<group>"; };
 		01F9C9AF242E221500118B4E /* start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = start.storyboard; sourceTree = "<group>"; };
 		01FCB114242BABB900E1524F /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01FCB117242BABB900E1524F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 		01D19B8E242F8D7800AE4C46 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				01D19B9E2430D67300AE4C46 /* Model */,
 				01D19B8F242F8DC800AE4C46 /* WBNetworkManager.swift */,
 				01D19B91242F9A9E00AE4C46 /* WBNetworkManager+Extension.swift */,
 			);
@@ -228,6 +231,14 @@
 				01D19B9C2430970200AE4C46 /* WBOAuthViewController.swift */,
 			);
 			path = OAuth;
+			sourceTree = "<group>";
+		};
+		01D19B9E2430D67300AE4C46 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				01D19B9F2430D6B200AE4C46 /* WBUserAccount.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		01FCB10B242BABB900E1524F = {
@@ -413,6 +424,7 @@
 				01D19B92242F9A9E00AE4C46 /* WBNetworkManager+Extension.swift in Sources */,
 				01628E8D242BD138004A313B /* WBDiscoverViewController.swift in Sources */,
 				01D19B9D2430970200AE4C46 /* WBOAuthViewController.swift in Sources */,
+				01D19BA02430D6B200AE4C46 /* WBUserAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

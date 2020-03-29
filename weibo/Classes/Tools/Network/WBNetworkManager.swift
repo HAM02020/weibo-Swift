@@ -17,10 +17,19 @@ enum WBHTTPMethod {
 class WBNetworkManager: AFHTTPSessionManager {
     
     /// 静态区 单l例
-    static let shared = WBNetworkManager()
+    static let shared = { () -> WBNetworkManager in
+        
+        let instance = WBNetworkManager()
+        
+        //响应反序列化支持的数据类型
+        instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        
+        return instance
+        
+    }
     
     ///访问令牌。有时限
-    var accessToken:String? // = "2.00S7fvUGniFLgDaf931b7642dfht9E"
+    var accessToken:String? // = "2.00S7fvUGniFLgDcd03b19156PB8cyD"
     
     ///用户微博 id
     var uid : String? = "5953831002"

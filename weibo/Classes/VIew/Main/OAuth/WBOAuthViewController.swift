@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 
 ///通过webView加载新浪微博授权页面控制器
 class WBOAuthViewController: UIViewController {
@@ -18,6 +18,10 @@ class WBOAuthViewController: UIViewController {
         view = webView
         
         view.backgroundColor = UIColor.white
+        //取消页面滚动
+        webView.scrollView.isScrollEnabled = false
+        //设置代理
+        webView.delegate = self
         
         // 设置导航栏
         title = "登陆新浪微博"
@@ -48,6 +52,9 @@ class WBOAuthViewController: UIViewController {
     //MARK: - 监听方法
     
     @objc private func close(){
+        
+        SVProgressHUD.dismiss()
+        
         dismiss(animated: true, completion: nil)
     }
     
@@ -60,4 +67,44 @@ class WBOAuthViewController: UIViewController {
         webView.stringByEvaluatingJavaScript(from: js)
     }
     
+}
+
+
+extension WBOAuthViewController : UIWebViewDelegate {
+    /// webView将要加载请求
+    /// - Parameters:
+    ///   - webView: webView
+    ///   - request: j要加载的请求
+    ///   - navigationType: 导航类型
+    ///
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
+        
+        if request.url?.absoluteString.hasPrefix(WBRedirectURI) == false {
+            return true
+        }
+        
+        print("加载请求 ---- \(String(describing: request.url?.absoluteString))")
+        print("加载请求 ---- \(String(describing: request.url?.query))")
+        
+        if request.url?.query?.hasPrefix("code=") == false {
+            print("取消授权")
+            close()
+            return false
+        }
+        
+        let code = String(request.url?.query?["code=".endIndex...] ?? "")
+        print("获取授权码\(code)")
+        
+        //4> 使用授权吗 获取AccessToken
+        WBNetworkManager.shared().getAccessToken(code: code)
+        close()
+        return false
+    }
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        SVProgressHUD.show()
+    }
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        SVProgressHUD.dismiss()
+    }
 }
