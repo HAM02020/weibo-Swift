@@ -10,13 +10,26 @@ import UIKit
 
 class WBMainViewController: UITabBarController {
 
+    //定时器
+    private var timer :Timer?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         setupChildControllers()
         setupComposeButton()
+        setupTimer()
+        
+        
     }
+    
+    deinit {
+        //销毁时钟
+        timer?.invalidate()
+    }
+    
+    
     //MARK: - 支持横屏
     //  protrait    竖屏
     //  landscape   竖屏
@@ -32,6 +45,29 @@ class WBMainViewController: UITabBarController {
     @objc private func composeStatus() {
         print("撰写微博")
     }
+}
+//MARK: - 时钟相关方法
+extension WBMainViewController {
+    
+    ///定义时钟
+    private func setupTimer() {
+        
+        timer = Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(updataTimer), userInfo: nil, repeats: true)
+        
+    }
+    
+    /// 时钟触发方法
+    @objc private func updataTimer() {
+        //测试未读数量
+        WBNetworkManager.shared.unreadCount{(count) in
+            print("有\(count)条新微博")
+            
+            // 设置 tabbaritem 的 badgeNumber
+            self.tabBar.items?[0].badgeValue = count > 0 ? "\(count)" : nil
+            
+        }
+    }
+    
 }
 
 extension WBMainViewController {
