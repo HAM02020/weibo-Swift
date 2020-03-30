@@ -22,6 +22,8 @@ class WBMainViewController: UITabBarController {
         setupComposeButton()
         setupTimer()
         
+        setupNewFeatureViews()
+        
         //设置代理 页面之间转换
         delegate = self
         
@@ -83,6 +85,43 @@ class WBMainViewController: UITabBarController {
         
     }
     
+}
+//MARK: - 新特性视图
+extension WBMainViewController  {
+    func setupNewFeatureViews(){
+        
+        //0. 判断是否登陆
+//        if !WBNetworkManager.shared().userLogon {
+//            return
+//        }
+        
+        //1. 检查版本是否更新
+        let v = isNewVersion ? WBNewFeatureView() : WBWelcomeView()
+        //2. 如果更新，显示新特性
+       
+        //3. 添加视图
+        v.frame = view.bounds
+        
+        view.addSubview(v)
+    }
+    
+    private var isNewVersion:Bool {
+        //1。 取当前的版本号
+        print(Bundle.main.infoDictionary ?? "")
+        //2. 取保存在 ‘Document(iTunes备份)[最理想保存在用户偏好]’目录中的之前版本号
+        let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let filePath = (docDir as NSString).appendingPathComponent("Version")
+        let sandboxVersion = (try? String(contentsOfFile: filePath)) ?? ""
+       
+        print("sandBox\(sandboxVersion)")
+        //3. 将当前版本号保存在沙盒
+        let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+        print(currentVersion)
+        
+        _ = try? currentVersion.write(toFile: filePath, atomically: true, encoding: .utf8)
+        //4. 返回两个版本号是否一致
+        return currentVersion != sandboxVersion
+    }
 }
 
 extension WBMainViewController: UITabBarControllerDelegate {
