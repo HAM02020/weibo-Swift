@@ -96,7 +96,7 @@ extension WBMainViewController  {
 //        }
         
         //1. 检查版本是否更新
-        let v = isNewVersion ? WBNewFeatureView() : WBWelcomeView.welcomeView()
+        let v = isNewVersion ? WBNewFeatureView.newFeatureView() : WBWelcomeView.welcomeView()
         //2. 如果更新，显示新特性
        
         //3. 添加视图
@@ -120,7 +120,7 @@ extension WBMainViewController  {
         
         _ = try? currentVersion.write(toFile: filePath, atomically: true, encoding: .utf8)
         //4. 返回两个版本号是否一致
-        return currentVersion != sandboxVersion
+        return currentVersion == sandboxVersion
     }
 }
 

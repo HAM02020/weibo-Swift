@@ -14,8 +14,14 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOt-MP-2XV">
-                    <rect key="frame" x="172" y="821" width="70" height="33"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PCt-Xo-2Sb">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="izE-57-bXi"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="ydo-sv-Lkm"/>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOt-MP-2XV">
+                    <rect key="frame" x="172" y="819" width="70" height="33"/>
                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <state key="normal" title="进入微博">
@@ -26,22 +32,19 @@
                         <action selector="enterStatus" destination="iN0-l3-epB" eventType="touchUpInside" id="RSf-rB-jVX"/>
                     </connections>
                 </button>
-                <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ylq-ZJ-cYS">
-                    <rect key="frame" x="188" y="848" width="39" height="37"/>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ylq-ZJ-cYS">
+                    <rect key="frame" x="187.5" y="846" width="39" height="37"/>
                     <color key="pageIndicatorTintColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="currentPageIndicatorTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </pageControl>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PCt-Xo-2Sb">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <viewLayoutGuide key="contentLayoutGuide" id="izE-57-bXi"/>
-                    <viewLayoutGuide key="frameLayoutGuide" id="ydo-sv-Lkm"/>
-                </scrollView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="MOt-MP-2XV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5Hk-Hy-ywQ"/>
                 <constraint firstAttribute="bottom" secondItem="PCt-Xo-2Sb" secondAttribute="bottom" id="6Ay-pW-gMY"/>
                 <constraint firstItem="PCt-Xo-2Sb" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="F5Y-og-iN7"/>
+                <constraint firstItem="ylq-ZJ-cYS" firstAttribute="centerX" secondItem="MOt-MP-2XV" secondAttribute="centerX" id="IHA-R3-HUo"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="MOt-MP-2XV" secondAttribute="bottom" constant="10" id="Zr2-pl-UhZ"/>
                 <constraint firstItem="PCt-Xo-2Sb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hdU-SX-4kg"/>
                 <constraint firstItem="PCt-Xo-2Sb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="iis-cD-D0d"/>
                 <constraint firstItem="ylq-ZJ-cYS" firstAttribute="top" secondItem="MOt-MP-2XV" secondAttribute="bottom" constant="-6" id="tMb-T0-9g9"/>

@@ -16,17 +16,49 @@ class WBNewFeatureView: UIView {
     
     @IBOutlet weak var pageControl: UIPageControl!
     
+     //进入微博
     @IBAction func enterStatus() {
     }
-    //进入微博
-    override init(frame: CGRect) {
-        super.init(frame:frame)
+   
+    
+    
+    class func newFeatureView() -> WBNewFeatureView {
+        let nib = UINib(nibName: "WBNewFeatureView", bundle: nil)
         
-        backgroundColor = UIColor.orange
+        let v = nib.instantiate(withOwner: nil, options: nil)[0] as! WBNewFeatureView
+        
+        v.frame = UIScreen.main.bounds
+        
+        return v
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func awakeFromNib() {
+        // 如果使用自动布局设置的界面 从XIB加载 默认是600 x 600
+        //
+        //添加4个图像视图
+        let count = 3
+        let rect = UIScreen.main.bounds
+        
+        for i in 0..<count {
+            let imageName = "w\(i+1)"
+            let iv = UIImageView(image: UIImage(named: imageName))
+            
+            //设置大小
+            iv.frame = rect.offsetBy(dx: CGFloat(i)*rect.width, dy: 0)
+            scrollView.addSubview(iv)
+        }
+        
+        //指定scrollView的属性
+        scrollView.contentSize = CGSize(width: CGFloat(count+1)*rect.width, height: rect.height)
+        
+        scrollView.bounces = false
+        
+        scrollView.isPagingEnabled = false
+        
+        scrollView.showsVerticalScrollIndicator = false
+        
+        //隐藏按钮
+        enterButton.isHidden = true
     }
-
+    
 }
