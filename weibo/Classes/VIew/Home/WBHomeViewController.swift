@@ -75,8 +75,8 @@ extension WBHomeViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
         
         //注册原型cell
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
-        
+        //tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView?.register(UINib(nibName: "WBStatusNormalCell", bundle: nil), forCellReuseIdentifier: cellId)
         setupNavTitle()
     }
     

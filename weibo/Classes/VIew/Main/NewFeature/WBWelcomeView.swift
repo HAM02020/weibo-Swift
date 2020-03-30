@@ -29,7 +29,6 @@ class WBWelcomeView: UIView {
         
         //  提示: initWithcode 只是刚刚从XIB的二进制文件将视图加载完成
         //还没有和代码连线建立起关系，所以开发时千万不要在这个方法中处理UI
-        print("initWithCoder+\(iconView)")
     }
     
     override func awakeFromNib() {

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0106A0282431D9D1008D60F8 /* WBNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0106A0272431D9D1008D60F8 /* WBNewFeatureView.xib */; };
+		01161E8C243262C90092541C /* WBStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01161E8B243262C90092541C /* WBStatusCell.swift */; };
+		01161E8E243262ED0092541C /* WBStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01161E8D243262ED0092541C /* WBStatusNormalCell.xib */; };
 		012B9CC4242CFAA30006AFDC /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012B9CC3242CFAA30006AFDC /* UIButton+Extensions.swift */; };
 		012B9CC6242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */; };
 		01357FE22431AC860042D8F5 /* WBTittleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01357FE12431AC860042D8F5 /* WBTittleButton.swift */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		0106A0272431D9D1008D60F8 /* WBNewFeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBNewFeatureView.xib; sourceTree = "<group>"; };
+		01161E8B243262C90092541C /* WBStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusCell.swift; sourceTree = "<group>"; };
+		01161E8D243262ED0092541C /* WBStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBStatusNormalCell.xib; sourceTree = "<group>"; };
 		012B9CC3242CFAA30006AFDC /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		01357FE12431AC860042D8F5 /* WBTittleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBTittleButton.swift; sourceTree = "<group>"; };
@@ -87,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01161E8A243262990092541C /* StatusCell */ = {
+			isa = PBXGroup;
+			children = (
+				01161E8B243262C90092541C /* WBStatusCell.swift */,
+				01161E8D243262ED0092541C /* WBStatusNormalCell.xib */,
+			);
+			path = StatusCell;
+			sourceTree = "<group>";
+		};
 		012B9CC0242CFA5B0006AFDC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +200,7 @@
 		01628E82242BD138004A313B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				01161E8A243262990092541C /* StatusCell */,
 				01357FE02431AC600042D8F5 /* TittleButton */,
 				01628E83242BD138004A313B /* WBHomeViewController.swift */,
 			);
@@ -382,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				017B2FE9242F26FF003286E5 /* main.json in Resources */,
+				01161E8E243262ED0092541C /* WBStatusNormalCell.xib in Resources */,
 				01FCB121242BABBB00E1524F /* Assets.xcassets in Resources */,
 				0106A0282431D9D1008D60F8 /* WBNewFeatureView.xib in Resources */,
 				01357FE92431C55E0042D8F5 /* WBWelcomeView.xib in Resources */,
@@ -440,6 +455,7 @@
 			files = (
 				01628EA0242CAA82004A313B /* WBDemoViewController.swift in Sources */,
 				01628E91242BD138004A313B /* WBBaseViewController.swift in Sources */,
+				01161E8C243262C90092541C /* WBStatusCell.swift in Sources */,
 				017B2FE4242E57FA003286E5 /* WBVisitorView.swift in Sources */,
 				01D19B90242F8DC800AE4C46 /* WBNetworkManager.swift in Sources */,
 				017B2FE7242E5AE1003286E5 /* UILabel+Extensions.swift in Sources */,
