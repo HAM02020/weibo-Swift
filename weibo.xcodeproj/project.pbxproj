@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0106A0282431D9D1008D60F8 /* WBNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0106A0272431D9D1008D60F8 /* WBNewFeatureView.xib */; };
 		012B9CC4242CFAA30006AFDC /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012B9CC3242CFAA30006AFDC /* UIButton+Extensions.swift */; };
 		012B9CC6242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */; };
 		01357FE22431AC860042D8F5 /* WBTittleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01357FE12431AC860042D8F5 /* WBTittleButton.swift */; };
 		01357FE52431B9D10042D8F5 /* WBWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01357FE42431B9D10042D8F5 /* WBWelcomeView.swift */; };
 		01357FE72431BA120042D8F5 /* WBNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01357FE62431BA120042D8F5 /* WBNewFeatureView.swift */; };
+		01357FE92431C55E0042D8F5 /* WBWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01357FE82431C55D0042D8F5 /* WBWelcomeView.xib */; };
 		01628E8C242BD138004A313B /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E83242BD138004A313B /* WBHomeViewController.swift */; };
 		01628E8D242BD138004A313B /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E85242BD138004A313B /* WBDiscoverViewController.swift */; };
 		01628E8E242BD138004A313B /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E87242BD138004A313B /* WBProfileViewController.swift */; };
@@ -37,11 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0106A0272431D9D1008D60F8 /* WBNewFeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBNewFeatureView.xib; sourceTree = "<group>"; };
 		012B9CC3242CFAA30006AFDC /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		01357FE12431AC860042D8F5 /* WBTittleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBTittleButton.swift; sourceTree = "<group>"; };
 		01357FE42431B9D10042D8F5 /* WBWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBWelcomeView.swift; sourceTree = "<group>"; };
 		01357FE62431BA120042D8F5 /* WBNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNewFeatureView.swift; sourceTree = "<group>"; };
+		01357FE82431C55D0042D8F5 /* WBWelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBWelcomeView.xib; sourceTree = "<group>"; };
 		01628E83242BD138004A313B /* WBHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
 		01628E85242BD138004A313B /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		01628E87242BD138004A313B /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				01357FE42431B9D10042D8F5 /* WBWelcomeView.swift */,
+				01357FE82431C55D0042D8F5 /* WBWelcomeView.xib */,
 				01357FE62431BA120042D8F5 /* WBNewFeatureView.swift */,
+				0106A0272431D9D1008D60F8 /* WBNewFeatureView.xib */,
 			);
 			path = NewFeature;
 			sourceTree = "<group>";
@@ -377,6 +383,8 @@
 			files = (
 				017B2FE9242F26FF003286E5 /* main.json in Resources */,
 				01FCB121242BABBB00E1524F /* Assets.xcassets in Resources */,
+				0106A0282431D9D1008D60F8 /* WBNewFeatureView.xib in Resources */,
+				01357FE92431C55E0042D8F5 /* WBWelcomeView.xib in Resources */,
 				01F9C9B0242E221500118B4E /* start.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

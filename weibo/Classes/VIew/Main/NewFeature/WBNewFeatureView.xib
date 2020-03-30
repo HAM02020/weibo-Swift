@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WBNewFeatureView" customModule="weibo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOt-MP-2XV">
+                    <rect key="frame" x="172" y="821" width="70" height="33"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <state key="normal" title="进入微博">
+                        <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <color key="titleShadowColor" cocoaTouchSystemColor="lightTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="enterStatus" destination="iN0-l3-epB" eventType="touchUpInside" id="RSf-rB-jVX"/>
+                    </connections>
+                </button>
+                <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ylq-ZJ-cYS">
+                    <rect key="frame" x="188" y="848" width="39" height="37"/>
+                    <color key="pageIndicatorTintColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="currentPageIndicatorTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </pageControl>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PCt-Xo-2Sb">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="izE-57-bXi"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="ydo-sv-Lkm"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="MOt-MP-2XV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5Hk-Hy-ywQ"/>
+                <constraint firstAttribute="bottom" secondItem="PCt-Xo-2Sb" secondAttribute="bottom" id="6Ay-pW-gMY"/>
+                <constraint firstItem="PCt-Xo-2Sb" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="F5Y-og-iN7"/>
+                <constraint firstItem="PCt-Xo-2Sb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hdU-SX-4kg"/>
+                <constraint firstItem="PCt-Xo-2Sb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="iis-cD-D0d"/>
+                <constraint firstItem="ylq-ZJ-cYS" firstAttribute="top" secondItem="MOt-MP-2XV" secondAttribute="bottom" constant="-6" id="tMb-T0-9g9"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="enterButton" destination="MOt-MP-2XV" id="Ud0-VU-YNI"/>
+                <outlet property="pageControl" destination="ylq-ZJ-cYS" id="6Zj-bU-SCV"/>
+                <outlet property="scrollView" destination="PCt-Xo-2Sb" id="ks0-vz-Qsv"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="89.732142857142847"/>
+        </view>
+    </objects>
+</document>

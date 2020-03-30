@@ -96,7 +96,7 @@ extension WBMainViewController  {
 //        }
         
         //1. 检查版本是否更新
-        let v = isNewVersion ? WBNewFeatureView() : WBWelcomeView()
+        let v = isNewVersion ? WBNewFeatureView() : WBWelcomeView.welcomeView()
         //2. 如果更新，显示新特性
        
         //3. 添加视图
