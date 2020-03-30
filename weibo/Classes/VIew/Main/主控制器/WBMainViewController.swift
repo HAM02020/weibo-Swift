@@ -91,9 +91,9 @@ extension WBMainViewController  {
     func setupNewFeatureViews(){
         
         //0. 判断是否登陆
-//        if !WBNetworkManager.shared().userLogon {
-//            return
-//        }
+        if !WBNetworkManager.shared().userLogon {
+            return
+        }
         
         //1. 检查版本是否更新
         let v = isNewVersion ? WBNewFeatureView.newFeatureView() : WBWelcomeView.welcomeView()
@@ -120,7 +120,7 @@ extension WBMainViewController  {
         
         _ = try? currentVersion.write(toFile: filePath, atomically: true, encoding: .utf8)
         //4. 返回两个版本号是否一致
-        return currentVersion == sandboxVersion
+        return currentVersion != sandboxVersion
     }
 }
 
@@ -166,7 +166,7 @@ extension WBMainViewController {
     ///定义时钟
     private func setupTimer() {
         
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(updataTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(updataTimer), userInfo: nil, repeats: true)
         
         
     }

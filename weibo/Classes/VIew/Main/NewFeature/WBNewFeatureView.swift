@@ -18,6 +18,7 @@ class WBNewFeatureView: UIView {
     
      //进入微博
     @IBAction func enterStatus() {
+        removeFromSuperview()
     }
    
     
@@ -53,12 +54,45 @@ class WBNewFeatureView: UIView {
         
         scrollView.bounces = false
         
-        scrollView.isPagingEnabled = false
+        scrollView.isPagingEnabled = true
         
         scrollView.showsVerticalScrollIndicator = false
         
+        scrollView.delegate = self
         //隐藏按钮
         enterButton.isHidden = true
     }
     
+}
+
+extension WBNewFeatureView:UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        //1. 滚动到最后一屏 让图像删除
+        
+        let page = Int(scrollView.contentOffset.x/scrollView.bounds.width)+1
+        print(page)
+        
+        //2. 判断是否是最后一页
+        if page == scrollView.subviews.count  {
+            print("热烈欢迎")
+            removeFromSuperview()
+        }
+        //3. 如果是倒数第二一 显示按钮
+        enterButton.isHidden = (page != scrollView.subviews.count - 1)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        //  0.一旦滚动隐藏按钮
+        enterButton.isHidden = true
+        //  1.计算当前的偏移量
+        let page = Int(scrollView.contentOffset.x/scrollView.bounds.width+0.5)
+        
+        //2. 设置分页 控件
+        pageControl.currentPage = page
+        
+        //3. 分页控件隐藏
+        pageControl.isHidden = (page == scrollView.subviews.count)
+    }
 }
