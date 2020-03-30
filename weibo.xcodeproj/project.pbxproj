@@ -10,6 +10,7 @@
 		0106A0282431D9D1008D60F8 /* WBNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0106A0272431D9D1008D60F8 /* WBNewFeatureView.xib */; };
 		01161E8C243262C90092541C /* WBStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01161E8B243262C90092541C /* WBStatusCell.swift */; };
 		01161E8E243262ED0092541C /* WBStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01161E8D243262ED0092541C /* WBStatusNormalCell.xib */; };
+		01161E902432648A0092541C /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01161E8F2432648A0092541C /* UIImage+Extensions.swift */; };
 		012B9CC4242CFAA30006AFDC /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012B9CC3242CFAA30006AFDC /* UIButton+Extensions.swift */; };
 		012B9CC6242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */; };
 		01357FE22431AC860042D8F5 /* WBTittleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01357FE12431AC860042D8F5 /* WBTittleButton.swift */; };
@@ -44,6 +45,7 @@
 		0106A0272431D9D1008D60F8 /* WBNewFeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBNewFeatureView.xib; sourceTree = "<group>"; };
 		01161E8B243262C90092541C /* WBStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusCell.swift; sourceTree = "<group>"; };
 		01161E8D243262ED0092541C /* WBStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBStatusNormalCell.xib; sourceTree = "<group>"; };
+		01161E8F2432648A0092541C /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		012B9CC3242CFAA30006AFDC /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		01357FE12431AC860042D8F5 /* WBTittleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBTittleButton.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		012B9CC0242CFA5B0006AFDC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				01161E8F2432648A0092541C /* UIImage+Extensions.swift */,
 				012B9CC3242CFAA30006AFDC /* UIButton+Extensions.swift */,
 				012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */,
 				017B2FE6242E5AE1003286E5 /* UILabel+Extensions.swift */,
@@ -455,6 +458,7 @@
 			files = (
 				01628EA0242CAA82004A313B /* WBDemoViewController.swift in Sources */,
 				01628E91242BD138004A313B /* WBBaseViewController.swift in Sources */,
+				01161E902432648A0092541C /* UIImage+Extensions.swift in Sources */,
 				01161E8C243262C90092541C /* WBStatusCell.swift in Sources */,
 				017B2FE4242E57FA003286E5 /* WBVisitorView.swift in Sources */,
 				01D19B90242F8DC800AE4C46 /* WBNetworkManager.swift in Sources */,
