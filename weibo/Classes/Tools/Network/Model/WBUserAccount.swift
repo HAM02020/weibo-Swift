@@ -29,6 +29,11 @@ class WBUserAccount: NSObject {
     
     @objc var expiresDate :Date?
     
+    ///用户昵称
+    @objc var screen_name:String?
+    ///用户头像地址 180 * 180
+    @objc var avatar_large:String?
+    
     override var description: String {
         return yy_modelDescription()
     }

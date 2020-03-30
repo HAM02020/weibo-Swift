@@ -58,7 +58,7 @@ extension WBNetworkManager {
     }
 
 }
-
+//MARK: - 用户信息
 extension WBNetworkManager {
     
     func loadUserInfo(completion: @escaping(_ dict:[String:AnyObject])->()) {
@@ -98,13 +98,17 @@ extension WBNetworkManager {
             
             print(WBNetworkManager.self.userAccount)
             
-            //保存模型
-            WBNetworkManager.self.userAccount.saveAccount()
+            
             
             //加载当前用户信息
             self.loadUserInfo { (dict) in
-                print(dict)
                 //加载完成再完成回调
+                
+                //使用用户信息字典设置用户账户信息
+                WBNetworkManager.self.userAccount.yy_modelSet(with: dict)
+                
+                //保存模型
+                WBNetworkManager.self.userAccount.saveAccount()
                 completion(isSuccess)
             }
             
