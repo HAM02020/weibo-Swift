@@ -16,7 +16,7 @@ class WBHomeViewController: WBBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
+        //loadData()
         print("Home LoadData")
     }
     ///加载数据

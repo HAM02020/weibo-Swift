@@ -49,7 +49,7 @@ class WBNetworkManager: AFHTTPSessionManager {
             //FIXME: 发送通知 提醒用户登陆
             print("没有token 需要登陆！")
             
-            //NotificationCenter.default.post(name: NSNotification.Name(WBUserShouldLoginNotification), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(WBUserShouldLoginNotification), object: "bad token")
             
             completion(nil,false)
             return

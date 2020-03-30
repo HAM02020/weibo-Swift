@@ -13,7 +13,7 @@ class WBMainViewController: UITabBarController {
     //定时器
     private var timer :Timer?
     
-
+    private var old_count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +59,8 @@ class WBMainViewController: UITabBarController {
     @objc private func userLogin(n:Notification) {
         print("用户登陆通知\(n)")
         
+        var when = DispatchTime.now()
+        
         //如果有值 判断 提示用户重新登陆
         if n.object != nil {
             //渐变样式
@@ -66,11 +68,12 @@ class WBMainViewController: UITabBarController {
 
             SVProgressHUD.showInfo(withStatus: "用户登陆已经超时，需要重新登陆")
             
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
-                SVProgressHUD.setDefaultMaskType(.clear)
-                //展现登陆控制器
-                
-            }
+            when = DispatchTime.now() + 2
+
+        }
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            SVProgressHUD.setDefaultMaskType(.clear)
+            //展现登陆控制器
             
         }
         let nav = UINavigationController(rootViewController: WBOAuthViewController())
@@ -106,6 +109,8 @@ extension WBMainViewController: UITabBarControllerDelegate {
             //4> 刷新数据
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
                 vc.loadData()
+                self.tabBar.items?[0].badgeValue = nil
+                UIApplication.shared.applicationIconBadgeNumber = 0
             }
         }
         
@@ -122,7 +127,8 @@ extension WBMainViewController {
     ///定义时钟
     private func setupTimer() {
         
-        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(updataTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(updataTimer), userInfo: nil, repeats: true)
+        
         
     }
     
@@ -134,13 +140,17 @@ extension WBMainViewController {
         }
         
         WBNetworkManager.shared().getUnreadCount{(count) in
-            print("有\(count)条新微博")
+            if count > self.old_count {
+                print("有\(count)条新微博")
+                
+                // 设置 tabbaritem 的 badgeNumber
+                self.tabBar.items?[0].badgeValue = count > 0 ? "\(count)" : nil
+                
+                //设置 App 的 badgeNumber
+                UIApplication.shared.applicationIconBadgeNumber = count
+                self.old_count = count
+            }
             
-            // 设置 tabbaritem 的 badgeNumber
-            self.tabBar.items?[0].badgeValue = count > 0 ? "\(count)" : nil
-            
-            //设置 App 的 badgeNumber
-            UIApplication.shared.applicationIconBadgeNumber = count
         }
     }
     
