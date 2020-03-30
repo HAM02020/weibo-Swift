@@ -39,7 +39,7 @@ extension WBNetworkManager {
     //返回微博的未读数量
     func getUnreadCount(completion:@escaping (_ count:Int)->()) {
         
-        guard let uid = userAccount.uid else {
+        guard let uid = WBNetworkManager.userAccount.uid else {
             return
         }
         
@@ -62,7 +62,7 @@ extension WBNetworkManager {
 extension WBNetworkManager {
     
     func loadUserInfo(completion: @escaping(_ dict:[String:AnyObject])->()) {
-        guard let uid = userAccount.uid else {
+        guard let uid = WBNetworkManager.userAccount.uid else {
             return
         }
         
@@ -94,12 +94,12 @@ extension WBNetworkManager {
         request(method: .POST, URLString: urlString, parameters: pararms as [String : AnyObject]) { (json, isSuccess) in
             print(json!)
             
-            self.userAccount.yy_modelSet(with: (json as? [String:AnyObject]) ?? [:])
+            WBNetworkManager.self.userAccount.yy_modelSet(with: (json as? [String:AnyObject]) ?? [:])
             
-            print(self.userAccount)
+            print(WBNetworkManager.self.userAccount)
             
             //保存模型
-            self.userAccount.saveAccount()
+            WBNetworkManager.self.userAccount.saveAccount()
             
             //加载当前用户信息
             self.loadUserInfo { (dict) in

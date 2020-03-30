@@ -17,7 +17,10 @@ enum WBHTTPMethod {
 class WBNetworkManager: AFHTTPSessionManager {
     
     
-    lazy var userAccount = WBUserAccount()
+    //lazy var userAccount = WBUserAccount()
+    class var userAccount : WBUserAccount {
+        return sharedAccount
+    }
     
     /// 静态区 单l例
         static let shared = { () -> WBNetworkManager in
@@ -34,14 +37,14 @@ class WBNetworkManager: AFHTTPSessionManager {
 
     
     var userLogon :Bool {
-        return userAccount.access_token != nil
+        return WBNetworkManager.userAccount.access_token != nil
     }
     
     ///专门负责拼接 token 的网络请求方法
     func tokenRequest(method:WBHTTPMethod = .GET,URLString:String,parameters:[String:AnyObject]?,completion:@escaping( _ json:AnyObject?,_ isSuccess:Bool)->()) {
         
         //0>判断token是否为nil 如果为nil直接返回
-        guard let token = userAccount.access_token else {
+        guard let token = WBNetworkManager.userAccount.access_token else {
             
             //FIXME: 发送通知 提醒用户登陆
             print("没有token 需要登陆！")

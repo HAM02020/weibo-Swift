@@ -10,6 +10,8 @@ import UIKit
 
 private let accountFile = "userAccount.json"
 
+var sharedAccount = WBUserAccount()
+
 ///用户账户信息
 class WBUserAccount: NSObject {
     
@@ -30,6 +32,8 @@ class WBUserAccount: NSObject {
     override var description: String {
         return yy_modelDescription()
     }
+    
+    
     
     override init() {
         super.init()
