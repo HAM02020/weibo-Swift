@@ -40,7 +40,6 @@ class WBBaseViewController: UIViewController {
         } else {
             setupVisitorView()
         }
-        //setupTalbeView()
         //注册通知
         NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(WBUserLoginSuccessNotification), object: nil)
     }
