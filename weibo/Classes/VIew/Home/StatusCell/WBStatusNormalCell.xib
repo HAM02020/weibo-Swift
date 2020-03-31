@@ -9,11 +9,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="276" id="Tt8-WG-KOf" customClass="WBStatusCell" customModule="weibo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="420" height="276"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="422" id="Tt8-WG-KOf" customClass="WBStatusCell" customModule="weibo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="422"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tt8-WG-KOf" id="XXg-8L-dzF">
-                <rect key="frame" x="0.0" y="0.0" width="420" height="276"/>
+                <rect key="frame" x="0.0" y="0.0" width="420" height="422"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpn-n0-y1p" userLabel="顶部分割_灰色">
@@ -61,7 +61,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJu-Yb-zyA" userLabel="底部工具栏" customClass="WBStatusToolBar" customModule="weibo" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="248" width="420" height="28"/>
+                        <rect key="frame" x="0.0" y="394" width="420" height="28"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLW-Jo-a0X">
                                 <rect key="frame" x="0.0" y="0.0" width="140" height="28"/>
@@ -134,8 +134,16 @@
                             <outlet property="btn_retweeted" destination="RLW-Jo-a0X" id="i6J-nK-Dn3"/>
                         </connections>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aok-ns-Id6">
+                        <rect key="frame" x="11" y="93" width="397" height="289"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="289" id="Ysk-Zm-ra7"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Aok-ns-Id6" firstAttribute="leading" secondItem="ehE-lx-AJn" secondAttribute="leading" id="6GJ-Vn-cHW"/>
                     <constraint firstItem="ehE-lx-AJn" firstAttribute="top" secondItem="1uU-K8-5Jw" secondAttribute="bottom" constant="11" id="92t-JD-dBa"/>
                     <constraint firstItem="hpn-n0-y1p" firstAttribute="leading" secondItem="XXg-8L-dzF" secondAttribute="leading" id="Ck5-YX-0vj"/>
                     <constraint firstItem="KH9-tK-MjT" firstAttribute="bottom" secondItem="1uU-K8-5Jw" secondAttribute="bottom" id="Emg-9f-LJg"/>
@@ -148,12 +156,14 @@
                     <constraint firstItem="hpn-n0-y1p" firstAttribute="top" secondItem="XXg-8L-dzF" secondAttribute="top" id="YxF-5J-cOj"/>
                     <constraint firstItem="jnE-qO-4M3" firstAttribute="centerY" secondItem="8VK-5x-ZCP" secondAttribute="centerY" id="bqT-YV-Pjl"/>
                     <constraint firstItem="KH9-tK-MjT" firstAttribute="leading" secondItem="8VK-5x-ZCP" secondAttribute="leading" id="dXC-y7-LqI"/>
+                    <constraint firstItem="eJu-Yb-zyA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Aok-ns-Id6" secondAttribute="bottom" constant="12" id="gbK-lO-INc"/>
                     <constraint firstAttribute="trailing" secondItem="hpn-n0-y1p" secondAttribute="trailing" id="gdo-SF-Qvw"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ehE-lx-AJn" secondAttribute="trailing" constant="11" id="ovp-gO-6hX"/>
                     <constraint firstItem="eJu-Yb-zyA" firstAttribute="leading" secondItem="XXg-8L-dzF" secondAttribute="leading" id="plL-Ud-dZp"/>
                     <constraint firstItem="8VK-5x-ZCP" firstAttribute="top" secondItem="1uU-K8-5Jw" secondAttribute="top" constant="4" id="qbv-Xj-8U1"/>
+                    <constraint firstAttribute="trailing" secondItem="Aok-ns-Id6" secondAttribute="trailing" constant="12" id="rCT-fz-JnK"/>
+                    <constraint firstItem="Aok-ns-Id6" firstAttribute="top" secondItem="ehE-lx-AJn" secondAttribute="bottom" constant="12" id="sWF-Qn-d4L"/>
                     <constraint firstAttribute="bottom" secondItem="eJu-Yb-zyA" secondAttribute="bottom" id="tkd-bF-BYM"/>
-                    <constraint firstItem="eJu-Yb-zyA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ehE-lx-AJn" secondAttribute="bottom" constant="12" id="wNA-MJ-IXj"/>
                     <constraint firstItem="1uU-K8-5Jw" firstAttribute="leading" secondItem="XXg-8L-dzF" secondAttribute="leading" constant="11" id="yFq-Bq-eX1"/>
                     <constraint firstItem="V4b-XM-fRr" firstAttribute="centerX" secondItem="1uU-K8-5Jw" secondAttribute="trailing" id="ydg-EV-4AG"/>
                     <constraint firstItem="ehE-lx-AJn" firstAttribute="leading" secondItem="1uU-K8-5Jw" secondAttribute="leading" id="z0c-9X-5xz"/>
@@ -170,7 +180,7 @@
                 <outlet property="toolBar" destination="eJu-Yb-zyA" id="BXB-F3-oi8"/>
                 <outlet property="vipIcon" destination="V4b-XM-fRr" id="BF4-4a-ZdQ"/>
             </connections>
-            <point key="canvasLocation" x="243.47826086956525" y="105.13392857142857"/>
+            <point key="canvasLocation" x="243.47826086956525" y="154.01785714285714"/>
         </tableViewCell>
     </objects>
     <resources>
