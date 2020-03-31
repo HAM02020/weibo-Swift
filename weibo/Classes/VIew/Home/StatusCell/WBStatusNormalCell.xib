@@ -24,38 +24,38 @@
                         </constraints>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1uU-K8-5Jw" userLabel="头像视图">
-                        <rect key="frame" x="11" y="20" width="34" height="34"/>
+                        <rect key="frame" x="12" y="20" width="34" height="34"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="34" id="M5g-tx-XrG"/>
                             <constraint firstAttribute="height" constant="34" id="t2u-Tt-Qm1"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VK-5x-ZCP" userLabel="姓名">
-                        <rect key="frame" x="56" y="24" width="33" height="16"/>
+                        <rect key="frame" x="57" y="24" width="33" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.9882352941176471" green="0.24313725490196078" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_crown" translatesAutoresizingMaskIntoConstraints="NO" id="jnE-qO-4M3" userLabel="皇冠">
-                        <rect key="frame" x="93" y="21.5" width="21.5" height="21"/>
+                        <rect key="frame" x="94" y="21.5" width="21.5" height="21"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KH9-tK-MjT" userLabel="时间">
-                        <rect key="frame" x="56" y="42" width="27" height="12"/>
+                        <rect key="frame" x="57" y="42" width="27" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="1" green="0.42352941176470588" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9q-qd-tjv" userLabel="来源">
-                        <rect key="frame" x="91" y="42" width="27" height="12"/>
+                        <rect key="frame" x="92" y="42" width="27" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_VIP" translatesAutoresizingMaskIntoConstraints="NO" id="V4b-XM-fRr" userLabel="认证图标">
-                        <rect key="frame" x="34.5" y="43.5" width="21.5" height="21.5"/>
+                        <rect key="frame" x="35.5" y="43.5" width="21.5" height="21.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehE-lx-AJn" userLabel="正文">
-                        <rect key="frame" x="11" y="65" width="33" height="16"/>
+                        <rect key="frame" x="12" y="65" width="33" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -135,7 +135,7 @@
                         </connections>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aok-ns-Id6" userLabel="配图视图" customClass="WBStatusPictureView" customModule="weibo" customModuleProvider="target">
-                        <rect key="frame" x="11" y="93" width="397" height="200"/>
+                        <rect key="frame" x="12" y="81" width="396" height="200"/>
                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="200" id="Ysk-Zm-ra7"/>
@@ -165,9 +165,9 @@
                     <constraint firstItem="eJu-Yb-zyA" firstAttribute="leading" secondItem="XXg-8L-dzF" secondAttribute="leading" id="plL-Ud-dZp"/>
                     <constraint firstItem="8VK-5x-ZCP" firstAttribute="top" secondItem="1uU-K8-5Jw" secondAttribute="top" constant="4" id="qbv-Xj-8U1"/>
                     <constraint firstAttribute="trailing" secondItem="Aok-ns-Id6" secondAttribute="trailing" constant="12" id="rCT-fz-JnK"/>
-                    <constraint firstItem="Aok-ns-Id6" firstAttribute="top" secondItem="ehE-lx-AJn" secondAttribute="bottom" constant="12" id="sWF-Qn-d4L"/>
+                    <constraint firstItem="Aok-ns-Id6" firstAttribute="top" secondItem="ehE-lx-AJn" secondAttribute="bottom" id="sZg-zL-CTe"/>
                     <constraint firstAttribute="bottom" secondItem="eJu-Yb-zyA" secondAttribute="bottom" id="tkd-bF-BYM"/>
-                    <constraint firstItem="1uU-K8-5Jw" firstAttribute="leading" secondItem="XXg-8L-dzF" secondAttribute="leading" constant="11" id="yFq-Bq-eX1"/>
+                    <constraint firstItem="1uU-K8-5Jw" firstAttribute="leading" secondItem="XXg-8L-dzF" secondAttribute="leading" constant="12" id="yFq-Bq-eX1"/>
                     <constraint firstItem="V4b-XM-fRr" firstAttribute="centerX" secondItem="1uU-K8-5Jw" secondAttribute="trailing" id="ydg-EV-4AG"/>
                     <constraint firstItem="ehE-lx-AJn" firstAttribute="leading" secondItem="1uU-K8-5Jw" secondAttribute="leading" id="z0c-9X-5xz"/>
                     <constraint firstItem="k9q-qd-tjv" firstAttribute="leading" secondItem="KH9-tK-MjT" secondAttribute="trailing" constant="8" id="zQS-vI-5VY"/>
@@ -177,7 +177,6 @@
                 <outlet property="iconView" destination="1uU-K8-5Jw" id="H4o-BK-E1Q"/>
                 <outlet property="memberIconView" destination="jnE-qO-4M3" id="bpX-Aw-ux1"/>
                 <outlet property="nameLabel" destination="8VK-5x-ZCP" id="on2-D5-58M"/>
-                <outlet property="pictureTopCons" destination="sWF-Qn-d4L" id="Ulx-YP-TyA"/>
                 <outlet property="pictureView" destination="Aok-ns-Id6" id="ig2-ca-Pm1"/>
                 <outlet property="sourceLabel" destination="k9q-qd-tjv" id="RVC-OU-IKs"/>
                 <outlet property="statusLabel" destination="ehE-lx-AJn" id="6ZQ-7f-4tB"/>
