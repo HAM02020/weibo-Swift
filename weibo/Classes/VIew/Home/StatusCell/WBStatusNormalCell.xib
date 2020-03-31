@@ -83,6 +83,15 @@
                     <constraint firstItem="k9q-qd-tjv" firstAttribute="leading" secondItem="KH9-tK-MjT" secondAttribute="trailing" constant="8" id="zQS-vI-5VY"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="iconView" destination="1uU-K8-5Jw" id="H4o-BK-E1Q"/>
+                <outlet property="memberIconView" destination="jnE-qO-4M3" id="bpX-Aw-ux1"/>
+                <outlet property="nameLabel" destination="8VK-5x-ZCP" id="on2-D5-58M"/>
+                <outlet property="sourceLabel" destination="k9q-qd-tjv" id="RVC-OU-IKs"/>
+                <outlet property="statusLabel" destination="ehE-lx-AJn" id="6ZQ-7f-4tB"/>
+                <outlet property="timeLabel" destination="KH9-tK-MjT" id="nQV-Kv-gr7"/>
+                <outlet property="vipIcon" destination="V4b-XM-fRr" id="BF4-4a-ZdQ"/>
+            </connections>
             <point key="canvasLocation" x="237.68115942028987" y="104.79910714285714"/>
         </tableViewCell>
     </objects>
