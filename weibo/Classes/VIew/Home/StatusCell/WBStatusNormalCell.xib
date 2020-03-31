@@ -9,15 +9,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="275" id="Tt8-WG-KOf" customClass="WBStatusCell" customModule="weibo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="422" height="275"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="276" id="Tt8-WG-KOf" customClass="WBStatusCell" customModule="weibo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="276"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tt8-WG-KOf" id="XXg-8L-dzF">
-                <rect key="frame" x="0.0" y="0.0" width="422" height="275"/>
+                <rect key="frame" x="0.0" y="0.0" width="420" height="276"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpn-n0-y1p" userLabel="顶部分割_灰色">
-                        <rect key="frame" x="0.0" y="0.0" width="422" height="8"/>
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="8"/>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="8" id="h5h-cl-ebQ"/>
@@ -60,6 +60,75 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJu-Yb-zyA" userLabel="底部工具栏">
+                        <rect key="frame" x="0.0" y="248" width="420" height="28"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLW-Jo-a0X">
+                                <rect key="frame" x="0.0" y="0.0" width="140" height="28"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="8mm-l6-uQr"/>
+                                    <constraint firstAttribute="height" constant="28" id="e7M-88-xGd"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="28" id="gmu-JN-1A8"/>
+                                    <constraint firstAttribute="width" constant="140" id="y5y-tG-nwA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="转发" image="cell_zhuan">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IID-Yj-REA">
+                                <rect key="frame" x="140" y="0.0" width="140" height="28"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="评论" image="cell_pinglun_normal">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ns-JF-pnM">
+                                <rect key="frame" x="280" y="0.0" width="140" height="28"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="赞" image="cell_zan_normal">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="TjM-RS-zrz">
+                                <rect key="frame" x="130" y="0.0" width="21.5" height="28"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="CY6-Xr-36Q">
+                                <rect key="frame" x="275" y="0.0" width="21.5" height="28"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CY6-Xr-36Q" firstAttribute="leading" secondItem="IID-Yj-REA" secondAttribute="trailing" constant="-5" id="AJD-on-kal"/>
+                            <constraint firstItem="IID-Yj-REA" firstAttribute="leading" secondItem="RLW-Jo-a0X" secondAttribute="trailing" id="AKn-oF-OWh"/>
+                            <constraint firstItem="IID-Yj-REA" firstAttribute="centerY" secondItem="RLW-Jo-a0X" secondAttribute="centerY" id="CFg-08-LGr"/>
+                            <constraint firstAttribute="height" constant="28" id="Fkk-C9-uOV"/>
+                            <constraint firstItem="4Ns-JF-pnM" firstAttribute="width" secondItem="IID-Yj-REA" secondAttribute="width" id="G7q-Vu-Fnb"/>
+                            <constraint firstItem="TjM-RS-zrz" firstAttribute="height" secondItem="RLW-Jo-a0X" secondAttribute="height" id="LcE-nJ-8Pg"/>
+                            <constraint firstItem="TjM-RS-zrz" firstAttribute="centerY" secondItem="RLW-Jo-a0X" secondAttribute="centerY" id="XT6-2M-1Op"/>
+                            <constraint firstAttribute="trailing" secondItem="4Ns-JF-pnM" secondAttribute="trailing" id="YF1-US-rLH"/>
+                            <constraint firstItem="IID-Yj-REA" firstAttribute="height" secondItem="RLW-Jo-a0X" secondAttribute="height" id="aIe-hJ-Xjr"/>
+                            <constraint firstItem="RLW-Jo-a0X" firstAttribute="top" secondItem="eJu-Yb-zyA" secondAttribute="top" id="cpU-9v-GVX"/>
+                            <constraint firstItem="4Ns-JF-pnM" firstAttribute="centerY" secondItem="IID-Yj-REA" secondAttribute="centerY" id="dUd-Uc-59d"/>
+                            <constraint firstItem="CY6-Xr-36Q" firstAttribute="centerY" secondItem="IID-Yj-REA" secondAttribute="centerY" id="fiY-LN-8vy"/>
+                            <constraint firstItem="4Ns-JF-pnM" firstAttribute="leading" secondItem="IID-Yj-REA" secondAttribute="trailing" id="hcO-yM-cbH"/>
+                            <constraint firstItem="RLW-Jo-a0X" firstAttribute="leading" secondItem="eJu-Yb-zyA" secondAttribute="leading" id="iA0-bZ-h20"/>
+                            <constraint firstItem="4Ns-JF-pnM" firstAttribute="height" secondItem="IID-Yj-REA" secondAttribute="height" id="iIo-SN-Bds"/>
+                            <constraint firstItem="TjM-RS-zrz" firstAttribute="leading" secondItem="RLW-Jo-a0X" secondAttribute="trailing" constant="-10" id="iei-No-5ye"/>
+                            <constraint firstItem="IID-Yj-REA" firstAttribute="width" secondItem="RLW-Jo-a0X" secondAttribute="width" id="jGa-rS-h1F"/>
+                            <constraint firstItem="CY6-Xr-36Q" firstAttribute="height" secondItem="IID-Yj-REA" secondAttribute="height" id="mxn-Cf-veP"/>
+                            <constraint firstAttribute="bottom" secondItem="RLW-Jo-a0X" secondAttribute="bottom" id="wjv-97-qNg"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ehE-lx-AJn" firstAttribute="top" secondItem="1uU-K8-5Jw" secondAttribute="bottom" constant="11" id="92t-JD-dBa"/>
@@ -68,7 +137,7 @@
                     <constraint firstItem="V4b-XM-fRr" firstAttribute="centerY" secondItem="1uU-K8-5Jw" secondAttribute="bottom" id="EnH-SE-qRU"/>
                     <constraint firstItem="1uU-K8-5Jw" firstAttribute="top" secondItem="hpn-n0-y1p" secondAttribute="bottom" constant="12" id="GRo-lT-KeP"/>
                     <constraint firstItem="8VK-5x-ZCP" firstAttribute="leading" secondItem="1uU-K8-5Jw" secondAttribute="trailing" constant="11" id="H7X-F8-kku"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ehE-lx-AJn" secondAttribute="bottom" constant="12" id="Mwt-sW-wdg"/>
+                    <constraint firstAttribute="trailing" secondItem="eJu-Yb-zyA" secondAttribute="trailing" id="HFc-De-PLR"/>
                     <constraint firstItem="k9q-qd-tjv" firstAttribute="centerY" secondItem="KH9-tK-MjT" secondAttribute="centerY" id="RMg-ZC-yCe"/>
                     <constraint firstItem="jnE-qO-4M3" firstAttribute="leading" secondItem="8VK-5x-ZCP" secondAttribute="trailing" constant="4" id="UnT-cP-lN9"/>
                     <constraint firstItem="hpn-n0-y1p" firstAttribute="top" secondItem="XXg-8L-dzF" secondAttribute="top" id="YxF-5J-cOj"/>
@@ -76,7 +145,10 @@
                     <constraint firstItem="KH9-tK-MjT" firstAttribute="leading" secondItem="8VK-5x-ZCP" secondAttribute="leading" id="dXC-y7-LqI"/>
                     <constraint firstAttribute="trailing" secondItem="hpn-n0-y1p" secondAttribute="trailing" id="gdo-SF-Qvw"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ehE-lx-AJn" secondAttribute="trailing" constant="11" id="ovp-gO-6hX"/>
+                    <constraint firstItem="eJu-Yb-zyA" firstAttribute="leading" secondItem="XXg-8L-dzF" secondAttribute="leading" id="plL-Ud-dZp"/>
                     <constraint firstItem="8VK-5x-ZCP" firstAttribute="top" secondItem="1uU-K8-5Jw" secondAttribute="top" constant="4" id="qbv-Xj-8U1"/>
+                    <constraint firstAttribute="bottom" secondItem="eJu-Yb-zyA" secondAttribute="bottom" id="tkd-bF-BYM"/>
+                    <constraint firstItem="eJu-Yb-zyA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ehE-lx-AJn" secondAttribute="bottom" constant="12" id="wNA-MJ-IXj"/>
                     <constraint firstItem="1uU-K8-5Jw" firstAttribute="leading" secondItem="XXg-8L-dzF" secondAttribute="leading" constant="11" id="yFq-Bq-eX1"/>
                     <constraint firstItem="V4b-XM-fRr" firstAttribute="centerX" secondItem="1uU-K8-5Jw" secondAttribute="trailing" id="ydg-EV-4AG"/>
                     <constraint firstItem="ehE-lx-AJn" firstAttribute="leading" secondItem="1uU-K8-5Jw" secondAttribute="leading" id="z0c-9X-5xz"/>
@@ -92,11 +164,15 @@
                 <outlet property="timeLabel" destination="KH9-tK-MjT" id="nQV-Kv-gr7"/>
                 <outlet property="vipIcon" destination="V4b-XM-fRr" id="BF4-4a-ZdQ"/>
             </connections>
-            <point key="canvasLocation" x="237.68115942028987" y="104.79910714285714"/>
+            <point key="canvasLocation" x="243.47826086956525" y="105.13392857142857"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="cell_VIP" width="21.333333969116211" height="21.333333969116211"/>
         <image name="cell_crown" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="cell_pinglun_normal" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="cell_zan_normal" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="cell_zhuan" width="22.333333969116211" height="21.333333969116211"/>
+        <image name="line" width="21.333333969116211" height="21.333333969116211"/>
     </resources>
 </document>
