@@ -10,6 +10,10 @@ import UIKit
 
 class WBStatusCell: UITableViewCell {
 
+    
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
