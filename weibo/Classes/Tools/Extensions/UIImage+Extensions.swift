@@ -8,6 +8,7 @@ extension UIImage {
     ///   - size: 尺寸
     ///   - backColor: 背景颜色
     ///   - lineColor: 边框颜色
+    ///   - isAvatar: 是否头像
     func mg_avatarImage(size:CGSize?,backColor:UIColor = UIColor.white,lineColor:UIColor=UIColor.lightGray) -> UIImage? {
         var size = size
         if size == nil {

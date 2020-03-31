@@ -10,6 +10,22 @@ import UIKit
 
 class WBStatusCell: UITableViewCell {
 
+    var viewModel : WBStatusViewModel? {
+        didSet {
+            
+            //设置微博文本
+            statusLabel.text = viewModel?.status.text
+            //姓名
+            nameLabel.text = viewModel?.status.user?.screen_name
+            //会员等级 根据 mbrank的值设置属性
+            memberIconView.image = viewModel?.memberIcon
+            //认证图标
+            vipIcon.image = viewModel?.vipIcon
+            //用户头像
+            iconView.mg_setImage(urlString: viewModel?.status.user?.profile_image_url, placeholderImage: UIImage(named: "Avatar"),isAvatar: true)
+            
+        }
+    }
     ///头像
     @IBOutlet weak var iconView: UIImageView!
     ///姓名

@@ -16,7 +16,7 @@ class WBUser: NSObject {
     ///昵称
     @objc var screen_name : String?
     ///头像 50 50
-    @objc var profile_image : String?
+    @objc var profile_image_url : String?
     ///d认证等级。-1 五认证。235 认证用户 220 达人
     @objc var verified_type:Int = 0
     ///会员等级 0 - 6

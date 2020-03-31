@@ -59,7 +59,11 @@ extension WBHomeViewController {
         // 1.   取cell
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! WBStatusCell
         // 2.   设置cell
-        cell.statusLabel.text = listViewModel.statusList[indexPath.row].text
+        let viewModel = listViewModel.statusList[indexPath.row]
+        cell.viewModel = viewModel
+        
+        
+        
         //3.    返回cell
         return cell
     }
