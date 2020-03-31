@@ -60,7 +60,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJu-Yb-zyA" userLabel="底部工具栏">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJu-Yb-zyA" userLabel="底部工具栏" customClass="WBStatusToolBar" customModule="weibo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="248" width="420" height="28"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLW-Jo-a0X">
@@ -128,6 +128,11 @@
                             <constraint firstItem="CY6-Xr-36Q" firstAttribute="height" secondItem="IID-Yj-REA" secondAttribute="height" id="mxn-Cf-veP"/>
                             <constraint firstAttribute="bottom" secondItem="RLW-Jo-a0X" secondAttribute="bottom" id="wjv-97-qNg"/>
                         </constraints>
+                        <connections>
+                            <outlet property="btn_comment" destination="IID-Yj-REA" id="JDu-6j-gTV"/>
+                            <outlet property="btn_like" destination="4Ns-JF-pnM" id="Qad-AB-S9g"/>
+                            <outlet property="btn_retweeted" destination="RLW-Jo-a0X" id="i6J-nK-Dn3"/>
+                        </connections>
                     </view>
                 </subviews>
                 <constraints>
@@ -162,6 +167,7 @@
                 <outlet property="sourceLabel" destination="k9q-qd-tjv" id="RVC-OU-IKs"/>
                 <outlet property="statusLabel" destination="ehE-lx-AJn" id="6ZQ-7f-4tB"/>
                 <outlet property="timeLabel" destination="KH9-tK-MjT" id="nQV-Kv-gr7"/>
+                <outlet property="toolBar" destination="eJu-Yb-zyA" id="BXB-F3-oi8"/>
                 <outlet property="vipIcon" destination="V4b-XM-fRr" id="BF4-4a-ZdQ"/>
             </connections>
             <point key="canvasLocation" x="243.47826086956525" y="105.13392857142857"/>

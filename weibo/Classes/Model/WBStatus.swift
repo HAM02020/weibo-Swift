@@ -18,6 +18,11 @@ class WBStatus: NSObject {
     //微博的内容
     @objc var text : String?
     
+    /// 转发 评论 点赞 数
+    @objc var reposts_count : Int = 0
+    @objc var comments_count :Int = 0
+    @objc var attitudes_count :Int = 0
+    
     @objc var user: WBUser?
     
     ///重写description 的计算型 属性

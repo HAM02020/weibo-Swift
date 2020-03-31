@@ -16,6 +16,12 @@ class WBStatusViewModel :CustomStringConvertible{
     
     @objc var vipIcon:UIImage?
     
+    ///转发文字
+    @objc var retweedtedStr : String?
+    ///评论文字
+    @objc var commentStr : String?
+    ///点赞文字
+    @objc var likeStr : String?
     
     
     init(model:WBStatus) {
@@ -37,8 +43,28 @@ class WBStatusViewModel :CustomStringConvertible{
         default:
             break
         }
+        //设置底部计数字符串
+        retweedtedStr = countStr(count: model.reposts_count, defaultStr: "转发")
+        commentStr = countStr(count: model.comments_count, defaultStr: "评论")
+        likeStr = countStr(count: model.attitudes_count, defaultStr: "赞")
+        
         
     }
+    
+    /// 给定一个数字返回对应的描述结果
+    /// - Parameters:
+    ///   - count: 数字
+    ///   - defaultStr: 默认字符串
+    private func countStr(count:Int,defaultStr:String) -> String {
+        if count == 0 {
+            return defaultStr
+        }
+        if count < 10000 {
+            return count.description
+        }
+        return String(format: "%.02f 万", Double(count/10000))
+    }
+    
     //相当于toString？
     var description: String {
         return status.description
