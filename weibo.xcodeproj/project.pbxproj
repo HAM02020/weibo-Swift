@@ -11,6 +11,8 @@
 		01161E8C243262C90092541C /* WBStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01161E8B243262C90092541C /* WBStatusCell.swift */; };
 		01161E8E243262ED0092541C /* WBStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01161E8D243262ED0092541C /* WBStatusNormalCell.xib */; };
 		01161E902432648A0092541C /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01161E8F2432648A0092541C /* UIImage+Extensions.swift */; };
+		01161E92243379780092541C /* WBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01161E91243379780092541C /* WBUser.swift */; };
+		01161E9624337E410092541C /* WBStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01161E9524337E410092541C /* WBStatusViewModel.swift */; };
 		012B9CC4242CFAA30006AFDC /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012B9CC3242CFAA30006AFDC /* UIButton+Extensions.swift */; };
 		012B9CC6242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */; };
 		01357FE22431AC860042D8F5 /* WBTittleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01357FE12431AC860042D8F5 /* WBTittleButton.swift */; };
@@ -46,6 +48,8 @@
 		01161E8B243262C90092541C /* WBStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusCell.swift; sourceTree = "<group>"; };
 		01161E8D243262ED0092541C /* WBStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBStatusNormalCell.xib; sourceTree = "<group>"; };
 		01161E8F2432648A0092541C /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		01161E91243379780092541C /* WBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBUser.swift; sourceTree = "<group>"; };
+		01161E9524337E410092541C /* WBStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusViewModel.swift; sourceTree = "<group>"; };
 		012B9CC3242CFAA30006AFDC /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		01357FE12431AC860042D8F5 /* WBTittleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBTittleButton.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				01D19B95242FBBF500AE4C46 /* WBStatusListViewModel.swift */,
+				01161E9524337E410092541C /* WBStatusViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				01D19B93242FB9C800AE4C46 /* WBStatus.swift */,
+				01161E91243379780092541C /* WBUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -457,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01628EA0242CAA82004A313B /* WBDemoViewController.swift in Sources */,
+				01161E92243379780092541C /* WBUser.swift in Sources */,
 				01628E91242BD138004A313B /* WBBaseViewController.swift in Sources */,
 				01161E902432648A0092541C /* UIImage+Extensions.swift in Sources */,
 				01161E8C243262C90092541C /* WBStatusCell.swift in Sources */,
@@ -466,6 +473,7 @@
 				01D19B96242FBBF500AE4C46 /* WBStatusListViewModel.swift in Sources */,
 				01357FE52431B9D10042D8F5 /* WBWelcomeView.swift in Sources */,
 				01628E96242C5443004A313B /* WBMainViewController.swift in Sources */,
+				01161E9624337E410092541C /* WBStatusViewModel.swift in Sources */,
 				01D19B94242FB9C800AE4C46 /* WBStatus.swift in Sources */,
 				012B9CC6242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift in Sources */,
 				01357FE72431BA120042D8F5 /* WBNewFeatureView.swift in Sources */,

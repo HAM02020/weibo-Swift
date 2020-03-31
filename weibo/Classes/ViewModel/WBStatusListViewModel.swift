@@ -48,7 +48,7 @@ class WBStatusListViewModel {
                 completion(isSuccess,false)
                 return
             }
-            
+            //print(array)
             print("刷新到\(array.count)条数据")
             
             //2. 拼接数据

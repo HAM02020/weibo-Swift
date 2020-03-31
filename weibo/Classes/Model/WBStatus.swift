@@ -16,7 +16,9 @@ class WBStatus: NSObject {
     ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!一定要在属性上 加 @objc 不然 无法识别！！！！！！！！！！！！！！！！！！！！
     @objc var id:Int64 = 0
     //微博的内容
-    @objc var text :String?
+    @objc var text : String?
+    
+    @objc var user: WBUser?
     
     ///重写description 的计算型 属性
     override var description: String {
