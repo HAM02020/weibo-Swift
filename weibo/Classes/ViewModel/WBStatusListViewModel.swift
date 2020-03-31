@@ -47,7 +47,7 @@ class WBStatusListViewModel {
                 completion(false,false)
                 return
             }
- 
+            //print(list)
             //1. 字典转模型
             var array = [WBStatusViewModel]()
             
@@ -55,6 +55,7 @@ class WBStatusListViewModel {
             for dict in list ?? [] {
                 // a)  创建微博模型
                 //或者 yy_modelSet(with :dict)
+               
                 guard let model = WBStatus.yy_model(with: dict) else {
                     continue
                 }

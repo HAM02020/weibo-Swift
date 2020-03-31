@@ -26,7 +26,7 @@ class WBStatusCell: UITableViewCell {
             //底部工具栏
             toolBar.viewModel = viewModel
             
-            pictureView.heightCons.constant = 100
+            pictureView.heightCons.constant = viewModel?.pictureViewSize.height ?? 0
         }
     }
     ///头像

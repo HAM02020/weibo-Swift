@@ -22,7 +22,8 @@ class WBStatusViewModel :CustomStringConvertible{
     @objc var commentStr : String?
     ///点赞文字
     @objc var likeStr : String?
-    
+    //  配图大小
+    @objc var pictureViewSize = CGSize()
     
     init(model:WBStatus) {
         self.status = model
@@ -48,7 +49,36 @@ class WBStatusViewModel :CustomStringConvertible{
         commentStr = countStr(count: model.comments_count, defaultStr: "评论")
         likeStr = countStr(count: model.attitudes_count, defaultStr: "赞")
         
+        //计算配图视图大小
+        pictureViewSize = calcPictureViewSize(count: status.pic_urls!.count)
         
+    }
+    
+    private func calcPictureViewSize(count:Int?) -> CGSize {
+        
+        if count == 0{
+            return CGSize()
+            
+        }
+        //外侧间距
+        let outterMargin :CGFloat = 12
+        //内部视图的间距
+        let innerMargin:CGFloat = 3
+        //视图的宽度
+        let pictureWidth = UIScreen.main.bounds.width - 2*outterMargin
+        //每个item默认的宽度
+        let itemWidth = (pictureWidth - 2*innerMargin)/3
+        
+        //2. 计算高度
+        // 1. 根据count计算行数
+        let row = (count!-1)/3+1
+        //2>   根据行数计算高度
+        var height = outterMargin
+            height += CGFloat(row) * itemWidth
+            height += CGFloat(row-1) * innerMargin
+        
+        
+        return CGSize(width: pictureWidth, height: height)
     }
     
     /// 给定一个数字返回对应的描述结果

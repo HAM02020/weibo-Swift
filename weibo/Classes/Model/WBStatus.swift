@@ -25,9 +25,14 @@ class WBStatus: NSObject {
     
     @objc var user: WBUser?
     
+    @objc var pic_urls:[WBStatusPicture]?
+    
     ///重写description 的计算型 属性
     override var description: String {
         return yy_modelDescription()
     }
-    
+    //类函数 告诉 yy model 遇到数组类型的属性 数组中存放的对象是什么类
+    @objc class func modelContainerPropertyGenericClass() -> [String:AnyClass]{
+        return ["pic_urls":WBStatusPicture.self]
+    }
 }

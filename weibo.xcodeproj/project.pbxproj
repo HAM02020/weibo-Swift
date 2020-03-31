@@ -16,6 +16,7 @@
 		01161E98243392380092541C /* UIImageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01161E97243392380092541C /* UIImageView+WebImage.swift */; };
 		01161E9A2433A9280092541C /* WBStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01161E992433A9280092541C /* WBStatusToolBar.swift */; };
 		01161E9C2433B4330092541C /* WBStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01161E9B2433B4330092541C /* WBStatusPictureView.swift */; };
+		01161E9E2433BD460092541C /* WBStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01161E9D2433BD460092541C /* WBStatusPicture.swift */; };
 		012B9CC4242CFAA30006AFDC /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012B9CC3242CFAA30006AFDC /* UIButton+Extensions.swift */; };
 		012B9CC6242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */; };
 		01357FE22431AC860042D8F5 /* WBTittleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01357FE12431AC860042D8F5 /* WBTittleButton.swift */; };
@@ -56,6 +57,7 @@
 		01161E97243392380092541C /* UIImageView+WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+WebImage.swift"; sourceTree = "<group>"; };
 		01161E992433A9280092541C /* WBStatusToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusToolBar.swift; sourceTree = "<group>"; };
 		01161E9B2433B4330092541C /* WBStatusPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusPictureView.swift; sourceTree = "<group>"; };
+		01161E9D2433BD460092541C /* WBStatusPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusPicture.swift; sourceTree = "<group>"; };
 		012B9CC3242CFAA30006AFDC /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		01357FE12431AC860042D8F5 /* WBTittleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBTittleButton.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				01D19B93242FB9C800AE4C46 /* WBStatus.swift */,
 				01161E91243379780092541C /* WBUser.swift */,
+				01161E9D2433BD460092541C /* WBStatusPicture.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				017B2FE4242E57FA003286E5 /* WBVisitorView.swift in Sources */,
 				01D19B90242F8DC800AE4C46 /* WBNetworkManager.swift in Sources */,
 				017B2FE7242E5AE1003286E5 /* UILabel+Extensions.swift in Sources */,
+				01161E9E2433BD460092541C /* WBStatusPicture.swift in Sources */,
 				01D19B96242FBBF500AE4C46 /* WBStatusListViewModel.swift in Sources */,
 				01357FE52431B9D10042D8F5 /* WBWelcomeView.swift in Sources */,
 				01628E96242C5443004A313B /* WBMainViewController.swift in Sources */,
