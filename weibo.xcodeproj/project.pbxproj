@@ -17,6 +17,8 @@
 		01161E9A2433A9280092541C /* WBStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01161E992433A9280092541C /* WBStatusToolBar.swift */; };
 		01161E9C2433B4330092541C /* WBStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01161E9B2433B4330092541C /* WBStatusPictureView.swift */; };
 		01161E9E2433BD460092541C /* WBStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01161E9D2433BD460092541C /* WBStatusPicture.swift */; };
+		01161EA0243446D00092541C /* WBTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01161E9F243446D00092541C /* WBTestView.swift */; };
+		01161EA2243446F40092541C /* WBTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01161EA1243446F40092541C /* WBTestView.xib */; };
 		012B9CC4242CFAA30006AFDC /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012B9CC3242CFAA30006AFDC /* UIButton+Extensions.swift */; };
 		012B9CC6242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */; };
 		01357FE22431AC860042D8F5 /* WBTittleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01357FE12431AC860042D8F5 /* WBTittleButton.swift */; };
@@ -58,6 +60,8 @@
 		01161E992433A9280092541C /* WBStatusToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusToolBar.swift; sourceTree = "<group>"; };
 		01161E9B2433B4330092541C /* WBStatusPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusPictureView.swift; sourceTree = "<group>"; };
 		01161E9D2433BD460092541C /* WBStatusPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusPicture.swift; sourceTree = "<group>"; };
+		01161E9F243446D00092541C /* WBTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBTestView.swift; sourceTree = "<group>"; };
+		01161EA1243446F40092541C /* WBTestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBTestView.xib; sourceTree = "<group>"; };
 		012B9CC3242CFAA30006AFDC /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		01357FE12431AC860042D8F5 /* WBTittleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBTittleButton.swift; sourceTree = "<group>"; };
@@ -269,6 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				01628E9F242CAA82004A313B /* WBDemoViewController.swift */,
+				01161E9F243446D00092541C /* WBTestView.swift */,
+				01161EA1243446F40092541C /* WBTestView.xib */,
 			);
 			path = "测试";
 			sourceTree = "<group>";
@@ -420,6 +426,7 @@
 				01161E8E243262ED0092541C /* WBStatusNormalCell.xib in Resources */,
 				01FCB121242BABBB00E1524F /* Assets.xcassets in Resources */,
 				0106A0282431D9D1008D60F8 /* WBNewFeatureView.xib in Resources */,
+				01161EA2243446F40092541C /* WBTestView.xib in Resources */,
 				01357FE92431C55E0042D8F5 /* WBWelcomeView.xib in Resources */,
 				01F9C9B0242E221500118B4E /* start.storyboard in Resources */,
 			);
@@ -505,6 +512,7 @@
 				01D19B9D2430970200AE4C46 /* WBOAuthViewController.swift in Sources */,
 				01D19BA02430D6B200AE4C46 /* WBUserAccount.swift in Sources */,
 				01357FE22431AC860042D8F5 /* WBTittleButton.swift in Sources */,
+				01161EA0243446D00092541C /* WBTestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

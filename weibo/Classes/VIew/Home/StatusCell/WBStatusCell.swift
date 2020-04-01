@@ -27,6 +27,9 @@ class WBStatusCell: UITableViewCell {
             toolBar.viewModel = viewModel
             
             pictureView.heightCons.constant = viewModel?.pictureViewSize.height ?? 0
+            
+            //设置配图视图的url数据
+            pictureView.urls = viewModel?.status.pic_urls
         }
     }
     ///头像
