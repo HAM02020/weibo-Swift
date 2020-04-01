@@ -8,6 +8,17 @@
 
 import UIKit
 
+
+//外侧间距
+let outterMargin :CGFloat = 12
+//内部视图的间距
+let innerMargin:CGFloat = 3
+//视图的宽度
+let pictureWidth = UIScreen.main.bounds.width - 2*outterMargin
+//每个item默认的宽度
+let itemWidth = (pictureWidth - 2*innerMargin)/3
+
+
 ///单条微博的视图模型
 class WBStatusViewModel :CustomStringConvertible{
     @objc var status: WBStatus
@@ -54,20 +65,15 @@ class WBStatusViewModel :CustomStringConvertible{
         
     }
     
+    
+    
     private func calcPictureViewSize(count:Int?) -> CGSize {
         
-        if count == 0{
+        if count == 0 || count == nil{
             return CGSize()
             
         }
-        //外侧间距
-        let outterMargin :CGFloat = 12
-        //内部视图的间距
-        let innerMargin:CGFloat = 3
-        //视图的宽度
-        let pictureWidth = UIScreen.main.bounds.width - 2*outterMargin
-        //每个item默认的宽度
-        let itemWidth = (pictureWidth - 2*innerMargin)/3
+        
         
         //2. 计算高度
         // 1. 根据count计算行数
