@@ -19,6 +19,7 @@
 		01161E9E2433BD460092541C /* WBStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01161E9D2433BD460092541C /* WBStatusPicture.swift */; };
 		01161EA0243446D00092541C /* WBTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01161E9F243446D00092541C /* WBTestView.swift */; };
 		01161EA2243446F40092541C /* WBTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01161EA1243446F40092541C /* WBTestView.xib */; };
+		01161EA42434F11E0092541C /* WBStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01161EA32434F11E0092541C /* WBStatusRetweetedCell.xib */; };
 		012B9CC4242CFAA30006AFDC /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012B9CC3242CFAA30006AFDC /* UIButton+Extensions.swift */; };
 		012B9CC6242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */; };
 		01357FE22431AC860042D8F5 /* WBTittleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01357FE12431AC860042D8F5 /* WBTittleButton.swift */; };
@@ -62,6 +63,7 @@
 		01161E9D2433BD460092541C /* WBStatusPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusPicture.swift; sourceTree = "<group>"; };
 		01161E9F243446D00092541C /* WBTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBTestView.swift; sourceTree = "<group>"; };
 		01161EA1243446F40092541C /* WBTestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBTestView.xib; sourceTree = "<group>"; };
+		01161EA32434F11E0092541C /* WBStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBStatusRetweetedCell.xib; sourceTree = "<group>"; };
 		012B9CC3242CFAA30006AFDC /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		01357FE12431AC860042D8F5 /* WBTittleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBTittleButton.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		01161E8A243262990092541C /* StatusCell */ = {
 			isa = PBXGroup;
 			children = (
+				01161EA32434F11E0092541C /* WBStatusRetweetedCell.xib */,
 				01161E8B243262C90092541C /* WBStatusCell.swift */,
 				01161E8D243262ED0092541C /* WBStatusNormalCell.xib */,
 				01161E992433A9280092541C /* WBStatusToolBar.swift */,
@@ -422,6 +425,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01161EA42434F11E0092541C /* WBStatusRetweetedCell.xib in Resources */,
 				017B2FE9242F26FF003286E5 /* main.json in Resources */,
 				01161E8E243262ED0092541C /* WBStatusNormalCell.xib in Resources */,
 				01FCB121242BABBB00E1524F /* Assets.xcassets in Resources */,
@@ -646,7 +650,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = HAMO.weibo;
 				PRODUCT_NAME = weibo;
 				SWIFT_OBJC_BRIDGING_HEADER = "weibo/Weibo-Bridge.h";
@@ -668,7 +672,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = HAMO.weibo;
 				PRODUCT_NAME = weibo;
 				SWIFT_OBJC_BRIDGING_HEADER = "weibo/Weibo-Bridge.h";

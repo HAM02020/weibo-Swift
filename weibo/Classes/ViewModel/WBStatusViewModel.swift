@@ -36,6 +36,11 @@ class WBStatusViewModel :CustomStringConvertible{
     //  配图大小
     @objc var pictureViewSize = CGSize()
     
+    var picUrls : [WBStatusPicture]? {
+        //如果有被转发的微博 返回被转发微博的配图，如果没有被转发的微博 返回 原创微博的配图 如果都没有 返回nil
+        return status.retweeted_status?.pic_urls ?? status.pic_urls
+    }
+    
     init(model:WBStatus) {
         self.status = model
         
@@ -61,7 +66,7 @@ class WBStatusViewModel :CustomStringConvertible{
         likeStr = countStr(count: model.attitudes_count, defaultStr: "赞")
         
         //计算配图视图大小
-        pictureViewSize = calcPictureViewSize(count: status.pic_urls!.count)
+        pictureViewSize = calcPictureViewSize(count: picUrls?.count)
         
     }
     

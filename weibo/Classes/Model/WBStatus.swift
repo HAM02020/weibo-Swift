@@ -27,6 +27,9 @@ class WBStatus: NSObject {
     
     @objc var pic_urls:[WBStatusPicture]?
     
+    //被转发的原创微博
+    @objc var retweeted_status:WBStatus?
+    
     ///重写description 的计算型 属性
     override var description: String {
         return yy_modelDescription()
