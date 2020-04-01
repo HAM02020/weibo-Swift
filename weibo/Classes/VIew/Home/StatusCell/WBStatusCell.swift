@@ -15,6 +15,8 @@ class WBStatusCell: UITableViewCell {
             
             //设置微博文本
             statusLabel.text = viewModel?.status.text
+            //被转发微博的正文
+            retweededLabel?.text = viewModel?.retweetedText
             //姓名
             nameLabel.text = viewModel?.status.user?.screen_name
             //会员等级 根据 mbrank的值设置属性
@@ -63,6 +65,7 @@ class WBStatusCell: UITableViewCell {
     //配图视图
     @IBOutlet weak var pictureView: WBStatusPictureView!
     
+    @IBOutlet weak var retweededLabel: UILabel? //注意 这里是 ？ 号 因为原创微博没有这一项
     
     
     override func awakeFromNib() {

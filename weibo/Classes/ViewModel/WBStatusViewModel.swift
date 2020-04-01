@@ -36,10 +36,14 @@ class WBStatusViewModel :CustomStringConvertible{
     //  配图大小
     @objc var pictureViewSize = CGSize()
     
-    var picUrls : [WBStatusPicture]? {
+    @objc var picUrls : [WBStatusPicture]? {
         //如果有被转发的微博 返回被转发微博的配图，如果没有被转发的微博 返回 原创微博的配图 如果都没有 返回nil
         return status.retweeted_status?.pic_urls ?? status.pic_urls
     }
+    
+    @objc var retweetedText : String?
+    
+    
     
     init(model:WBStatus) {
         self.status = model
@@ -67,7 +71,8 @@ class WBStatusViewModel :CustomStringConvertible{
         
         //计算配图视图大小
         pictureViewSize = calcPictureViewSize(count: picUrls?.count)
-        
+        //设置被转发微博的文字
+        retweetedText = "@\(status.retweeted_status?.user?.screen_name ?? ""):\(status.retweeted_status?.text ?? "")"
     }
     
     
