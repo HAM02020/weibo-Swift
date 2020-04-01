@@ -26,6 +26,12 @@ class WBStatusPictureView: UIView {
                 //获取对应索引的imageView
                 let iv = subviews[index] as! UIImageView
                 
+                //4张图像处理
+                if index == 1 && urls?.count == 4 {
+                    index += 1
+                }
+                
+                
                 //设置图像
                 iv.mg_setImage(urlString: url.thumbnail_pic, placeholderImage: nil)
                 iv.contentMode = .scaleAspectFill
@@ -51,6 +57,10 @@ extension WBStatusPictureView {
     
     
     private func setupUI() {
+        
+        //设置背景颜色
+        backgroundColor = superview?.backgroundColor
+        
         let rect = CGRect(x: 0, y: outterMargin, width: itemWidth, height: itemWidth)
         
         //超出边界的内容不显示
