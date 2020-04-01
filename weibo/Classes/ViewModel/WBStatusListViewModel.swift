@@ -81,11 +81,33 @@ class WBStatusListViewModel {
                 self.pullUpErrorTimes += 1
                 completion(isSuccess,false)
             }else {
+                
+                self.casheSingleImage(list :array)
+                
+                //真正有数据的回调
                 completion(isSuccess,true)
             }
+             
+        }
+        
+    }
+    ///缓存本次下载微博数据数组中的单张图像
+    private func casheSingleImage(list:[WBStatusViewModel]){
+        //遍历数组 查找微博数据中有单张图像的 进行缓存
+        
+        for vm in list {
             
+            //1> 判断图像数量
+            if vm.picUrls?.count != 1 {
+                continue
+            }
             
-            
+            //2> 获取图像模型
+            guard let pic_str = vm.picUrls![0].thumbnail_pic,
+                let url = URL(string: pic_str) else {
+                    continue
+            }
+            print("要缓存的URL是\(pic_str)")
             
         }
     }
