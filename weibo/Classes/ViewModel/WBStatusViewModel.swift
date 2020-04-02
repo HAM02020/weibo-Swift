@@ -43,6 +43,8 @@ class WBStatusViewModel :CustomStringConvertible{
     
     @objc var retweetedText : String?
     
+//    行高
+    @objc var rowHeight:CGFloat = 0
     
     
     init(model:WBStatus) {
@@ -73,6 +75,9 @@ class WBStatusViewModel :CustomStringConvertible{
         pictureViewSize = calcPictureViewSize(count: picUrls?.count)
         //设置被转发微博的文字
         retweetedText = "@\(status.retweeted_status?.user?.screen_name ?? ""):\(status.retweeted_status?.text ?? "")"
+        
+        //计算行高
+        updateRowHeight()
     }
     
     
@@ -115,6 +120,50 @@ class WBStatusViewModel :CustomStringConvertible{
     var description: String {
         return status.description
     }
+    ///根据当前视图模型内容计算行高
+    func updateRowHeight() {
+        
+        let margin :CGFloat = 12
+        let iconHeight:CGFloat = 34
+        let toolbarHeight:CGFloat = 35
+        
+        var height:CGFloat = 0
+        let viewSize = CGSize(width: UIScreen.main.bounds.width - 2 * margin, height: CGFloat(MAXFLOAT))
+        let originalFont = UIFont.systemFont(ofSize: 15)
+        let retweetedFont = UIFont.systemFont(ofSize: 14)
+        //1. 计算顶部位置
+        height = 2 * margin + iconHeight + margin
+        
+        //2. 正文高度
+        if let text = status.text {
+            
+            /*
+             1> 预期尺寸，宽度固定，高度尽量打
+             2> 选项，换行文本，统一使用 userlinefragmentorign
+             3> attributes 指定字典
+             */
+            
+            height += (text as NSString).boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], attributes: [NSAttributedString.Key.font : originalFont], context: nil).height
+        }
+        //3. 判断是否为转发微博
+        if status.retweeted_status != nil {
+            height += 2 * margin
+            //转发文本的高度
+            if let text = retweetedText{
+                height += (text as NSString).boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], attributes: [NSAttributedString.Key.font : retweetedFont], context: nil).height
+            }
+        }
+        //4.配图视图
+        height += pictureViewSize.height
+        
+        height += margin
+        
+        height += toolbarHeight
+        
+        rowHeight = height
+        
+    }
+    
     
     /// 使用单个图像 重新调整配图视图大小
     /// - Parameter image: 网络缓存的单张视图
@@ -122,6 +171,9 @@ class WBStatusViewModel :CustomStringConvertible{
         var size = image.size
         size.height += outterMargin
         pictureViewSize = size
+        
+        //更新行高
+        updateRowHeight()
     }
     
 }
