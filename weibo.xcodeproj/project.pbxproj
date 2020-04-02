@@ -37,6 +37,7 @@
 		017B2FE4242E57FA003286E5 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017B2FE3242E57FA003286E5 /* WBVisitorView.swift */; };
 		017B2FE7242E5AE1003286E5 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017B2FE6242E5AE1003286E5 /* UILabel+Extensions.swift */; };
 		017B2FE9242F26FF003286E5 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 017B2FE8242F26FF003286E5 /* main.json */; };
+		0184CBCE24363FA2002BED2C /* MGRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0184CBCD24363FA2002BED2C /* MGRefreshControl.swift */; };
 		01D19B90242F8DC800AE4C46 /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D19B8F242F8DC800AE4C46 /* WBNetworkManager.swift */; };
 		01D19B92242F9A9E00AE4C46 /* WBNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D19B91242F9A9E00AE4C46 /* WBNetworkManager+Extension.swift */; };
 		01D19B94242FB9C800AE4C46 /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D19B93242FB9C800AE4C46 /* WBStatus.swift */; };
@@ -82,6 +83,7 @@
 		017B2FE3242E57FA003286E5 /* WBVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		017B2FE6242E5AE1003286E5 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		017B2FE8242F26FF003286E5 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		0184CBCD24363FA2002BED2C /* MGRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGRefreshControl.swift; sourceTree = "<group>"; };
 		01D19B8F242F8DC800AE4C46 /* WBNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
 		01D19B91242F9A9E00AE4C46 /* WBNetworkManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WBNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		01D19B93242FB9C800AE4C46 /* WBStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatus.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 		01628E7F242BD138004A313B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0184CBCC24363F59002BED2C /* MGRefeshControl */,
 				01D19B8E242F8D7800AE4C46 /* Network */,
 				012B9CC7242D19390006AFDC /* reactor */,
 				012B9CC0242CFA5B0006AFDC /* Extensions */,
@@ -288,6 +291,14 @@
 				017B2FE3242E57FA003286E5 /* WBVisitorView.swift */,
 			);
 			path = Visitor;
+			sourceTree = "<group>";
+		};
+		0184CBCC24363F59002BED2C /* MGRefeshControl */ = {
+			isa = PBXGroup;
+			children = (
+				0184CBCD24363FA2002BED2C /* MGRefreshControl.swift */,
+			);
+			path = MGRefeshControl;
 			sourceTree = "<group>";
 		};
 		01D19B8E242F8D7800AE4C46 /* Network */ = {
@@ -499,6 +510,7 @@
 				01D19B96242FBBF500AE4C46 /* WBStatusListViewModel.swift in Sources */,
 				01357FE52431B9D10042D8F5 /* WBWelcomeView.swift in Sources */,
 				01628E96242C5443004A313B /* WBMainViewController.swift in Sources */,
+				0184CBCE24363FA2002BED2C /* MGRefreshControl.swift in Sources */,
 				01161E9624337E410092541C /* WBStatusViewModel.swift in Sources */,
 				01D19B94242FB9C800AE4C46 /* WBStatus.swift in Sources */,
 				012B9CC6242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift in Sources */,
