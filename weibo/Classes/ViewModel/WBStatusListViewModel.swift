@@ -82,22 +82,22 @@ class WBStatusListViewModel {
                 completion(isSuccess,false)
             }else {
                 
-                self.casheSingleImage(list :array)
-                
-                //真正有数据的回调
-                completion(isSuccess,true)
+                self.casheSingleImage(list :array,finished: completion)
+            
             }
              
         }
         
     }
     ///缓存本次下载微博数据数组中的单张图像
-    private func casheSingleImage(list:[WBStatusViewModel]){
-        //遍历数组 查找微博数据中有单张图像的 进行缓存
+    private func casheSingleImage(list:[WBStatusViewModel],finished:@escaping(_ isSuccess:Bool,_ shouldRefresh:Bool)->()){
+       
+        //调度组
+        let group = DispatchGroup()
         
         //  记录数据长度
         var length = 0
-        
+         //遍历数组 查找微博数据中有单张图像的 进行缓存
         for vm in list {
             
             //1> 判断图像数量
@@ -110,7 +110,11 @@ class WBStatusListViewModel {
                 let url = URL(string: pic_str) else {
                     continue
             }
-            print("要缓存的URL是\(pic_str)")
+            //print("要缓存的URL是\(pic_str)")
+            
+            
+            //入组
+            group.enter()
             
             //3 > 下载图像
             SDWebImageManager.shared.loadImage(with: url, options: [], progress: nil) { (image, _, _, _, _, _) in
@@ -121,12 +125,19 @@ class WBStatusListViewModel {
                     
                     length += data.count
                 }
-                
-                
-                
                 print("缓存的图像是 \(String(describing: image) )长度 \(length)")
+                
+                //  出组
+                group.leave()
             }
             
+        }
+        
+        // 监听调度组情况
+        group.notify(queue: DispatchQueue.main) {
+            print("图像缓存完成\(length/1024)K")
+            //执行闭包回调
+            finished(true,true)
         }
     }
 }
