@@ -124,6 +124,8 @@ class WBStatusListViewModel {
                     let data = image.pngData(){
                     
                     length += data.count
+                    //更新配图视图的大小
+                    vm.updateSingleImageSize(image: image)
                 }
                 print("缓存的图像是 \(String(describing: image) )长度 \(length)")
                 

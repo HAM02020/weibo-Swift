@@ -28,7 +28,8 @@ class WBStatusCell: UITableViewCell {
             //底部工具栏
             toolBar.viewModel = viewModel
             
-            pictureView.heightCons.constant = viewModel?.pictureViewSize.height ?? 0
+            
+            pictureView.viewModel = viewModel
             
 //            //测试4张图像
 //            if viewModel!.status.pic_urls!.count > 4{
@@ -44,6 +45,7 @@ class WBStatusCell: UITableViewCell {
             
             //设置配图视图的url数据
             pictureView.urls = viewModel?.picUrls
+            
         }
     }
     ///头像

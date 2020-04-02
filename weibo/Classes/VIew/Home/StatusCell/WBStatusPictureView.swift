@@ -10,6 +10,29 @@ import UIKit
 
 class WBStatusPictureView: UIView {
 
+    var viewModel:WBStatusViewModel? {
+        didSet {
+            clacViewSize()
+        }
+    }
+    
+    //根据配图视图模型的配图大小设置图像大小
+    private func clacViewSize() {
+        //处理宽度
+        // 1 > 单图
+        if viewModel?.picUrls?.count == 1 {
+            let viewSize = viewModel?.pictureViewSize ?? CGSize()
+            let iv = subviews[0]
+            iv.frame = CGRect(x: 0, y: outterMargin, width: viewSize.width, height: viewSize.height - outterMargin)
+        }else {
+            //2> 多图(无图)，恢复 subview[0]的宽高
+            let iv = subviews[0]
+            iv.frame = CGRect(x: 0, y: outterMargin, width: itemWidth, height: itemWidth)
+        }
+        heightCons.constant = viewModel?.pictureViewSize.height ?? 0
+    }
+    
+    
     @objc var urls:[WBStatusPicture]? {
         didSet {
             //1.隐藏所有的imageview
@@ -54,6 +77,7 @@ class WBStatusPictureView: UIView {
 extension WBStatusPictureView {
     ///Cell 中所有的控件提前准备好
     ///根据数据是否显示
+    
     
     
     private func setupUI() {
