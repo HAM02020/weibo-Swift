@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import SDWebImage
 /// 微博数据列表视图模型
 /// 父类的选择
 
@@ -95,6 +95,9 @@ class WBStatusListViewModel {
     private func casheSingleImage(list:[WBStatusViewModel]){
         //遍历数组 查找微博数据中有单张图像的 进行缓存
         
+        //  记录数据长度
+        var length = 0
+        
         for vm in list {
             
             //1> 判断图像数量
@@ -108,6 +111,21 @@ class WBStatusListViewModel {
                     continue
             }
             print("要缓存的URL是\(pic_str)")
+            
+            //3 > 下载图像
+            SDWebImageManager.shared.loadImage(with: url, options: [], progress: nil) { (image, _, _, _, _, _) in
+                
+                //将图像转成二进制数据
+                if let image = image ,
+                    let data = image.pngData(){
+                    
+                    length += data.count
+                }
+                
+                
+                
+                print("缓存的图像是 \(String(describing: image) )长度 \(length)")
+            }
             
         }
     }
