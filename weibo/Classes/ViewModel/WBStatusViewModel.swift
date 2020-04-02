@@ -169,6 +169,23 @@ class WBStatusViewModel :CustomStringConvertible{
     /// - Parameter image: 网络缓存的单张视图
     func updateSingleImageSize(image:UIImage) {
         var size = image.size
+        
+        //过宽图像处理
+        let maxWidth : CGFloat = 300
+        let minWidth : CGFloat = 40
+        
+        if size.width > maxWidth {
+            //等比例调整高度
+            size.width = maxWidth
+            size.height = size.width * image.size.height / image.size.width
+        }
+        
+        if size.width < minWidth {
+            //等比例调整高度
+            size.width = minWidth 
+            size.height = size.width * image.size.height / image.size.width
+        }
+        
         size.height += outterMargin
         pictureViewSize = size
         

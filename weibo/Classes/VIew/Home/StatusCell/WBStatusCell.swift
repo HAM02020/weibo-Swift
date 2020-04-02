@@ -73,12 +73,21 @@ class WBStatusCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        //异步绘制 离屏渲染
+        self.layer.drawsAsynchronously = true
+        
+        //栅格化
+        //必须指定分辨率 不然h很模糊
+        self.layer.shouldRasterize = true
+        //分辨率
+        self.layer.rasterizationScale = UIScreen.main.scale
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//        // Configure the view for the selected state
+//    }
 
 }
