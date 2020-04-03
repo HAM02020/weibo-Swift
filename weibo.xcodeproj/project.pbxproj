@@ -28,6 +28,8 @@
 		01357FE92431C55E0042D8F5 /* WBWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01357FE82431C55D0042D8F5 /* WBWelcomeView.xib */; };
 		0153DACF2437888E002209E0 /* WBComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0153DACE2437888E002209E0 /* WBComposeTypeView.swift */; };
 		0153DAD124378C0F002209E0 /* WBComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0153DAD024378C0F002209E0 /* WBComposeTypeView.xib */; };
+		0153DAD3243793A4002209E0 /* WBComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0153DAD2243793A4002209E0 /* WBComposeTypeButton.swift */; };
+		0153DAD524379531002209E0 /* WBComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0153DAD424379531002209E0 /* WBComposeTypeButton.xib */; };
 		015F40052437084300CA0E4C /* MGRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015F40042437084300CA0E4C /* MGRefreshView.xib */; };
 		015F400724370A9800CA0E4C /* MGRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015F400624370A9800CA0E4C /* MGRefreshView.swift */; };
 		015F400924376A5400CA0E4C /* MGHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015F400824376A5400CA0E4C /* MGHumanRefreshView.xib */; };
@@ -80,6 +82,8 @@
 		01357FE82431C55D0042D8F5 /* WBWelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBWelcomeView.xib; sourceTree = "<group>"; };
 		0153DACE2437888E002209E0 /* WBComposeTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBComposeTypeView.swift; sourceTree = "<group>"; };
 		0153DAD024378C0F002209E0 /* WBComposeTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBComposeTypeView.xib; sourceTree = "<group>"; };
+		0153DAD2243793A4002209E0 /* WBComposeTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBComposeTypeButton.swift; sourceTree = "<group>"; };
+		0153DAD424379531002209E0 /* WBComposeTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBComposeTypeButton.xib; sourceTree = "<group>"; };
 		015F40042437084300CA0E4C /* MGRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGRefreshView.xib; sourceTree = "<group>"; };
 		015F400624370A9800CA0E4C /* MGRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGRefreshView.swift; sourceTree = "<group>"; };
 		015F400824376A5400CA0E4C /* MGHumanRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGHumanRefreshView.xib; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 			children = (
 				0153DACE2437888E002209E0 /* WBComposeTypeView.swift */,
 				0153DAD024378C0F002209E0 /* WBComposeTypeView.xib */,
+				0153DAD424379531002209E0 /* WBComposeTypeButton.xib */,
+				0153DAD2243793A4002209E0 /* WBComposeTypeButton.swift */,
 			);
 			path = ComposeType;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 				01161E8E243262ED0092541C /* WBStatusNormalCell.xib in Resources */,
 				01FCB121242BABBB00E1524F /* Assets.xcassets in Resources */,
 				0106A0282431D9D1008D60F8 /* WBNewFeatureView.xib in Resources */,
+				0153DAD524379531002209E0 /* WBComposeTypeButton.xib in Resources */,
 				01161EA2243446F40092541C /* WBTestView.xib in Resources */,
 				01357FE92431C55E0042D8F5 /* WBWelcomeView.xib in Resources */,
 				0153DAD124378C0F002209E0 /* WBComposeTypeView.xib in Resources */,
@@ -538,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01628EA0242CAA82004A313B /* WBDemoViewController.swift in Sources */,
+				0153DAD3243793A4002209E0 /* WBComposeTypeButton.swift in Sources */,
 				01161E98243392380092541C /* UIImageView+WebImage.swift in Sources */,
 				01161E92243379780092541C /* WBUser.swift in Sources */,
 				01628E91242BD138004A313B /* WBBaseViewController.swift in Sources */,

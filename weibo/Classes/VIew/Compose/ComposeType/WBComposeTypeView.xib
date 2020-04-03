@@ -13,9 +13,50 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WBComposeTypeView" customModule="weibo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTK-bx-GkE">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cVX-sl-7Ye">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIa-XZ-0R9">
+                                <rect key="frame" x="0.0" y="832" width="414" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hkv-Qa-j5q">
+                                        <rect key="frame" x="191" y="16" width="32" height="32"/>
+                                        <state key="normal" image="x"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Hkv-Qa-j5q" firstAttribute="centerY" secondItem="ZIa-XZ-0R9" secondAttribute="centerY" id="axB-us-Y9B"/>
+                                    <constraint firstItem="Hkv-Qa-j5q" firstAttribute="centerX" secondItem="ZIa-XZ-0R9" secondAttribute="centerX" id="fO7-yw-lJL"/>
+                                    <constraint firstAttribute="height" constant="64" id="pIO-cd-xyn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ZIa-XZ-0R9" firstAttribute="leading" secondItem="cVX-sl-7Ye" secondAttribute="leading" id="3nT-5o-j9v"/>
+                            <constraint firstAttribute="trailing" secondItem="ZIa-XZ-0R9" secondAttribute="trailing" id="Ofv-ZD-JAl"/>
+                            <constraint firstAttribute="bottom" secondItem="ZIa-XZ-0R9" secondAttribute="bottom" id="YWV-v0-7zz"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="extraLight"/>
+                </visualEffectView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yTK-bx-GkE" secondAttribute="trailing" id="2Ij-oD-pQR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="yTK-bx-GkE" secondAttribute="bottom" constant="-34" id="H9b-v6-eHM"/>
+                <constraint firstItem="yTK-bx-GkE" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="-44" id="Mnq-mv-f80"/>
+                <constraint firstItem="yTK-bx-GkE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="nUS-bh-frw"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="132" y="112"/>
+            <point key="canvasLocation" x="131.8840579710145" y="111.83035714285714"/>
         </view>
     </objects>
+    <resources>
+        <image name="x" width="32" height="32"/>
+    </resources>
 </document>

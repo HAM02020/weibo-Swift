@@ -26,4 +26,27 @@ class WBComposeTypeView: UIView {
         }
         vc.view.addSubview(self)
     }
+    
+    override func awakeFromNib() {
+        setupUI()
+    }
+    
+    //MARK:监听方法
+    @objc private func clickButton() {
+        print("点我了")
+    }
+}
+
+
+private extension WBComposeTypeView {
+    func setupUI() {
+        //创建类型按钮
+        let btn = WBComposeTypeButton.composeTypeButton(imageName: "compose_message", title: "试一试")
+        
+        btn.center = center
+        addSubview(btn)
+        
+//        添加监听方法
+        btn.addTarget(self, action: #selector(clickButton), for: .touchUpInside)
+    }
 }
