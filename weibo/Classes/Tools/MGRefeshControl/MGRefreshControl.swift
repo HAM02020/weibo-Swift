@@ -42,6 +42,18 @@ class MGRefreshControl: UIControl {
     ///开始刷新
     func beginRefreshing() {
         print("开始刷新")
+        
+        //判断父视图
+        guard let sv = scrollView else {
+            return
+        }
+        //设置刷新视图的状态
+        refreshView.refreshState = .WillRefresh
+        
+        //   调整表格间距
+        var inset = sv.contentInset
+        inset.top += MGRefreshOffset
+        sv.contentInset = inset
     }
     ///结束刷新
     func endRefreshing() {

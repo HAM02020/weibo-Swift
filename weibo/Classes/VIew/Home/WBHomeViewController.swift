@@ -23,6 +23,8 @@ class WBHomeViewController: WBBaseViewController {
     }
     ///加载数据
     override func loadData() {
+        //开始刷新的小菊花
+        refreshControl?.beginRefreshing()
         
         listViewModel.loadStatus(isPullup:self.isPullup) { (isSuccess,shouldRefresh) in
             //刷新表格
@@ -36,7 +38,8 @@ class WBHomeViewController: WBBaseViewController {
             }
 
         }
-        
+        //结束刷新
+        refreshControl?.endRefreshing()
 
         
     }
