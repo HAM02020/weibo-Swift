@@ -45,6 +45,8 @@ class MGRefreshView: UIView {
         }
     }
     
+    var parentViewHeight : CGFloat = 0
+    
     ///提示图标
     @IBOutlet weak var tipIcon: UIImageView?
     ///提示语

@@ -22,7 +22,7 @@ class MGRefreshControl: UIControl {
     //tableview 和 UICollentionview 的父类
     private weak var scrollView : UIScrollView?
     
-    lazy var refreshView = MGRefreshView.refreshView()
+    lazy var refreshView  = MGRefreshView.refreshView()
     
     
     
@@ -60,6 +60,9 @@ class MGRefreshControl: UIControl {
         var inset = sv.contentInset
         inset.top += MGRefreshOffset
         sv.contentInset = inset
+        
+        //设置刷新视图的父视图高度
+        refreshView.parentViewHeight = MGRefreshOffset
     }
     ///结束刷新
     func endRefreshing() {
@@ -117,6 +120,9 @@ class MGRefreshControl: UIControl {
         }
         //可以根据高度设置刷新控件的frame
         self.frame = CGRect(x: 0, y: -height, width: sv.bounds.width, height: height)
+        
+        //传递父视图高度
+        refreshView.parentViewHeight = height
         
         //判断零界点
         if sv.isDragging {
