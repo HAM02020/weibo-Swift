@@ -11,6 +11,21 @@ import UIKit
 /// 撰写微博 类型视图
 class WBComposeTypeView: UIView {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    private let buttonInfo :[[String:Any]] = [["imageName":"compose_message","title":"文字"],
+                                            ["imageName":"compose_message","title":"照片/视频"],
+                                            ["imageName":"compose_message","title":"长微博"],
+                                            ["imageName":"compose_message","title":"签到"],
+                                            ["imageName":"compose_message","title":"点评"],
+                                            ["imageName":"compose_message","title":"更多"],
+                                            ["imageName":"compose_message","title":"好友圈"],
+                                            ["imageName":"compose_message","title":"微博相机"],
+                                            ["imageName":"compose_message","title":"音乐"],
+                                            ["imageName":"compose_message","title":"拍摄"],
+                                                                            ]
+                              
+    
     class func composeTypeView() -> WBComposeTypeView {
         let nib = UINib(nibName: "WBComposeTypeView", bundle: nil)
         let v = nib.instantiate(withOwner: nil, options: nil)[0] as! WBComposeTypeView
@@ -35,6 +50,12 @@ class WBComposeTypeView: UIView {
     @objc private func clickButton() {
         print("点我了")
     }
+    
+    @IBAction func close() {
+        removeFromSuperview()
+    }
+    
+    
 }
 
 

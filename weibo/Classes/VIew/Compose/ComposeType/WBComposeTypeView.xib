@@ -26,6 +26,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hkv-Qa-j5q">
                                         <rect key="frame" x="191" y="16" width="32" height="32"/>
                                         <state key="normal" image="x"/>
+                                        <connections>
+                                            <action selector="close" destination="iN0-l3-epB" eventType="touchUpInside" id="bRq-7q-fQ6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -35,11 +38,23 @@
                                     <constraint firstAttribute="height" constant="64" id="pIO-cd-xyn"/>
                                 </constraints>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qbz-3O-by7">
+                                <rect key="frame" x="0.0" y="389" width="414" height="306"/>
+                                <color key="backgroundColor" red="1" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="fyj-Et-6FG"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="h9I-Tv-4Ay"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="HRm-I0-iZ6"/>
+                            </scrollView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="ZIa-XZ-0R9" firstAttribute="leading" secondItem="cVX-sl-7Ye" secondAttribute="leading" id="3nT-5o-j9v"/>
+                            <constraint firstAttribute="trailing" secondItem="qbz-3O-by7" secondAttribute="trailing" id="MU2-Aa-vnI"/>
                             <constraint firstAttribute="trailing" secondItem="ZIa-XZ-0R9" secondAttribute="trailing" id="Ofv-ZD-JAl"/>
+                            <constraint firstItem="ZIa-XZ-0R9" firstAttribute="top" secondItem="qbz-3O-by7" secondAttribute="bottom" constant="100" id="UBP-bW-HPy"/>
                             <constraint firstAttribute="bottom" secondItem="ZIa-XZ-0R9" secondAttribute="bottom" id="YWV-v0-7zz"/>
+                            <constraint firstItem="qbz-3O-by7" firstAttribute="leading" secondItem="cVX-sl-7Ye" secondAttribute="leading" id="xzg-eH-e94"/>
                         </constraints>
                     </view>
                     <blurEffect style="extraLight"/>
@@ -53,6 +68,9 @@
                 <constraint firstItem="yTK-bx-GkE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="nUS-bh-frw"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="scrollView" destination="qbz-3O-by7" id="zMK-Hh-WUO"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="111.83035714285714"/>
         </view>
     </objects>
