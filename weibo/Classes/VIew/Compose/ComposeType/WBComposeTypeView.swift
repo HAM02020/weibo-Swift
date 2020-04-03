@@ -80,7 +80,7 @@ private extension WBComposeTypeView {
     func addButtons(v:UIView,index:Int){
         let count = 6
         
-        for i in index...(index + count) {
+        for i in index...(index + count - 1) {
             
             if index >= buttonInfo.count {
                 break
@@ -94,6 +94,20 @@ private extension WBComposeTypeView {
             let btn = WBComposeTypeButton.composeTypeButton(imageName: imageName, title: title)
             
             v.addSubview(btn)
+        }
+        
+        //按钮布局
+        
+        //准备常量
+        let btnSize = CGSize(width: 100, height: 100)
+        let margin = (v.bounds.width - 3 * btnSize.width)/4
+        for (i,btn) in v.subviews.enumerated() {
+            print("iiiii = \(i)")
+            let y :CGFloat = (i > 2) ? (v.bounds.height - btnSize.height) : 0
+            let col = i % 3
+            let x = CGFloat(col+1) * margin + CGFloat(col) * btnSize.width
+            
+            btn.frame = CGRect(x: x, y: y, width: btnSize.width, height: btnSize.height)
         }
     }
 }
