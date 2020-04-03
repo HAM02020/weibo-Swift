@@ -13,7 +13,7 @@ class WBComposeTypeView: UIView {
 
     @IBOutlet weak var scrollView: UIScrollView!
     
-    private let buttonInfo :[[String:Any]] = [["imageName":"compose_message","title":"文字"],
+    private let buttonInfo :[[String:String]] = [["imageName":"compose_message","title":"文字"],
                                             ["imageName":"compose_message","title":"照片/视频"],
                                             ["imageName":"compose_message","title":"长微博"],
                                             ["imageName":"compose_message","title":"签到"],
@@ -30,6 +30,7 @@ class WBComposeTypeView: UIView {
         let nib = UINib(nibName: "WBComposeTypeView", bundle: nil)
         let v = nib.instantiate(withOwner: nil, options: nil)[0] as! WBComposeTypeView
         v.frame = UIScreen.main.bounds
+        v.setupUI()
         return v
     }
     
@@ -42,9 +43,6 @@ class WBComposeTypeView: UIView {
         vc.view.addSubview(self)
     }
     
-    override func awakeFromNib() {
-        setupUI()
-    }
     
     //MARK:监听方法
     @objc private func clickButton() {
@@ -61,13 +59,41 @@ class WBComposeTypeView: UIView {
 
 private extension WBComposeTypeView {
     func setupUI() {
-        //创建类型按钮
-        let btn = WBComposeTypeButton.composeTypeButton(imageName: "compose_message", title: "试一试")
         
-        btn.center = center
-        addSubview(btn)
+        //0. 强行更新布局
+        layoutIfNeeded()
         
-//        添加监听方法
-        btn.addTarget(self, action: #selector(clickButton), for: .touchUpInside)
+        //1. 向scrollView添加视图
+        let rect = scrollView.bounds
+        let v = UIView(frame: rect)
+        //2. 向视图添加按钮
+        addButtons(v: v, index: 0)
+        
+        //3. 将视图添加到scrollView
+        scrollView.addSubview(v)
+        
+    }
+    /// 向v 中添加按钮，索引从index开始
+    /// - Parameters:
+    ///   - v:
+    ///   - index:开始位置
+    func addButtons(v:UIView,index:Int){
+        let count = 6
+        
+        for i in index...(index + count) {
+            
+            if index >= buttonInfo.count {
+                break
+            }
+            let dict = buttonInfo[i]
+            guard let imageName = dict["imageName"],
+                let title = dict["title"] else {
+                    continue
+            }
+            
+            let btn = WBComposeTypeButton.composeTypeButton(imageName: imageName, title: title)
+            
+            v.addSubview(btn)
+        }
     }
 }
