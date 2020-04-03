@@ -10,6 +10,10 @@ import UIKit
 
 ///刷新视图
 class MGRefreshView: UIView {
+    
+    ///刷新状态
+    var refreshState: MGRefreshState = .Normal
+    
     ///提示图标
     @IBOutlet weak var tipIcon: UIImageView!
     ///提示语

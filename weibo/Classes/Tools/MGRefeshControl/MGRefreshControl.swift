@@ -8,14 +8,26 @@
 
 import UIKit
 
+///刷新状态切换的临界点
+private let MGRefreshOffset :CGFloat = 200
+
+/// 刷新状态
+enum MGRefreshState {
+    case Normal//普通状态
+    case Pulling//超过零界点
+    case WillRefresh//超过零界点并且放手
+}
+
 class MGRefreshControl: UIControl {
     
     //tableview 和 UICollentionview 的父类
     private weak var scrollView : UIScrollView?
     
     private lazy var refreshView = MGRefreshView.refreshView()
-    //这个是存代码的
     
+    
+    
+    //这个是存代码的
     init() {
         super.init(frame: CGRect())
         setupUI()
@@ -69,8 +81,22 @@ class MGRefreshControl: UIControl {
         //初始高度 应该是 0 越f往下拉越小 所以要取反
         let height = -(sv.contentInset.top + sv.contentOffset.y)
         
+        if height < 0 {
+            return
+        }
         //可以根据高度设置刷新控件的frame
         self.frame = CGRect(x: 0, y: -height, width: sv.bounds.width, height: height)
+        
+        //判断零界点
+        if sv.isDragging {
+            if height > MGRefreshOffset {
+                print("放手刷新")
+            }else {
+                print("再使劲。。。")
+            }
+        }else {
+            
+        }
     }
     
     override func removeFromSuperview() {
