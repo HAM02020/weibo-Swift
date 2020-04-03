@@ -18,39 +18,39 @@ class MGRefreshView: UIView {
             switch refreshState {
             case .Normal:
                 //回复状态
-                tipIcon.isHidden = false
-                indicator.stopAnimating()
+                tipIcon?.isHidden = false
+                indicator?.stopAnimating()
                 
-                tipLabel.text = "继续使劲拉..."
+                tipLabel?.text = "继续使劲拉..."
                 //回复箭头初始状态
                 UIView.animate(withDuration: 0.25) {
-                    self.tipIcon.transform = CGAffineTransform.identity
+                    self.tipIcon?.transform = CGAffineTransform.identity
                 }
                 
             case .Pulling:
-                tipLabel.text = "放手刷新..."
+                tipLabel?.text = "放手刷新..."
                 
                 UIView.animate(withDuration: 0.25) {
-                    self.tipIcon.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi + 0.001)) ///减去一点点 实现同方向 而不是顺时针旋转 就近原则
+                    self.tipIcon?.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi + 0.001)) ///减去一点点 实现同方向 而不是顺时针旋转 就近原则
                 }
                 
                 
             case .WillRefresh:
-                tipLabel.text = "正在刷新中..."
-                tipIcon.isHidden = true
+                tipLabel?.text = "正在刷新中..."
+                tipIcon?.isHidden = true
                 
                 //显示菊花
-                indicator.startAnimating()
+                indicator?.startAnimating()
             }
         }
     }
     
     ///提示图标
-    @IBOutlet weak var tipIcon: UIImageView!
+    @IBOutlet weak var tipIcon: UIImageView?
     ///提示语
-    @IBOutlet weak var tipLabel: UILabel!
+    @IBOutlet weak var tipLabel: UILabel?
     ///指示器
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView?
     
     class func refreshView() -> MGRefreshView {
         let nib = UINib(nibName: "MGNewView", bundle: nil)
