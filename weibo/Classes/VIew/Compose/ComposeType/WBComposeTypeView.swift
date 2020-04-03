@@ -11,13 +11,11 @@ import UIKit
 /// 撰写微博 类型视图
 class WBComposeTypeView: UIView {
 
-    override init(frame: CGRect) {
-        super.init(frame:UIScreen.main.bounds)
-        backgroundColor = UIColor.red
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    class func composeTypeView() -> WBComposeTypeView {
+        let nib = UINib(nibName: "WBComposeTypeView", bundle: nil)
+        let v = nib.instantiate(withOwner: nil, options: nil)[0] as! WBComposeTypeView
+        v.frame = UIScreen.main.bounds
+        return v
     }
     
     ///显示当前视图

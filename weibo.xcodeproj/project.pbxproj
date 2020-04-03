@@ -27,6 +27,7 @@
 		01357FE72431BA120042D8F5 /* WBNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01357FE62431BA120042D8F5 /* WBNewFeatureView.swift */; };
 		01357FE92431C55E0042D8F5 /* WBWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01357FE82431C55D0042D8F5 /* WBWelcomeView.xib */; };
 		0153DACF2437888E002209E0 /* WBComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0153DACE2437888E002209E0 /* WBComposeTypeView.swift */; };
+		0153DAD124378C0F002209E0 /* WBComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0153DAD024378C0F002209E0 /* WBComposeTypeView.xib */; };
 		015F40052437084300CA0E4C /* MGRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015F40042437084300CA0E4C /* MGRefreshView.xib */; };
 		015F400724370A9800CA0E4C /* MGRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015F400624370A9800CA0E4C /* MGRefreshView.swift */; };
 		015F400924376A5400CA0E4C /* MGHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015F400824376A5400CA0E4C /* MGHumanRefreshView.xib */; };
@@ -78,6 +79,7 @@
 		01357FE62431BA120042D8F5 /* WBNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNewFeatureView.swift; sourceTree = "<group>"; };
 		01357FE82431C55D0042D8F5 /* WBWelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBWelcomeView.xib; sourceTree = "<group>"; };
 		0153DACE2437888E002209E0 /* WBComposeTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBComposeTypeView.swift; sourceTree = "<group>"; };
+		0153DAD024378C0F002209E0 /* WBComposeTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBComposeTypeView.xib; sourceTree = "<group>"; };
 		015F40042437084300CA0E4C /* MGRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGRefreshView.xib; sourceTree = "<group>"; };
 		015F400624370A9800CA0E4C /* MGRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGRefreshView.swift; sourceTree = "<group>"; };
 		015F400824376A5400CA0E4C /* MGHumanRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGHumanRefreshView.xib; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				0153DACE2437888E002209E0 /* WBComposeTypeView.swift */,
+				0153DAD024378C0F002209E0 /* WBComposeTypeView.xib */,
 			);
 			path = ComposeType;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				0106A0282431D9D1008D60F8 /* WBNewFeatureView.xib in Resources */,
 				01161EA2243446F40092541C /* WBTestView.xib in Resources */,
 				01357FE92431C55E0042D8F5 /* WBWelcomeView.xib in Resources */,
+				0153DAD124378C0F002209E0 /* WBComposeTypeView.xib in Resources */,
 				01F9C9B0242E221500118B4E /* start.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
