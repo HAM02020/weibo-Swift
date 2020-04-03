@@ -38,8 +38,6 @@ class WBHomeViewController: WBBaseViewController {
             }
 
         }
-        //结束刷新
-        refreshControl?.endRefreshing()
 
         
     }

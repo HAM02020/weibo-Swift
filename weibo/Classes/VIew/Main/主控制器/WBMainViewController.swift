@@ -143,11 +143,16 @@ extension WBMainViewController: UITabBarControllerDelegate {
             let nav = viewControllers?[0] as! UINavigationController
             let vc = nav.viewControllers[0] as! WBHomeViewController
             //滚动到顶部
-            vc.tableView?.setContentOffset(CGPoint(x: 0, y: -88), animated: true)
+            vc.refreshControl?.refreshView.refreshState = .Pulling
+            vc.tableView?.setContentOffset(CGPoint(x: 0, y: -MGRefreshOffset-88), animated: true)
             
             //4> 刷新数据
+            //vc.refreshControl?.beginRefreshing()
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
                 vc.loadData()
+                //vc.refreshControl?.endRefreshing()
+                //回复表格高度
+                //vc.tableView?.setContentOffset(CGPoint(x: 0, y: MGRefreshOffset+88), animated: true)
                 self.tabBar.items?[0].badgeValue = nil
                 UIApplication.shared.applicationIconBadgeNumber = 0
             }

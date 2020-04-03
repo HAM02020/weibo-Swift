@@ -17,6 +17,10 @@ class MGRefreshView: UIView {
         didSet {
             switch refreshState {
             case .Normal:
+                //回复状态
+                tipIcon.isHidden = false
+                indicator.stopAnimating()
+                
                 tipLabel.text = "继续使劲拉..."
                 //回复箭头初始状态
                 UIView.animate(withDuration: 0.25) {

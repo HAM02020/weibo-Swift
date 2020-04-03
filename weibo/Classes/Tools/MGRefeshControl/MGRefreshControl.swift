@@ -9,7 +9,7 @@
 import UIKit
 
 ///刷新状态切换的临界点
-private let MGRefreshOffset :CGFloat = 100
+let MGRefreshOffset :CGFloat = 100
 /// 刷新状态
 enum MGRefreshState {
     case Normal//普通状态
@@ -22,7 +22,7 @@ class MGRefreshControl: UIControl {
     //tableview 和 UICollentionview 的父类
     private weak var scrollView : UIScrollView?
     
-    private lazy var refreshView = MGRefreshView.refreshView()
+    lazy var refreshView = MGRefreshView.refreshView()
     
     
     
@@ -47,8 +47,14 @@ class MGRefreshControl: UIControl {
         guard let sv = scrollView else {
             return
         }
+        //  判断是否正在刷新
+        if refreshView.refreshState == .WillRefresh {
+            return
+        }
+        
         //设置刷新视图的状态
         refreshView.refreshState = .WillRefresh
+        
         
         //   调整表格间距
         var inset = sv.contentInset
@@ -58,6 +64,20 @@ class MGRefreshControl: UIControl {
     ///结束刷新
     func endRefreshing() {
         print("结束刷新")
+        guard let sv = scrollView else {
+            return
+        }
+        
+        if refreshView.refreshState != .WillRefresh {
+            return
+        }
+        
+        //回复刷新视图的状态
+        refreshView.refreshState = .Normal
+        //恢复表格视图的conteninsert
+        var insert = sv.contentInset
+        insert.top -= MGRefreshOffset
+        sv.contentInset = insert
     }
 
     /*
@@ -111,13 +131,10 @@ class MGRefreshControl: UIControl {
             //放手 - 是否超过零界点
             if refreshView.refreshState == .Pulling {
                 print("准备开始刷新")
-                refreshView.refreshState = .WillRefresh
+                beginRefreshing()
                 
-                //让整个刷新视图 显示出来 不缩进去
-                //解决方法：修改表格的contenInset
-                var inset = sv.contentInset
-                inset.top += MGRefreshOffset
-                sv.contentInset = inset
+                //发送刷新数据的事件
+                sendActions(for: .valueChanged)
                 
             }
             
