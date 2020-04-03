@@ -13,6 +13,7 @@ class MGRefreshControl: UIControl {
     //tableview 和 UICollentionview 的父类
     private weak var scrollView : UIScrollView?
     
+    private lazy var refreshView = MGRefreshView.refreshView()
     //这个是存代码的
     
     init() {
@@ -85,6 +86,19 @@ extension MGRefreshControl {
     
     func setupUI() {
         backgroundColor = UIColor.red
+        //超出边界不显示
+        clipsToBounds = true
         
+        //添加刷新视图
+        addSubview(refreshView)
+        
+        //自动布局
+        refreshView.translatesAutoresizingMaskIntoConstraints = false
+        
+        addConstraint(NSLayoutConstraint(item: refreshView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0))
+        addConstraint(NSLayoutConstraint(item: refreshView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0))
+        
+        addConstraint(NSLayoutConstraint(item: refreshView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: refreshView.bounds.width))
+        addConstraint(NSLayoutConstraint(item: refreshView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: refreshView.bounds.height))
     }
 }
