@@ -44,6 +44,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="indicator" destination="S1d-w3-ZCD" id="A2u-Kq-XNK"/>
+                <outlet property="tipIcon" destination="Sam-qA-02S" id="bvb-Bj-lPo"/>
                 <outlet property="tipLabel" destination="PmF-Ma-Omg" id="Zm6-7P-DFl"/>
             </connections>
             <point key="canvasLocation" x="39" y="-109"/>

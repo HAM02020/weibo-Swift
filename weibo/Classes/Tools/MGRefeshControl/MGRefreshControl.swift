@@ -9,8 +9,7 @@
 import UIKit
 
 ///刷新状态切换的临界点
-private let MGRefreshOffset :CGFloat = 200
-
+private let MGRefreshOffset :CGFloat = 100
 /// 刷新状态
 enum MGRefreshState {
     case Normal//普通状态
@@ -101,6 +100,13 @@ class MGRefreshControl: UIControl {
             if refreshView.refreshState == .Pulling {
                 print("准备开始刷新")
                 refreshView.refreshState = .WillRefresh
+                
+                //让整个刷新视图 显示出来 不缩进去
+                //解决方法：修改表格的contenInset
+                var inset = sv.contentInset
+                inset.top += MGRefreshOffset
+                sv.contentInset = inset
+                
             }
             
         }
@@ -120,7 +126,7 @@ extension MGRefreshControl {
     func setupUI() {
         backgroundColor = superview?.backgroundColor
         //超出边界不显示
-        clipsToBounds = true
+        //clipsToBounds = true
         
         //添加刷新视图
         addSubview(refreshView)
