@@ -26,6 +26,7 @@
 		01357FE52431B9D10042D8F5 /* WBWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01357FE42431B9D10042D8F5 /* WBWelcomeView.swift */; };
 		01357FE72431BA120042D8F5 /* WBNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01357FE62431BA120042D8F5 /* WBNewFeatureView.swift */; };
 		01357FE92431C55E0042D8F5 /* WBWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01357FE82431C55D0042D8F5 /* WBWelcomeView.xib */; };
+		0153DACF2437888E002209E0 /* WBComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0153DACE2437888E002209E0 /* WBComposeTypeView.swift */; };
 		015F40052437084300CA0E4C /* MGRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015F40042437084300CA0E4C /* MGRefreshView.xib */; };
 		015F400724370A9800CA0E4C /* MGRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015F400624370A9800CA0E4C /* MGRefreshView.swift */; };
 		015F400924376A5400CA0E4C /* MGHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015F400824376A5400CA0E4C /* MGHumanRefreshView.xib */; };
@@ -76,6 +77,7 @@
 		01357FE42431B9D10042D8F5 /* WBWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBWelcomeView.swift; sourceTree = "<group>"; };
 		01357FE62431BA120042D8F5 /* WBNewFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNewFeatureView.swift; sourceTree = "<group>"; };
 		01357FE82431C55D0042D8F5 /* WBWelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBWelcomeView.xib; sourceTree = "<group>"; };
+		0153DACE2437888E002209E0 /* WBComposeTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBComposeTypeView.swift; sourceTree = "<group>"; };
 		015F40042437084300CA0E4C /* MGRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGRefreshView.xib; sourceTree = "<group>"; };
 		015F400624370A9800CA0E4C /* MGRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGRefreshView.swift; sourceTree = "<group>"; };
 		015F400824376A5400CA0E4C /* MGHumanRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGHumanRefreshView.xib; sourceTree = "<group>"; };
@@ -183,6 +185,22 @@
 			path = NewFeature;
 			sourceTree = "<group>";
 		};
+		0153DACC24378733002209E0 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				0153DACD24378838002209E0 /* ComposeType */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		0153DACD24378838002209E0 /* ComposeType */ = {
+			isa = PBXGroup;
+			children = (
+				0153DACE2437888E002209E0 /* WBComposeTypeView.swift */,
+			);
+			path = ComposeType;
+			sourceTree = "<group>";
+		};
 		01628E7D242BD138004A313B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +246,7 @@
 		01628E81242BD138004A313B /* VIew */ = {
 			isa = PBXGroup;
 			children = (
+				0153DACC24378733002209E0 /* Compose */,
 				01628E88242BD138004A313B /* Main */,
 				017B2FE5242E5930003286E5 /* Visitor */,
 				01628E82242BD138004A313B /* Home */,
@@ -529,6 +548,7 @@
 				01357FE52431B9D10042D8F5 /* WBWelcomeView.swift in Sources */,
 				01628E96242C5443004A313B /* WBMainViewController.swift in Sources */,
 				0184CBCE24363FA2002BED2C /* MGRefreshControl.swift in Sources */,
+				0153DACF2437888E002209E0 /* WBComposeTypeView.swift in Sources */,
 				01161E9624337E410092541C /* WBStatusViewModel.swift in Sources */,
 				01D19B94242FB9C800AE4C46 /* WBStatus.swift in Sources */,
 				012B9CC6242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift in Sources */,
