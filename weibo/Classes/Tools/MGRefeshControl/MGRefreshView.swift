@@ -53,7 +53,7 @@ class MGRefreshView: UIView {
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     class func refreshView() -> MGRefreshView {
-        let nib = UINib(nibName: "MGRefreshView", bundle: nil)
+        let nib = UINib(nibName: "MGNewView", bundle: nil)
         
         return nib.instantiate(withOwner: nil, options: nil)[0] as! MGRefreshView
     }

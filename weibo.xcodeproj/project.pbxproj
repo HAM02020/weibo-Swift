@@ -28,6 +28,9 @@
 		01357FE92431C55E0042D8F5 /* WBWelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01357FE82431C55D0042D8F5 /* WBWelcomeView.xib */; };
 		015F40052437084300CA0E4C /* MGRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015F40042437084300CA0E4C /* MGRefreshView.xib */; };
 		015F400724370A9800CA0E4C /* MGRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015F400624370A9800CA0E4C /* MGRefreshView.swift */; };
+		015F400924376A5400CA0E4C /* MGHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015F400824376A5400CA0E4C /* MGHumanRefreshView.xib */; };
+		015F400B243772EC00CA0E4C /* MGNewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015F400A243772EC00CA0E4C /* MGNewView.xib */; };
+		015F400D243774BB00CA0E4C /* MGNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015F400C243774BB00CA0E4C /* MGNewView.swift */; };
 		01628E8C242BD138004A313B /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E83242BD138004A313B /* WBHomeViewController.swift */; };
 		01628E8D242BD138004A313B /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E85242BD138004A313B /* WBDiscoverViewController.swift */; };
 		01628E8E242BD138004A313B /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E87242BD138004A313B /* WBProfileViewController.swift */; };
@@ -75,6 +78,9 @@
 		01357FE82431C55D0042D8F5 /* WBWelcomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBWelcomeView.xib; sourceTree = "<group>"; };
 		015F40042437084300CA0E4C /* MGRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGRefreshView.xib; sourceTree = "<group>"; };
 		015F400624370A9800CA0E4C /* MGRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGRefreshView.swift; sourceTree = "<group>"; };
+		015F400824376A5400CA0E4C /* MGHumanRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGHumanRefreshView.xib; sourceTree = "<group>"; };
+		015F400A243772EC00CA0E4C /* MGNewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGNewView.xib; sourceTree = "<group>"; };
+		015F400C243774BB00CA0E4C /* MGNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGNewView.swift; sourceTree = "<group>"; };
 		01628E83242BD138004A313B /* WBHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
 		01628E85242BD138004A313B /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		01628E87242BD138004A313B /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
@@ -303,6 +309,9 @@
 				0184CBCD24363FA2002BED2C /* MGRefreshControl.swift */,
 				015F40042437084300CA0E4C /* MGRefreshView.xib */,
 				015F400624370A9800CA0E4C /* MGRefreshView.swift */,
+				015F400824376A5400CA0E4C /* MGHumanRefreshView.xib */,
+				015F400A243772EC00CA0E4C /* MGNewView.xib */,
+				015F400C243774BB00CA0E4C /* MGNewView.swift */,
 			);
 			path = MGRefeshControl;
 			sourceTree = "<group>";
@@ -444,6 +453,8 @@
 			files = (
 				015F40052437084300CA0E4C /* MGRefreshView.xib in Resources */,
 				01161EA42434F11E0092541C /* WBStatusRetweetedCell.xib in Resources */,
+				015F400B243772EC00CA0E4C /* MGNewView.xib in Resources */,
+				015F400924376A5400CA0E4C /* MGHumanRefreshView.xib in Resources */,
 				017B2FE9242F26FF003286E5 /* main.json in Resources */,
 				01161E8E243262ED0092541C /* WBStatusNormalCell.xib in Resources */,
 				01FCB121242BABBB00E1524F /* Assets.xcassets in Resources */,
@@ -533,6 +544,7 @@
 				01D19B92242F9A9E00AE4C46 /* WBNetworkManager+Extension.swift in Sources */,
 				015F400724370A9800CA0E4C /* MGRefreshView.swift in Sources */,
 				01628E8D242BD138004A313B /* WBDiscoverViewController.swift in Sources */,
+				015F400D243774BB00CA0E4C /* MGNewView.swift in Sources */,
 				01D19B9D2430970200AE4C46 /* WBOAuthViewController.swift in Sources */,
 				01D19BA02430D6B200AE4C46 /* WBUserAccount.swift in Sources */,
 				01357FE22431AC860042D8F5 /* WBTittleButton.swift in Sources */,
