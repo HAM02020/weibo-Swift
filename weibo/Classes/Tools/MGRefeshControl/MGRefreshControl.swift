@@ -72,7 +72,7 @@ class MGRefreshControl: UIControl {
     // -通知中心 如果不释放 什么也不会发生，但是会有内存泄漏 有多次注册的的可能
     //- KVO 如果不释放 会崩溃！
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        print(scrollView?.contentOffset)
+        //print(scrollView?.contentOffset)
         
         guard let sv = scrollView else {
             return
@@ -89,12 +89,19 @@ class MGRefreshControl: UIControl {
         
         //判断零界点
         if sv.isDragging {
-            if height > MGRefreshOffset {
+            if height > MGRefreshOffset && refreshView.refreshState == .Normal {
                 print("放手刷新")
-            }else {
-                print("再使劲。。。")
+                refreshView.refreshState = .Pulling
+            }else if height < MGRefreshOffset && refreshView.refreshState == .Pulling {
+                print("继续使劲。。。")
+                refreshView.refreshState = .Normal
             }
         }else {
+            //放手 - 是否超过零界点
+            if refreshView.refreshState == .Pulling {
+                print("准备开始刷新")
+                refreshView.refreshState = .WillRefresh
+            }
             
         }
     }
