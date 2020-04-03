@@ -12,7 +12,19 @@ import UIKit
 class MGRefreshView: UIView {
     
     ///刷新状态
-    var refreshState: MGRefreshState = .Normal
+    var refreshState: MGRefreshState = .Normal {
+        didSet {
+            switch refreshState {
+            case .Normal:
+                tipLabel.text = "继续使劲拉..."
+            case .Pulling:
+                tipLabel.text = "放手刷新..."
+                
+            case .WillRefresh:
+                tipLabel.text = "正在刷新中..."
+            }
+        }
+    }
     
     ///提示图标
     @IBOutlet weak var tipIcon: UIImageView!

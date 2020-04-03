@@ -118,7 +118,7 @@ class MGRefreshControl: UIControl {
 extension MGRefreshControl {
     
     func setupUI() {
-        backgroundColor = UIColor.red
+        backgroundColor = superview?.backgroundColor
         //超出边界不显示
         clipsToBounds = true
         
