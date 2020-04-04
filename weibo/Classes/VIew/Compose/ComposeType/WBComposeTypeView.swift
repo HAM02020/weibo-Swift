@@ -12,13 +12,19 @@ import UIKit
 class WBComposeTypeView: UIView {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    ///关闭按钮的x
+    @IBOutlet weak var closeButtonCenterX: NSLayoutConstraint!
+    ///返回按钮的x
+    @IBOutlet weak var returnButtonCenterX: NSLayoutConstraint!
     
-    private let buttonInfo :[[String:String]] = [["imageName":"compose_message","title":"文字"],
+    @IBOutlet weak var returnButton: UIButton!
+    
+    private let buttonInfo = [["imageName":"compose_message","title":"文字"],
                                             ["imageName":"compose_message","title":"照片/视频"],
                                             ["imageName":"compose_message","title":"长微博"],
                                             ["imageName":"compose_message","title":"签到"],
                                             ["imageName":"compose_message","title":"点评"],
-                                            ["imageName":"compose_message","title":"更多"],
+                                            ["imageName":"compose_message","title":"更多","action":"clickMore"],
                                             ["imageName":"compose_message","title":"好友圈"],
                                             ["imageName":"compose_message","title":"微博相机"],
                                             ["imageName":"compose_message","title":"音乐"],
@@ -52,8 +58,41 @@ class WBComposeTypeView: UIView {
     @IBAction func close() {
         removeFromSuperview()
     }
+    ///点击更多按钮 翻页
+    @objc private func clickMore(){
+        print(#function)
+        //将scrollView滚动到第二页
+        scrollView.setContentOffset(CGPoint(x: scrollView.bounds.width, y: 0), animated: true)
+        
+        //处理底部按钮 让两个按钮分开
+        returnButton.isHidden = false
+        let margin = scrollView.bounds.width/6
+        closeButtonCenterX.constant += margin
+        returnButtonCenterX.constant -= margin
+        UIView.animate(withDuration: 0.25) {
+            self.layoutIfNeeded()
+        }
+        
+    }
     
-    
+    @IBAction func clickReturn() {
+        
+        //将scrollview滚动到第一页
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        
+        closeButtonCenterX.constant = 0
+        returnButtonCenterX.constant = 0
+        
+        //动画完成后再隐藏按钮
+        UIView.animate(withDuration: 0.25, animations: {
+            self.layoutIfNeeded()
+            //渐隐
+            self.returnButton.alpha = 0
+        }) { (_) in
+            self.returnButton.isHidden = true
+            self.returnButton.alpha = 1
+        }
+    }
 }
 
 
@@ -104,6 +143,11 @@ private extension WBComposeTypeView {
             let btn = WBComposeTypeButton.composeTypeButton(imageName: imageName, title: title)
             
             v.addSubview(btn)
+            
+            //3.添加监听方法
+            if let action = dict["action"] {
+                btn.addTarget(self, action: Selector(action), for: .touchUpInside)
+            }
         }
         
         //按钮布局

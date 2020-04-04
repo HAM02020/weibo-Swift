@@ -23,18 +23,27 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIa-XZ-0R9">
                                 <rect key="frame" x="0.0" y="832" width="414" height="64"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hkv-Qa-j5q">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hkv-Qa-j5q" userLabel="关闭">
                                         <rect key="frame" x="191" y="16" width="32" height="32"/>
                                         <state key="normal" image="x"/>
                                         <connections>
                                             <action selector="close" destination="iN0-l3-epB" eventType="touchUpInside" id="bRq-7q-fQ6"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swA-68-b1W" userLabel="返回上一页">
+                                        <rect key="frame" x="190" y="16" width="34" height="32"/>
+                                        <state key="normal" image="compose_back_button"/>
+                                        <connections>
+                                            <action selector="clickReturn" destination="iN0-l3-epB" eventType="touchUpInside" id="SgO-3I-53F"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="swA-68-b1W" firstAttribute="centerX" secondItem="ZIa-XZ-0R9" secondAttribute="centerX" id="NU2-m9-FJ1"/>
                                     <constraint firstItem="Hkv-Qa-j5q" firstAttribute="centerY" secondItem="ZIa-XZ-0R9" secondAttribute="centerY" id="axB-us-Y9B"/>
                                     <constraint firstItem="Hkv-Qa-j5q" firstAttribute="centerX" secondItem="ZIa-XZ-0R9" secondAttribute="centerX" id="fO7-yw-lJL"/>
+                                    <constraint firstItem="swA-68-b1W" firstAttribute="centerY" secondItem="ZIa-XZ-0R9" secondAttribute="centerY" id="mrK-Fk-CiZ"/>
                                     <constraint firstAttribute="height" constant="64" id="pIO-cd-xyn"/>
                                 </constraints>
                             </view>
@@ -69,12 +78,16 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="closeButtonCenterX" destination="fO7-yw-lJL" id="sef-ob-8aR"/>
+                <outlet property="returnButton" destination="swA-68-b1W" id="eH2-Uq-QXn"/>
+                <outlet property="returnButtonCenterX" destination="NU2-m9-FJ1" id="E4w-7d-xgI"/>
                 <outlet property="scrollView" destination="qbz-3O-by7" id="zMK-Hh-WUO"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="111.83035714285714"/>
         </view>
     </objects>
     <resources>
+        <image name="compose_back_button" width="34" height="32"/>
         <image name="x" width="32" height="32"/>
     </resources>
 </document>
