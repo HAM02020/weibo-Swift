@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import pop
 /// 撰写微博 类型视图
 class WBComposeTypeView: UIView {
 
@@ -47,6 +47,9 @@ class WBComposeTypeView: UIView {
             return
         }
         vc.view.addSubview(self)
+        
+        ///开始动画
+        showCurrentView()
     }
     
     
@@ -92,6 +95,27 @@ class WBComposeTypeView: UIView {
             self.returnButton.isHidden = true
             self.returnButton.alpha = 1
         }
+    }
+}
+
+///MARK: - 动画方法
+private extension WBComposeTypeView {
+    ///动画显示当前视图
+    func showCurrentView() {
+        
+        //1> 创建动画
+        
+        let anim : POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        //透明度从0到1
+        anim.fromValue = 0
+        anim.toValue = 1
+        anim.duration = 0.5 //时间
+        
+        //2> 添加到t视图
+        pop_add(anim, forKey: nil)
+        
+        
+        
     }
 }
 
