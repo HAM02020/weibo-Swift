@@ -42,10 +42,10 @@
                                 <rect key="frame" x="0.0" y="389" width="414" height="306"/>
                                 <color key="backgroundColor" red="1" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="fyj-Et-6FG"/>
+                                    <constraint firstAttribute="height" constant="224" id="fyj-Et-6FG"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="h9I-Tv-4Ay"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="HRm-I0-iZ6"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="MGC-sd-7kY"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="qSo-Hi-hVR"/>
                             </scrollView>
                         </subviews>
                         <constraints>

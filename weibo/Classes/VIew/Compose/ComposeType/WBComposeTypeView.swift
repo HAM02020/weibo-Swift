@@ -65,13 +65,23 @@ private extension WBComposeTypeView {
         
         //1. 向scrollView添加视图
         let rect = scrollView.bounds
-        let v = UIView(frame: rect)
-        //2. 向视图添加按钮
-        addButtons(v: v, index: 0)
+        let width = scrollView.bounds.width
+        for i in 0..<2 {
+            let v = UIView(frame: rect.offsetBy(dx: CGFloat(i) * width, dy: 0))
+            //2. 向视图添加按钮
+            addButtons(v: v, index: i * 6)
+            //3. 将视图添加到scrollView
+            scrollView.addSubview(v)
+        }
         
-        //3. 将视图添加到scrollView
-        scrollView.addSubview(v)
-        
+        //4设置scrollview
+        scrollView.contentSize = CGSize(width: 2 * width, height: 0)
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.bounces = false
+        //禁用滚动
+        scrollView.isScrollEnabled = false
+    
     }
     /// 向v 中添加按钮，索引从index开始
     /// - Parameters:
@@ -82,7 +92,7 @@ private extension WBComposeTypeView {
         
         for i in index...(index + count - 1) {
             
-            if index >= buttonInfo.count {
+            if i >= buttonInfo.count {
                 break
             }
             let dict = buttonInfo[i]
@@ -102,7 +112,6 @@ private extension WBComposeTypeView {
         let btnSize = CGSize(width: 100, height: 100)
         let margin = (v.bounds.width - 3 * btnSize.width)/4
         for (i,btn) in v.subviews.enumerated() {
-            print("iiiii = \(i)")
             let y :CGFloat = (i > 2) ? (v.bounds.height - btnSize.height) : 0
             let col = i % 3
             let x = CGFloat(col+1) * margin + CGFloat(col) * btnSize.width
