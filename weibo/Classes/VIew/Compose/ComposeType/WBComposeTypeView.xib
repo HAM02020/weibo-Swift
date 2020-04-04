@@ -47,7 +47,7 @@
                                     <constraint firstAttribute="height" constant="64" id="pIO-cd-xyn"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qbz-3O-by7">
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qbz-3O-by7">
                                 <rect key="frame" x="0.0" y="389" width="414" height="306"/>
                                 <color key="backgroundColor" red="1" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>

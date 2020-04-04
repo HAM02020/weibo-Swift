@@ -50,6 +50,8 @@ class WBComposeTypeView: UIView {
         
         ///开始动画
         showCurrentView()
+        ///显示按钮的动画
+        showButtons()
     }
     
     
@@ -109,13 +111,38 @@ private extension WBComposeTypeView {
         //透明度从0到1
         anim.fromValue = 0
         anim.toValue = 1
-        anim.duration = 0.5 //时间
+        anim.duration = 0.2 //时间
         
         //2> 添加到t视图
         pop_add(anim, forKey: nil)
+  
+    }
+    ///弹力显示所有按钮
+    func showButtons() {
         
+        //获取 scrollview的子视图的第 0 个视图
+        let v = scrollView.subviews[0]
         
-        
+        //2.  遍历v中的所有按钮
+        for (i,btn) in v.subviews.enumerated() {
+            
+            //1> 创建动画
+            let anim : POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+            
+            //2> 设置动画属性
+            anim.fromValue = btn.center.y + 300
+            anim.toValue = btn.center.y
+            //弹力系数 0-20
+            anim.springBounciness = 8
+            //弹力速度 0-20
+            anim.springSpeed = 8
+            
+            //设置动画启动时间
+            anim.beginTime = CACurrentMediaTime() + CFTimeInterval(i) * 0.025
+            
+            //3.添加动画
+            btn.pop_add(anim, forKey: nil)
+        }
     }
 }
 
