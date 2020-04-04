@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01031AC32438D6D00026B334 /* HMEmoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 01031AC22438D6D00026B334 /* HMEmoticon.bundle */; };
+		01031AC62438DE8F0026B334 /* MGEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01031AC52438DE8F0026B334 /* MGEmoticonManager.swift */; };
+		01031AC82438E0BF0026B334 /* MGEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01031AC72438E0BF0026B334 /* MGEmoticon.swift */; };
+		01031ACA2438E19F0026B334 /* MGEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01031AC92438E19F0026B334 /* MGEmoticonPackage.swift */; };
 		0106A0282431D9D1008D60F8 /* WBNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0106A0272431D9D1008D60F8 /* WBNewFeatureView.xib */; };
 		01161E8C243262C90092541C /* WBStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01161E8B243262C90092541C /* WBStatusCell.swift */; };
 		01161E8E243262ED0092541C /* WBStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01161E8D243262ED0092541C /* WBStatusNormalCell.xib */; };
@@ -63,6 +67,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01031AC22438D6D00026B334 /* HMEmoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMEmoticon.bundle; sourceTree = "<group>"; };
+		01031AC52438DE8F0026B334 /* MGEmoticonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGEmoticonManager.swift; sourceTree = "<group>"; };
+		01031AC72438E0BF0026B334 /* MGEmoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGEmoticon.swift; sourceTree = "<group>"; };
+		01031AC92438E19F0026B334 /* MGEmoticonPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGEmoticonPackage.swift; sourceTree = "<group>"; };
 		0106A0272431D9D1008D60F8 /* WBNewFeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBNewFeatureView.xib; sourceTree = "<group>"; };
 		01161E8B243262C90092541C /* WBStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusCell.swift; sourceTree = "<group>"; };
 		01161E8D243262ED0092541C /* WBStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBStatusNormalCell.xib; sourceTree = "<group>"; };
@@ -135,6 +143,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01031AC12438D6A30026B334 /* Emoticon */ = {
+			isa = PBXGroup;
+			children = (
+				01031AC42438DE290026B334 /* Model */,
+				01031AC22438D6D00026B334 /* HMEmoticon.bundle */,
+				01031AC52438DE8F0026B334 /* MGEmoticonManager.swift */,
+			);
+			path = Emoticon;
+			sourceTree = "<group>";
+		};
+		01031AC42438DE290026B334 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				01031AC72438E0BF0026B334 /* MGEmoticon.swift */,
+				01031AC92438E19F0026B334 /* MGEmoticonPackage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		01161E8A243262990092541C /* StatusCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +266,7 @@
 		01628E7F242BD138004A313B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				01031AC12438D6A30026B334 /* Emoticon */,
 				0184CBCC24363F59002BED2C /* MGRefeshControl */,
 				01D19B8E242F8D7800AE4C46 /* Network */,
 				012B9CC7242D19390006AFDC /* reactor */,
@@ -487,6 +515,7 @@
 			files = (
 				015F40052437084300CA0E4C /* MGRefreshView.xib in Resources */,
 				01161EA42434F11E0092541C /* WBStatusRetweetedCell.xib in Resources */,
+				01031AC32438D6D00026B334 /* HMEmoticon.bundle in Resources */,
 				015F400B243772EC00CA0E4C /* MGNewView.xib in Resources */,
 				015F400924376A5400CA0E4C /* MGHumanRefreshView.xib in Resources */,
 				017B2FE9242F26FF003286E5 /* main.json in Resources */,
@@ -550,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01031AC82438E0BF0026B334 /* MGEmoticon.swift in Sources */,
 				01628EA0242CAA82004A313B /* WBDemoViewController.swift in Sources */,
 				0153DAD92438B7ED002209E0 /* String+Extensions.swift in Sources */,
 				0153DAD3243793A4002209E0 /* WBComposeTypeButton.swift in Sources */,
@@ -565,6 +595,7 @@
 				01161E9E2433BD460092541C /* WBStatusPicture.swift in Sources */,
 				01D19B96242FBBF500AE4C46 /* WBStatusListViewModel.swift in Sources */,
 				01357FE52431B9D10042D8F5 /* WBWelcomeView.swift in Sources */,
+				01031AC62438DE8F0026B334 /* MGEmoticonManager.swift in Sources */,
 				01628E96242C5443004A313B /* WBMainViewController.swift in Sources */,
 				0184CBCE24363FA2002BED2C /* MGRefreshControl.swift in Sources */,
 				0153DACF2437888E002209E0 /* WBComposeTypeView.swift in Sources */,
@@ -580,6 +611,7 @@
 				01FCB118242BABB900E1524F /* AppDelegate.swift in Sources */,
 				01D19B9A2430946B00AE4C46 /* WeiboCommon.swift in Sources */,
 				01161E9A2433A9280092541C /* WBStatusToolBar.swift in Sources */,
+				01031ACA2438E19F0026B334 /* MGEmoticonPackage.swift in Sources */,
 				01D19B92242F9A9E00AE4C46 /* WBNetworkManager+Extension.swift in Sources */,
 				015F400724370A9800CA0E4C /* MGRefreshView.swift in Sources */,
 				01628E8D242BD138004A313B /* WBDiscoverViewController.swift in Sources */,

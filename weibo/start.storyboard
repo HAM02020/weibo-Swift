@@ -16,12 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WechatIMG20" translatesAutoresizingMaskIntoConstraints="NO" id="xDm-Zb-ygc">
-                                <rect key="frame" x="-20" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WechatIMG20" translatesAutoresizingMaskIntoConstraints="NO" id="xDm-Zb-ygc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="xDm-Zb-ygc" secondAttribute="bottom" id="DwO-9d-liK"/>
+                            <constraint firstItem="xDm-Zb-ygc" firstAttribute="top" secondItem="YAg-Mt-FaC" secondAttribute="top" id="IVm-KC-xFB"/>
+                            <constraint firstItem="xDm-Zb-ygc" firstAttribute="leading" secondItem="YAg-Mt-FaC" secondAttribute="leading" id="r4C-w1-Hgm"/>
+                            <constraint firstItem="KgK-ek-DbZ" firstAttribute="trailing" secondItem="xDm-Zb-ygc" secondAttribute="trailing" id="xL3-kj-U8L"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KgK-ek-DbZ"/>
                     </view>
                 </viewController>
