@@ -61,7 +61,8 @@ class WBComposeTypeView: UIView {
     }
     
     @IBAction func close() {
-        removeFromSuperview()
+        //removeFromSuperview()
+        hideButtons()
     }
     ///点击更多按钮 翻页
     @objc private func clickMore(){
@@ -102,6 +103,8 @@ class WBComposeTypeView: UIView {
 
 ///MARK: - 动画方法
 private extension WBComposeTypeView {
+    
+    //MARK: - 显示动画
     ///动画显示当前视图
     func showCurrentView() {
         
@@ -130,7 +133,7 @@ private extension WBComposeTypeView {
             let anim : POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
             
             //2> 设置动画属性
-            anim.fromValue = btn.center.y + 300
+            anim.fromValue = btn.center.y + 400
             anim.toValue = btn.center.y
             //弹力系数 0-20
             anim.springBounciness = 8
@@ -144,6 +147,48 @@ private extension WBComposeTypeView {
             btn.pop_add(anim, forKey: nil)
         }
     }
+    
+    //MARK: - 消除动画
+    private func hideButtons() {
+        //1. 根据contenoffe判断当前显示的子视图
+        let page = Int(scrollView.contentOffset.x/scrollView.bounds.width)
+        let v = scrollView.subviews[page]
+        
+        //2. 遍历b 反序
+        for (i,btn) in v.subviews.enumerated().reversed() {
+            let anim : POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+            
+            //2> 设置动画属性
+            anim.fromValue = btn.center.y
+            anim.toValue = btn.center.y + 400
+            
+            //设置时间
+            anim.beginTime = CACurrentMediaTime() + CFTimeInterval(v.subviews.count - i) * 0.025
+            
+            //btn.popd
+            btn.layer.pop_add(anim, forKey: nil)
+            //监听第0个按钮 最后执行的动画
+            if i == 0 {
+                anim.completionBlock = {(_,_) -> () in
+                    self.hideCurrentView()
+                }
+            }
+        }
+    }
+    
+    func hideCurrentView() {
+        let anim : POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
+        anim.fromValue = 1
+        anim.toValue = 0
+        anim.duration = 0.25
+        
+        pop_add(anim, forKey: nil)
+        //添加完成监听方法
+        anim.completionBlock = { _,_ in
+            self.removeFromSuperview()
+        }
+    }
+    
 }
 
 
