@@ -20,7 +20,11 @@ class WBStatus: NSObject {
     //微博创建时间字符串
     @objc var created_at:String?
     //微博来源 客户端 设备
-    @objc var source:String?
+    @objc var source:String? {
+        didSet {
+            source = "来自于 " + (source?.mg_href()?.text ?? "")
+        }
+    }
     
     
     /// 转发 评论 点赞 数
