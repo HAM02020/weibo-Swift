@@ -8,15 +8,15 @@
 
 import Foundation
 
-//MARK - 应用程序信息
-let WBAppKey = "3371648213"
-let WBAPPSecret = "28f74db958f047fdbca5e6846357f3c0"
-let WBRedirectURI = "http://baidu.com/"
+////MARK - 应用程序信息
+//let WBAppKey = "3371648213"
+//let WBAPPSecret = "28f74db958f047fdbca5e6846357f3c0"
+//let WBRedirectURI = "http://baidu.com/"
 
 ////A01
-//let WBAppKey = "4276674222"
-//let WBAPPSecret = "610f8119d39ea76957b5fc665d59eb56"
-//let WBRedirectURI = "http://baidu.com/"
+let WBAppKey = "4276674222"
+let WBAPPSecret = "610f8119d39ea76957b5fc665d59eb56"
+let WBRedirectURI = "http://baidu.com/"
 
 //电竞馆牛顿
 //let WBAppKey = "32755502"

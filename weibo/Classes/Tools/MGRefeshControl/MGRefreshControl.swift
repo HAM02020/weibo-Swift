@@ -9,7 +9,7 @@
 import UIKit
 
 ///刷新状态切换的临界点
-let MGRefreshOffset :CGFloat = 100
+let MGRefreshOffset :CGFloat = 200
 /// 刷新状态
 enum MGRefreshState {
     case Normal//普通状态
@@ -121,8 +121,12 @@ class MGRefreshControl: UIControl {
         //可以根据高度设置刷新控件的frame
         self.frame = CGRect(x: 0, y: -height, width: sv.bounds.width, height: height)
         
-        //传递父视图高度
-        refreshView.parentViewHeight = height
+        if refreshView.refreshState != .WillRefresh {
+            //传递父视图高度
+            refreshView.parentViewHeight = height
+        }
+        
+       
         
         //判断零界点
         if sv.isDragging {
