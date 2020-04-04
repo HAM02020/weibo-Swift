@@ -30,8 +30,10 @@ class WBComposeTypeView: UIView {
                                             ["imageName":"compose_message","title":"音乐"],
                                             ["imageName":"compose_message","title":"拍摄"],
                                                                             ]
-                              
+     
+    private var completionBlock:((_ clsName:String?)->())?
     
+    //MARK: - 实例化方法
     class func composeTypeView() -> WBComposeTypeView {
         let nib = UINib(nibName: "WBComposeTypeView", bundle: nil)
         let v = nib.instantiate(withOwner: nil, options: nil)[0] as! WBComposeTypeView
@@ -41,7 +43,10 @@ class WBComposeTypeView: UIView {
     }
     
     ///显示当前视图
-    func show() {
+    func show(completion :@escaping (_ clsName:String?)->()) {
+        //0.记录闭包
+        completionBlock = completion
+        
         //1> 将当前视图添加到 跟视图控制器的view
         guard let vc = UIApplication.shared.keyWindow?.rootViewController else {
             return
@@ -56,7 +61,7 @@ class WBComposeTypeView: UIView {
     
     
     //MARK:监听方法
-    @objc private func clickButton(button:WBComposeTypeButton) {
+    @objc private func clickButton(seletedButton:WBComposeTypeButton) {
         
         //1. 判断当前显示的视图
         let page : Int = Int(scrollView.contentOffset.x/scrollView.bounds.width)
@@ -65,19 +70,32 @@ class WBComposeTypeView: UIView {
         
         //2. 遍历当前视图
         //选中的按钮放大
-        for btn in v.subviews {
+        for (i,btn) in v.subviews.enumerated() {
             let anim :POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewScaleXY)
             
             //x,y 在系统中使用CGPoint表示，如果要转换成id 需要使用 ‘NSValue’包装
             //选中按钮变大两倍 未选中的缩小
-            let scale = (button == btn) ? 2 : 0.2
+            let scale = (seletedButton == btn) ? 2 : 0.2
             let value  = NSValue(cgPoint: CGPoint(x: scale, y: scale))
             anim.toValue = value
             anim.duration = 0.5
             btn.pop_add(anim, forKey: nil)
             
             //渐变动画 动画组
+                //透明度降低
+            let alphaAnim : POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
             
+            alphaAnim.toValue = 0.2
+            alphaAnim.duration = 0.5
+            
+            btn.pop_add(alphaAnim, forKey: nil)
+            
+            //动画监听 完成回调
+            if i == 0 {
+                anim.completionBlock = { _,_ in
+                    self.completionBlock?(seletedButton.clsName)
+                }
+            }
             
         }
     }

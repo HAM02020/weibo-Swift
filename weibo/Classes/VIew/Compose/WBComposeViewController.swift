@@ -16,9 +16,12 @@ class WBComposeViewController: UIViewController {
 
         view.backgroundColor = UIColor.orange
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "退出", target: self, action: #selector(Stream.close))
         
     }
-    
+    @objc private func close(){
+        dismiss(animated: true, completion: nil)
+    }
 
    
 

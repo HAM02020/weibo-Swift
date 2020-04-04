@@ -63,7 +63,21 @@ class WBMainViewController: UITabBarController {
         let v = WBComposeTypeView.composeTypeView()
         
         //2>  显示视图
-        v.show()
+        v.show { [weak v] (clsName) in
+            //展现撰写微博控制器
+            guard let clsName = clsName,
+                let cls = NSClassFromString("\(Bundle.main.infoDictionary?["CFBundleName"] as? String ?? "").\(clsName)") as? UIViewController.Type
+                else {
+                    v?.removeFromSuperview()
+                    return
+            }
+            let vc = cls.init()
+            let nav = UINavigationController(rootViewController: vc)
+            
+            self.present(nav, animated: true) {
+                v?.removeFromSuperview()
+            }
+        }
     }
     
     @objc private func userLogin(n:Notification) {
