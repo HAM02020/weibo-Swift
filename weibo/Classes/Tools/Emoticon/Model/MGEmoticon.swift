@@ -41,6 +41,22 @@ class MGEmoticon: NSObject {
         return yy_modelDescription()
     }
     
+    ///将当前的图像转换生成图片的专属属性文本
+    func imageText(font:UIFont) -> NSAttributedString {
+        //1. 判断图片是否存在
+        guard let image = image else {
+            return NSAttributedString(string: "")
+        }
+        //2. 创建文本附件
+        let attchment = NSTextAttachment()
+        attchment.image = image
+        let height = font.lineHeight
+        attchment.bounds = CGRect(x: 0, y: -4, width: height, height: height)
+        //3.返回图片属性文本
+        return NSAttributedString(attachment: attchment)
+        
+    }
+    
 }
 
 

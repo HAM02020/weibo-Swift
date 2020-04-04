@@ -14,9 +14,8 @@ class WBStatusCell: UITableViewCell {
         didSet {
             
             //设置微博文本
-            statusLabel.text = viewModel?.status.text
-            //被转发微博的正文
-            retweededLabel?.text = viewModel?.retweetedText
+            statusLabel.attributedText = viewModel?.statusAttrText
+            retweededLabel?.attributedText = viewModel?.retweetedAttrText
             //姓名
             nameLabel.text = viewModel?.status.user?.screen_name
             //会员等级 根据 mbrank的值设置属性

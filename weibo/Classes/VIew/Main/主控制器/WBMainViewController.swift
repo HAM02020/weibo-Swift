@@ -34,6 +34,7 @@ class WBMainViewController: UITabBarController {
         let manager = MGEmoticonManager.shared
         print(manager.packages.last?.emoticons.first?.image)
         print(manager.packages.last?.emoticons.first)
+        print(manager.findEmoticon(string: "[爱你]"))
         
         
     }
