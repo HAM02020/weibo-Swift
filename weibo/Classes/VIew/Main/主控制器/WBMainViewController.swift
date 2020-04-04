@@ -193,7 +193,7 @@ extension WBMainViewController {
     ///定义时钟
     private func setupTimer() {
         
-        timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(updataTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(updataTimer), userInfo: nil, repeats: true)
         
         
     }

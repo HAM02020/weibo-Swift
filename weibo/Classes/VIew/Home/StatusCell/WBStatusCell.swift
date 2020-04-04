@@ -46,6 +46,10 @@ class WBStatusCell: UITableViewCell {
             //设置配图视图的url数据
             pictureView.urls = viewModel?.picUrls
             
+            //设置来源
+
+            sourceLabel.text = viewModel?.sourceStr
+            
         }
     }
     ///头像

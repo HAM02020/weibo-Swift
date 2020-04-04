@@ -46,6 +46,8 @@ class WBStatusViewModel :CustomStringConvertible{
 //    行高
     @objc var rowHeight:CGFloat = 0
     
+    @objc var sourceStr:String?
+    
     
     init(model:WBStatus) {
         self.status = model
@@ -75,6 +77,10 @@ class WBStatusViewModel :CustomStringConvertible{
         pictureViewSize = calcPictureViewSize(count: picUrls?.count)
         //设置被转发微博的文字
         retweetedText = "@\(status.retweeted_status?.user?.screen_name ?? ""):\(status.retweeted_status?.text ?? "")"
+        
+        //设置来源字符串
+        sourceStr = "来自" + (model.source?.mg_href()?.text ?? "")
+        
         
         //计算行高
         updateRowHeight()

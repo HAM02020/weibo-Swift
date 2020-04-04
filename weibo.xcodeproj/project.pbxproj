@@ -31,6 +31,7 @@
 		0153DAD3243793A4002209E0 /* WBComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0153DAD2243793A4002209E0 /* WBComposeTypeButton.swift */; };
 		0153DAD524379531002209E0 /* WBComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0153DAD424379531002209E0 /* WBComposeTypeButton.xib */; };
 		0153DAD72438766B002209E0 /* WBComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0153DAD62438766B002209E0 /* WBComposeViewController.swift */; };
+		0153DAD92438B7ED002209E0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0153DAD82438B7ED002209E0 /* String+Extensions.swift */; };
 		015F40052437084300CA0E4C /* MGRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015F40042437084300CA0E4C /* MGRefreshView.xib */; };
 		015F400724370A9800CA0E4C /* MGRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015F400624370A9800CA0E4C /* MGRefreshView.swift */; };
 		015F400924376A5400CA0E4C /* MGHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015F400824376A5400CA0E4C /* MGHumanRefreshView.xib */; };
@@ -86,6 +87,7 @@
 		0153DAD2243793A4002209E0 /* WBComposeTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBComposeTypeButton.swift; sourceTree = "<group>"; };
 		0153DAD424379531002209E0 /* WBComposeTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBComposeTypeButton.xib; sourceTree = "<group>"; };
 		0153DAD62438766B002209E0 /* WBComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBComposeViewController.swift; sourceTree = "<group>"; };
+		0153DAD82438B7ED002209E0 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		015F40042437084300CA0E4C /* MGRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGRefreshView.xib; sourceTree = "<group>"; };
 		015F400624370A9800CA0E4C /* MGRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGRefreshView.swift; sourceTree = "<group>"; };
 		015F400824376A5400CA0E4C /* MGHumanRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGHumanRefreshView.xib; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				012B9CC5242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift */,
 				017B2FE6242E5AE1003286E5 /* UILabel+Extensions.swift */,
 				01161E97243392380092541C /* UIImageView+WebImage.swift */,
+				0153DAD82438B7ED002209E0 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01628EA0242CAA82004A313B /* WBDemoViewController.swift in Sources */,
+				0153DAD92438B7ED002209E0 /* String+Extensions.swift in Sources */,
 				0153DAD3243793A4002209E0 /* WBComposeTypeButton.swift in Sources */,
 				01161E98243392380092541C /* UIImageView+WebImage.swift in Sources */,
 				01161E92243379780092541C /* WBUser.swift in Sources */,
