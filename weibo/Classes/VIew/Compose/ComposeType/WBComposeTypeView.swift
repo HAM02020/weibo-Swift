@@ -19,7 +19,7 @@ class WBComposeTypeView: UIView {
     
     @IBOutlet weak var returnButton: UIButton!
     
-    private let buttonInfo = [["imageName":"compose_message","title":"文字"],
+    private let buttonInfo = [["imageName":"compose_message","title":"文字","clsName":"WBComposeViewController"],
                                             ["imageName":"compose_message","title":"照片/视频"],
                                             ["imageName":"compose_message","title":"长微博"],
                                             ["imageName":"compose_message","title":"签到"],
@@ -56,8 +56,30 @@ class WBComposeTypeView: UIView {
     
     
     //MARK:监听方法
-    @objc private func clickButton() {
-        print("点我了")
+    @objc private func clickButton(button:WBComposeTypeButton) {
+        
+        //1. 判断当前显示的视图
+        let page : Int = Int(scrollView.contentOffset.x/scrollView.bounds.width)
+        
+        let v = scrollView.subviews[page]
+        
+        //2. 遍历当前视图
+        //选中的按钮放大
+        for btn in v.subviews {
+            let anim :POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewScaleXY)
+            
+            //x,y 在系统中使用CGPoint表示，如果要转换成id 需要使用 ‘NSValue’包装
+            //选中按钮变大两倍 未选中的缩小
+            let scale = (button == btn) ? 2 : 0.2
+            let value  = NSValue(cgPoint: CGPoint(x: scale, y: scale))
+            anim.toValue = value
+            anim.duration = 0.5
+            btn.pop_add(anim, forKey: nil)
+            
+            //渐变动画 动画组
+            
+            
+        }
     }
     
     @IBAction func close() {
@@ -243,7 +265,13 @@ private extension WBComposeTypeView {
             //3.添加监听方法
             if let action = dict["action"] {
                 btn.addTarget(self, action: Selector(action), for: .touchUpInside)
+            }else {
+                
+                btn.addTarget(self, action: #selector(clickButton), for: .touchUpInside)
             }
+            //4？ 设置要展现的类名
+            btn.clsName = dict["clsName"]
+            
         }
         
         //按钮布局
