@@ -10,9 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBComposeViewController" customModule="weibo" customModuleProvider="target">
             <connections>
+                <outlet property="placeHolderLabel" destination="xtg-QE-k4T" id="eLA-Bf-tw0"/>
                 <outlet property="sendButton" destination="H5R-81-sJG" id="Obz-dv-Snu"/>
                 <outlet property="textView" destination="W37-dy-53k" id="JK9-16-B4s"/>
                 <outlet property="titleLabel" destination="SyM-yw-ws0" id="ir7-DN-Nkc"/>
+                <outlet property="tooBarBottomCons" destination="sEO-SY-rRL" id="Qln-uR-A0F"/>
                 <outlet property="toolBar" destination="4f3-U6-gj1" id="0ec-SX-0cO"/>
                 <outlet property="view" destination="eUV-Tk-a7a" id="teU-uI-vML"/>
             </connections>
@@ -25,7 +27,6 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="W37-dy-53k">
                     <rect key="frame" x="0.0" y="44" width="375" height="685"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -37,13 +38,21 @@
                     </constraints>
                     <items/>
                 </toolbar>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享新鲜事..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtg-QE-k4T">
+                    <rect key="frame" x="4" y="51" width="90" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="4f3-U6-gj1" firstAttribute="trailing" secondItem="U3n-0k-Deb" secondAttribute="trailing" id="B64-9a-abt"/>
                 <constraint firstItem="4f3-U6-gj1" firstAttribute="leading" secondItem="U3n-0k-Deb" secondAttribute="leading" id="FjB-VB-E0h"/>
                 <constraint firstItem="4f3-U6-gj1" firstAttribute="top" secondItem="W37-dy-53k" secondAttribute="bottom" id="IVN-RD-g5W"/>
+                <constraint firstItem="xtg-QE-k4T" firstAttribute="leading" secondItem="U3n-0k-Deb" secondAttribute="leading" constant="4" id="V4f-xZ-J4v"/>
                 <constraint firstItem="W37-dy-53k" firstAttribute="leading" secondItem="U3n-0k-Deb" secondAttribute="leading" id="aSZ-1r-q0Z"/>
+                <constraint firstItem="xtg-QE-k4T" firstAttribute="top" secondItem="U3n-0k-Deb" secondAttribute="top" constant="7" id="cFd-Wo-JZX"/>
                 <constraint firstAttribute="trailing" secondItem="W37-dy-53k" secondAttribute="trailing" id="jaE-C9-vBT"/>
                 <constraint firstItem="4f3-U6-gj1" firstAttribute="bottom" secondItem="U3n-0k-Deb" secondAttribute="bottom" id="sEO-SY-rRL"/>
                 <constraint firstItem="W37-dy-53k" firstAttribute="top" secondItem="U3n-0k-Deb" secondAttribute="top" id="zRV-yH-Syk"/>

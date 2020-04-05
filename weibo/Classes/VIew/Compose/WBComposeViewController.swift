@@ -16,6 +16,9 @@ class WBComposeViewController: UIViewController {
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet var sendButton: UIButton!
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet weak var placeHolderLabel: UILabel!
+    ///工具栏底部约束
+    @IBOutlet weak var tooBarBottomCons: NSLayoutConstraint!
     
 //    lazy var sendButton : UIButton = {
 //        let btn = UIButton()
@@ -40,7 +43,59 @@ class WBComposeViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         
+        
+        //监听键盘通知
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardChanged),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
+    
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //激活键盘
+        textView.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        //关闭键盘
+        textView.resignFirstResponder()
+    }
+    
+    //MARK: - textview监听方法
+    @objc func textChanged() {
+        print("textChanged")
+    }
+    
+    //MARK: - 键盘监听方法
+    @objc private func keyboardChanged(n:Notification){
+        print(n.userInfo)
+        //1.目标rect
+        guard let rect = (n.userInfo?["UIKeyboardFrameEndUserInfoKey"] as? NSValue)?.cgRectValue,
+            let duration = (n.userInfo?["UIKeyboardAnimationDurationUserInfoKey"] as? NSNumber)?.doubleValue
+        else {
+            return
+        }
+        
+        
+        
+        //2. 设置底部约束的高度
+        let offset = UIScreen.main.bounds.height - rect.origin.y
+        
+        //3. 更新底部约束
+        tooBarBottomCons.constant = -offset
+        
+        //4. 动画更新约束
+        UIView.animate(withDuration: duration) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    
     @objc private func close(){
         dismiss(animated: true, completion: nil)
     }
@@ -55,12 +110,26 @@ class WBComposeViewController: UIViewController {
 
 }
 
+//MARK: - UITextViewDelegate
+extension WBComposeViewController : UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        sendButton.isEnabled = textView.hasText
+        placeHolderLabel.isHidden = textView.hasText
+    }
+    
+    
+}
+
+
 private extension WBComposeViewController {
     func setupUI() {
         
         view.backgroundColor = UIColor.white
         setupNavigationBar()
         setupToolbar()
+        
+        textView.delegate = self
     }
     ///设置工具栏
     func setupToolbar() {
