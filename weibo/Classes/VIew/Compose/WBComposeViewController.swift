@@ -20,6 +20,8 @@ class WBComposeViewController: UIViewController {
     ///工具栏底部约束
     @IBOutlet weak var tooBarBottomCons: NSLayoutConstraint!
     
+    private var keyboardHeight:CGFloat?
+    
 //    lazy var sendButton : UIButton = {
 //        let btn = UIButton()
 //        btn.setTitle("发布", for: [])
@@ -80,6 +82,9 @@ class WBComposeViewController: UIViewController {
         else {
             return
         }
+        if keyboardHeight == nil && rect.height > 0 {
+            keyboardHeight = rect.height
+        }
         
         
         
@@ -129,6 +134,18 @@ class WBComposeViewController: UIViewController {
         }
         
     }
+    ///切换表情键盘
+    @objc private func emoticonKeyboard() {
+        //如果使用系统默认的键盘，输入视图为nil
+        let keyboardView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: keyboardHeight ?? 300))
+        keyboardView.backgroundColor = UIColor.blue
+        
+        //2> 设置键盘视图
+        textView.inputView = (textView.inputView == nil) ? keyboardView : nil
+        
+        //3. 刷新键盘视图
+        textView.reloadInputViews()
+    }
     
 
 }
@@ -157,7 +174,7 @@ private extension WBComposeViewController {
     ///设置工具栏
     func setupToolbar() {
         let itemSettings = [["imageName":"compose_pic"],
-                            ["imageName":"compose_smile"],
+                            ["imageName":"compose_smile","actionName":"emoticonKeyboard"],
                             ["imageName":"compose_hashtag"],
                             ["imageName":"compose_email"],
                             ["imageName":"compose_add"]
@@ -177,6 +194,13 @@ private extension WBComposeViewController {
             btn.setImage(image_highlighted, for: .highlighted)
             
             //btn.sizeToFit()
+            
+            //判断actionName
+            if let actionName = s["actionName"] {
+                //添加监听方法
+                btn.addTarget(self, action: Selector(actionName), for: .touchUpInside)
+            }
+            
             //追加按钮
             items.append(UIBarButtonItem(customView: btn))
             //追加弹簧

@@ -6,7 +6,7 @@
 //  Copyright © 2020 HAM02020. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 
@@ -63,7 +63,7 @@ extension WBNetworkManager {
 extension WBNetworkManager {
     
     ///发布微博
-    func postStatus(text:String,completion:@escaping(_ result:[String:AnyObject]?,_ isSuccess:Bool)->())-> () {
+    func postStatus(text:String,image:UIImage? = nil,completion:@escaping(_ result:[String:AnyObject]?,_ isSuccess:Bool)->())-> () {
         //1. url
         //let urlString = "http://api.sina.com.cn/2/statuses/update.json"
         let urlString = "https://api.weibo.com/2/statuses/share.json"
@@ -71,11 +71,18 @@ extension WBNetworkManager {
         //"source":WBAppKey,
         let params = ["status":text] as [String : AnyObject]
         
-        //3.发起网络请求
-        tokenRequest(method: .POST, URLString: urlString, parameters: params) { (json, isSuccess) in
-            completion(json as? [String:AnyObject],isSuccess)
+        var name :String?
+        var data :Data?
+        
+        if image != nil {
+            name = "pic"
+            data = image!.pngData()
         }
         
+        //3.发起网络请求
+        tokenRequest(method: .POST, URLString: urlString, parameters: params, name: name, data: data) { (json, isSuccess) in
+            completion(json as? [String:AnyObject],isSuccess)
+        }
         
     }
 }
