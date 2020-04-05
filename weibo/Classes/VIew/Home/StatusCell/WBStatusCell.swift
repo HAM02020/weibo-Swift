@@ -63,13 +63,13 @@ class WBStatusCell: UITableViewCell {
     ///认证图标
     @IBOutlet weak var vipIcon: UIImageView!
     ///微博正文
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusLabel: MGLabel!
     //底部工具栏
     @IBOutlet weak var toolBar: WBStatusToolBar!
     //配图视图
     @IBOutlet weak var pictureView: WBStatusPictureView!
     
-    @IBOutlet weak var retweededLabel: UILabel? //注意 这里是 ？ 号 因为原创微博没有这一项
+    @IBOutlet weak var retweededLabel: MGLabel? //注意 这里是 ？ 号 因为原创微博没有这一项
     
     
     override func awakeFromNib() {
@@ -84,6 +84,10 @@ class WBStatusCell: UITableViewCell {
         self.layer.shouldRasterize = true
         //分辨率
         self.layer.rasterizationScale = UIScreen.main.scale
+        
+        // FIXME:  设置微博文本代理 -
+
+        
     }
 
 //    override func setSelected(_ selected: Bool, animated: Bool) {

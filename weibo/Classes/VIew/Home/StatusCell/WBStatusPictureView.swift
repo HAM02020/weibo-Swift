@@ -44,7 +44,7 @@ class WBStatusPictureView: UIView {
             var index = 0
             
             for url in urls ?? []{
-                print("url.thumpic = \(url.thumbnail_pic)")
+                print("url.thumpic = \(String(describing: url.thumbnail_pic))")
                 
                 //获取对应索引的imageView
                 let iv = subviews[index] as! UIImageView

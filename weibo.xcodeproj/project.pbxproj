@@ -11,6 +11,7 @@
 		01031AC62438DE8F0026B334 /* MGEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01031AC52438DE8F0026B334 /* MGEmoticonManager.swift */; };
 		01031AC82438E0BF0026B334 /* MGEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01031AC72438E0BF0026B334 /* MGEmoticon.swift */; };
 		01031ACA2438E19F0026B334 /* MGEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01031AC92438E19F0026B334 /* MGEmoticonPackage.swift */; };
+		01031ACD2439A4DA0026B334 /* MGLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01031ACC2439A4DA0026B334 /* MGLabel.swift */; };
 		0106A0282431D9D1008D60F8 /* WBNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0106A0272431D9D1008D60F8 /* WBNewFeatureView.xib */; };
 		01161E8C243262C90092541C /* WBStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01161E8B243262C90092541C /* WBStatusCell.swift */; };
 		01161E8E243262ED0092541C /* WBStatusNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01161E8D243262ED0092541C /* WBStatusNormalCell.xib */; };
@@ -71,6 +72,7 @@
 		01031AC52438DE8F0026B334 /* MGEmoticonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGEmoticonManager.swift; sourceTree = "<group>"; };
 		01031AC72438E0BF0026B334 /* MGEmoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGEmoticon.swift; sourceTree = "<group>"; };
 		01031AC92438E19F0026B334 /* MGEmoticonPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGEmoticonPackage.swift; sourceTree = "<group>"; };
+		01031ACC2439A4DA0026B334 /* MGLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGLabel.swift; sourceTree = "<group>"; };
 		0106A0272431D9D1008D60F8 /* WBNewFeatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBNewFeatureView.xib; sourceTree = "<group>"; };
 		01161E8B243262C90092541C /* WBStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusCell.swift; sourceTree = "<group>"; };
 		01161E8D243262ED0092541C /* WBStatusNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBStatusNormalCell.xib; sourceTree = "<group>"; };
@@ -160,6 +162,14 @@
 				01031AC92438E19F0026B334 /* MGEmoticonPackage.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		01031ACB2439A4B50026B334 /* TextKit */ = {
+			isa = PBXGroup;
+			children = (
+				01031ACC2439A4DA0026B334 /* MGLabel.swift */,
+			);
+			path = TextKit;
 			sourceTree = "<group>";
 		};
 		01161E8A243262990092541C /* StatusCell */ = {
@@ -266,6 +276,7 @@
 		01628E7F242BD138004A313B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				01031ACB2439A4B50026B334 /* TextKit */,
 				01031AC12438D6A30026B334 /* Emoticon */,
 				0184CBCC24363F59002BED2C /* MGRefeshControl */,
 				01D19B8E242F8D7800AE4C46 /* Network */,
@@ -606,6 +617,7 @@
 				012B9CC4242CFAA30006AFDC /* UIButton+Extensions.swift in Sources */,
 				01628E8C242BD138004A313B /* WBHomeViewController.swift in Sources */,
 				01628E8E242BD138004A313B /* WBProfileViewController.swift in Sources */,
+				01031ACD2439A4DA0026B334 /* MGLabel.swift in Sources */,
 				01628E94242C4A80004A313B /* WBNavigationController.swift in Sources */,
 				01628E99242C5F8E004A313B /* WBMessageViewController.swift in Sources */,
 				01FCB118242BABB900E1524F /* AppDelegate.swift in Sources */,

@@ -30,11 +30,7 @@ class WBMainViewController: UITabBarController {
         // 注册通知
         NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
         
-        ////////////////
-        let manager = MGEmoticonManager.shared
-        print(manager.packages.last?.emoticons.first?.image)
-        print(manager.packages.last?.emoticons.first)
-        print(manager.findEmoticon(string: "[爱你]"))
+
         
         
     }

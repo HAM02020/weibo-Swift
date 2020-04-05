@@ -51,7 +51,8 @@ extension MGEmoticonManager {
             
         }
         //4. 统一设置一遍字符串的属性
-        attrString.addAttributes([NSAttributedString.Key.font:font], range: NSRange(location: 0, length: attrString.length))
+        attrString.addAttributes([NSAttributedString.Key.font:font,
+                                  NSAttributedString.Key.foregroundColor:UIColor.darkGray], range: NSRange(location: 0, length: attrString.length))
         return attrString
     }
     

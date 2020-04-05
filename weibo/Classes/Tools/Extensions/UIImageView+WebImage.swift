@@ -26,7 +26,6 @@ extension UIImageView {
         sd_setImage(with: url, placeholderImage: placeholderImage, options: [], progress: nil) {
             [weak self](image, _, _, _) in
             
-            print("set image = \(image)")
 //            完成回调 判断是否是头像 设置圆形
             if isAvatar {
                 self?.image = image?.mg_avatarImage(size: self?.bounds.size)
