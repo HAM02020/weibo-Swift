@@ -84,6 +84,7 @@ class WBNetworkManager: AFHTTPSessionManager {
         post(URLString, parameters: parameters, constructingBodyWith: { (formData) in
             
             //FIXME: 创建formData
+            formData.appendPart(withFileData: data, name: name, fileName: "xxx", mimeType: "application/octet-stream")
             
         }, progress: nil, success: { (_, json) in
             completion(json as AnyObject,true)
