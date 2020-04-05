@@ -58,6 +58,29 @@ extension WBNetworkManager {
     }
 
 }
+
+//MARK: - 发布微博
+extension WBNetworkManager {
+    
+    ///发布微博
+    func postStatus(text:String,completion:@escaping(_ result:[String:AnyObject]?,_ isSuccess:Bool)->())-> () {
+        //1. url
+        //let urlString = "http://api.sina.com.cn/2/statuses/update.json"
+        let urlString = "https://api.weibo.com/2/statuses/share.json"
+        //2. 参数字典
+        //"source":WBAppKey,
+        let params = ["status":text] as [String : AnyObject]
+        
+        //3.发起网络请求
+        tokenRequest(method: .POST, URLString: urlString, parameters: params) { (json, isSuccess) in
+            completion(json as? [String:AnyObject],isSuccess)
+        }
+        
+        
+    }
+}
+
+
 //MARK: - 用户信息
 extension WBNetworkManager {
     

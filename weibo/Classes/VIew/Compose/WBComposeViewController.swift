@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 ///撰写微博控制器
 class WBComposeViewController: UIViewController {
     //文本编辑视图
@@ -105,6 +105,29 @@ class WBComposeViewController: UIViewController {
     ///发布微博
     @IBAction func postStatus() {
         print("发布微博")
+        
+        //1.  获取微博文字
+        guard var text = textView.text else {
+            return
+        }
+        //2. 发布微博
+        text += " http://www.baidu.com"
+        WBNetworkManager.shared().postStatus(text: text) { (result, isSuccess) in
+            
+            let message = isSuccess ? "发布成功" : "网络不给力"
+            //修改通知样式
+            SVProgressHUD.setDefaultStyle(.dark)
+            SVProgressHUD.showInfo(withStatus: message)
+            //如果成功关闭当前窗口
+            if isSuccess {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1) {
+                    //恢复样式
+                    SVProgressHUD.setDefaultStyle(.light)
+                    self.close()
+                }
+            }
+        }
+        
     }
     
 

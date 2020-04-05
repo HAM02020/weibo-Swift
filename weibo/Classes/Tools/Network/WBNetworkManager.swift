@@ -23,13 +23,17 @@ class WBNetworkManager: AFHTTPSessionManager {
     }
     
     /// 静态区 单l例
-        static let shared = { () -> WBNetworkManager in
+    static let shared = { () -> WBNetworkManager in
         
         let instance = WBNetworkManager()
-        
+            
         //响应反序列化支持的数据类型
-        instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
         
+        //instance.requestSerializer = AFJSONRequestSerializer()
+        //instance.responseSerializer = AFHTTPResponseSerializer()
+        instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        //instance.responseSerializer.acceptableContentTypes?.insert("application/json")
+        //instance.responseSerializer.acceptableContentTypes?.insert("text/json")
         return instance
         
     }
@@ -64,7 +68,8 @@ class WBNetworkManager: AFHTTPSessionManager {
         //2> 设置参数字典
         parameters!["access_token"] = token as AnyObject
         
-        request(URLString: URLString, parameters: parameters!, completion: completion)
+        //equest(URLString: URLString, parameters: parameters!, completion: completion)
+        request(method: method, URLString: URLString, parameters: parameters!, completion: completion)
     }
     
     
