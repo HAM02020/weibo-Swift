@@ -10,7 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBComposeViewController" customModule="weibo" customModuleProvider="target">
             <connections>
+                <outlet property="sendButton" destination="H5R-81-sJG" id="Obz-dv-Snu"/>
                 <outlet property="textView" destination="W37-dy-53k" id="JK9-16-B4s"/>
+                <outlet property="titleLabel" destination="SyM-yw-ws0" id="ir7-DN-Nkc"/>
                 <outlet property="toolBar" destination="4f3-U6-gj1" id="0ec-SX-0cO"/>
                 <outlet property="view" destination="eUV-Tk-a7a" id="teU-uI-vML"/>
             </connections>
@@ -51,5 +53,64 @@
             <viewLayoutGuide key="safeArea" id="U3n-0k-Deb"/>
             <point key="canvasLocation" x="-39.130434782608695" y="59.598214285714285"/>
         </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="H5R-81-sJG">
+            <rect key="frame" x="0.0" y="0.0" width="49" height="39"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+            <state key="normal" title="发布" backgroundImage="compose_button_orange"/>
+            <state key="disabled" backgroundImage="compose_button_white">
+                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            </state>
+            <state key="highlighted" backgroundImage="compose_button_orange_highlighted"/>
+            <connections>
+                <action selector="postStatus" destination="-1" eventType="touchUpInside" id="h27-Jh-Svd"/>
+            </connections>
+            <point key="canvasLocation" x="-655" y="72"/>
+        </button>
+        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SyM-yw-ws0">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="35"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <attributedString key="attributedText">
+                <fragment content="发微博">
+                    <attributes>
+                        <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                    </attributes>
+                </fragment>
+                <fragment content=" ">
+                    <attributes>
+                        <font key="NSFont" metaFont="system" size="14"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                    </attributes>
+                </fragment>
+                <fragment content=" ">
+                    <attributes>
+                        <font key="NSFont" metaFont="system" size="2"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                    </attributes>
+                </fragment>
+                <fragment content=" ">
+                    <attributes>
+                        <font key="NSFont" metaFont="system" size="14"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                    </attributes>
+                </fragment>
+                <fragment content="MarsvEX">
+                    <attributes>
+                        <color key="NSColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <font key="NSFont" metaFont="system" size="14"/>
+                        <font key="NSOriginalFont" metaFont="system" size="12"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                    </attributes>
+                </fragment>
+            </attributedString>
+            <nil key="highlightedColor"/>
+            <point key="canvasLocation" x="-539.13043478260875" y="209.59821428571428"/>
+        </label>
     </objects>
+    <resources>
+        <image name="compose_button_orange" width="79" height="32"/>
+        <image name="compose_button_orange_highlighted" width="79" height="32"/>
+        <image name="compose_button_white" width="79" height="32"/>
+    </resources>
 </document>
