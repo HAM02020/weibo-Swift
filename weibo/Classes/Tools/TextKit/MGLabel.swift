@@ -8,11 +8,18 @@
 
 import UIKit
 
+@objc protocol MGLabelDelegate : NSObjectProtocol {
+    
+    @objc func labelDidSelectedLinkText(label : MGLabel,text:String)
+}
 
 
 class MGLabel: UILabel {
 
     //MARK: - 重写属性
+    
+    
+    
     override var text: String? {
         didSet {
             prepareTextContent()
