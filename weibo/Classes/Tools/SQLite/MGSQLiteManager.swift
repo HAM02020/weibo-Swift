@@ -8,6 +8,10 @@
 
 import Foundation
 import FMDB
+//最大数据库缓存时间，以s为单位
+private let maxDBCacheTime = -5 * 24 * 60 * 60
+
+
 ///SQLite管理器
 class MGSQLiteManager {
     
