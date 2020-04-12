@@ -43,6 +43,8 @@
 		015F400924376A5400CA0E4C /* MGHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015F400824376A5400CA0E4C /* MGHumanRefreshView.xib */; };
 		015F400B243772EC00CA0E4C /* MGNewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 015F400A243772EC00CA0E4C /* MGNewView.xib */; };
 		015F400D243774BB00CA0E4C /* MGNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015F400C243774BB00CA0E4C /* MGNewView.swift */; };
+		016211552443735B00581BB6 /* status.sql in Resources */ = {isa = PBXBuildFile; fileRef = 016211532443735B00581BB6 /* status.sql */; };
+		016211562443735B00581BB6 /* MGSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016211542443735B00581BB6 /* MGSQLiteManager.swift */; };
 		01628E8C242BD138004A313B /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E83242BD138004A313B /* WBHomeViewController.swift */; };
 		01628E8D242BD138004A313B /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E85242BD138004A313B /* WBDiscoverViewController.swift */; };
 		01628E8E242BD138004A313B /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E87242BD138004A313B /* WBProfileViewController.swift */; };
@@ -105,6 +107,8 @@
 		015F400824376A5400CA0E4C /* MGHumanRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGHumanRefreshView.xib; sourceTree = "<group>"; };
 		015F400A243772EC00CA0E4C /* MGNewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MGNewView.xib; sourceTree = "<group>"; };
 		015F400C243774BB00CA0E4C /* MGNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGNewView.swift; sourceTree = "<group>"; };
+		016211532443735B00581BB6 /* status.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = status.sql; sourceTree = "<group>"; };
+		016211542443735B00581BB6 /* MGSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGSQLiteManager.swift; sourceTree = "<group>"; };
 		01628E83242BD138004A313B /* WBHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
 		01628E85242BD138004A313B /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		01628E87242BD138004A313B /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +260,24 @@
 			path = ComposeType;
 			sourceTree = "<group>";
 		};
+		016211512443731A00581BB6 /* UI框架 */ = {
+			isa = PBXGroup;
+			children = (
+				01031AC12438D6A30026B334 /* Emoticon */,
+				01031ACB2439A4B50026B334 /* TextKit */,
+			);
+			path = "UI框架";
+			sourceTree = "<group>";
+		};
+		016211522443735B00581BB6 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				016211532443735B00581BB6 /* status.sql */,
+				016211542443735B00581BB6 /* MGSQLiteManager.swift */,
+			);
+			path = SQLite;
+			sourceTree = "<group>";
+		};
 		01628E7D242BD138004A313B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,10 +301,10 @@
 		01628E7F242BD138004A313B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				01031ACB2439A4B50026B334 /* TextKit */,
-				01031AC12438D6A30026B334 /* Emoticon */,
+				016211522443735B00581BB6 /* SQLite */,
+				016211512443731A00581BB6 /* UI框架 */,
 				0184CBCC24363F59002BED2C /* MGRefeshControl */,
-				01D19B8E242F8D7800AE4C46 /* Network */,
+				01D19B8E242F8D7800AE4C46 /* Network(网络) */,
 				012B9CC7242D19390006AFDC /* reactor */,
 				012B9CC0242CFA5B0006AFDC /* Extensions */,
 				01D19B992430946B00AE4C46 /* WeiboCommon.swift */,
@@ -392,14 +414,14 @@
 			path = MGRefeshControl;
 			sourceTree = "<group>";
 		};
-		01D19B8E242F8D7800AE4C46 /* Network */ = {
+		01D19B8E242F8D7800AE4C46 /* Network(网络) */ = {
 			isa = PBXGroup;
 			children = (
 				01D19B9E2430D67300AE4C46 /* Model */,
 				01D19B8F242F8DC800AE4C46 /* WBNetworkManager.swift */,
 				01D19B91242F9A9E00AE4C46 /* WBNetworkManager+Extension.swift */,
 			);
-			path = Network;
+			path = "Network(网络)";
 			sourceTree = "<group>";
 		};
 		01D19B9B243096D600AE4C46 /* OAuth */ = {
@@ -539,6 +561,7 @@
 				0106A0282431D9D1008D60F8 /* WBNewFeatureView.xib in Resources */,
 				0153DAD524379531002209E0 /* WBComposeTypeButton.xib in Resources */,
 				01161EA2243446F40092541C /* WBTestView.xib in Resources */,
+				016211552443735B00581BB6 /* status.sql in Resources */,
 				01357FE92431C55E0042D8F5 /* WBWelcomeView.xib in Resources */,
 				0153DAD124378C0F002209E0 /* WBComposeTypeView.xib in Resources */,
 				01F9C9B0242E221500118B4E /* start.storyboard in Resources */,
@@ -635,6 +658,7 @@
 				01D19B9D2430970200AE4C46 /* WBOAuthViewController.swift in Sources */,
 				0153DAD72438766B002209E0 /* WBComposeViewController.swift in Sources */,
 				01D19BA02430D6B200AE4C46 /* WBUserAccount.swift in Sources */,
+				016211562443735B00581BB6 /* MGSQLiteManager.swift in Sources */,
 				01357FE22431AC860042D8F5 /* WBTittleButton.swift in Sources */,
 				01161EA0243446D00092541C /* WBTestView.swift in Sources */,
 			);

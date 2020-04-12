@@ -10,5 +10,5 @@ pod "YYModel"
 pod "FMDB"
 pod "SVProgressHUD"
 pod "pop"
-
+pod "FMDB"
 end

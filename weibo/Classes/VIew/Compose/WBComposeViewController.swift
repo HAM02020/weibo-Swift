@@ -75,7 +75,6 @@ class WBComposeViewController: UIViewController {
     
     //MARK: - 键盘监听方法
     @objc private func keyboardChanged(n:Notification){
-        print(n.userInfo)
         //1.目标rect
         guard let rect = (n.userInfo?["UIKeyboardFrameEndUserInfoKey"] as? NSValue)?.cgRectValue,
             let duration = (n.userInfo?["UIKeyboardAnimationDurationUserInfoKey"] as? NSNumber)?.doubleValue
