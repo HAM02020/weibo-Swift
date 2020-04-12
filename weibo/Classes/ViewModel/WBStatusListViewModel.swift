@@ -41,7 +41,12 @@ class WBStatusListViewModel {
         //上拉刷新取出 z数组最后一条微博的id
         let max_id = !isPullup ? 0 : (statusList.last?.status.id ?? 0)
         
-        WBNetworkManager.shared().getStatusList(since_id:since_id,max_id: max_id) { (list, isSuccess) in
+        // 让数据访问层加载数据
+        WBStatusListDAL.loadStatus(since_id: since_id, max_id: max_id) { (list, isSuccess) in
+            
+            
+ //       }
+//        WBNetworkManager.shared().getStatusList(since_id:since_id,max_id: max_id) { (list, isSuccess) in
             //0. 判断网络是否成功
             if !isSuccess {
                 completion(false,false)
