@@ -45,6 +45,7 @@
 		015F400D243774BB00CA0E4C /* MGNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015F400C243774BB00CA0E4C /* MGNewView.swift */; };
 		016211552443735B00581BB6 /* status.sql in Resources */ = {isa = PBXBuildFile; fileRef = 016211532443735B00581BB6 /* status.sql */; };
 		016211562443735B00581BB6 /* MGSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016211542443735B00581BB6 /* MGSQLiteManager.swift */; };
+		01621158244373DF00581BB6 /* WBStatusListDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01621157244373DF00581BB6 /* WBStatusListDAL.swift */; };
 		01628E8C242BD138004A313B /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E83242BD138004A313B /* WBHomeViewController.swift */; };
 		01628E8D242BD138004A313B /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E85242BD138004A313B /* WBDiscoverViewController.swift */; };
 		01628E8E242BD138004A313B /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E87242BD138004A313B /* WBProfileViewController.swift */; };
@@ -109,6 +110,7 @@
 		015F400C243774BB00CA0E4C /* MGNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGNewView.swift; sourceTree = "<group>"; };
 		016211532443735B00581BB6 /* status.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = status.sql; sourceTree = "<group>"; };
 		016211542443735B00581BB6 /* MGSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGSQLiteManager.swift; sourceTree = "<group>"; };
+		01621157244373DF00581BB6 /* WBStatusListDAL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusListDAL.swift; sourceTree = "<group>"; };
 		01628E83242BD138004A313B /* WBHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
 		01628E85242BD138004A313B /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		01628E87242BD138004A313B /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 			children = (
 				01D19B95242FBBF500AE4C46 /* WBStatusListViewModel.swift */,
 				01161E9524337E410092541C /* WBStatusViewModel.swift */,
+				01621157244373DF00581BB6 /* WBStatusListDAL.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				01628E96242C5443004A313B /* WBMainViewController.swift in Sources */,
 				0184CBCE24363FA2002BED2C /* MGRefreshControl.swift in Sources */,
 				0153DACF2437888E002209E0 /* WBComposeTypeView.swift in Sources */,
+				01621158244373DF00581BB6 /* WBStatusListDAL.swift in Sources */,
 				01161E9624337E410092541C /* WBStatusViewModel.swift in Sources */,
 				01D19B94242FB9C800AE4C46 /* WBStatus.swift in Sources */,
 				012B9CC6242CFEA60006AFDC /* UIBarButtonItem+Extensions.swift in Sources */,
