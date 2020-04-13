@@ -23,6 +23,16 @@ let WBRedirectURI = "http://baidu.com/"
 //let WBAPPSecret = "b2be28311bf46112121e28319edd82b1"
 //let WBRedirectURI = "http://baidu.com/"
 
+//MARK: - 照片浏览通知定义
+/// selectedIndex   选中照片的索引
+/// urls                    浏览照片的URL字符串数组
+/// parentImageViews 父视图的图像视图数组，用户展现和解除转场动画参照
+let WBStatusCellBrowserPhotoNotification = "WBStatusCellBrowserPhotoNotification"
+
+let WBStatusCellBrowserSelectedIndexKey = "WBStatusCellBrowserSelectedIndexKey"
+
+let WBStatusCellBrowserPhotoImageViewsKey = "WBStatusCellBrowserPhotoImageViewsKey"
+
 //MARK: 全局通知定义
 
 let WBUserShouldLoginNotification = "WBUserShouldLoginNotification"

@@ -180,7 +180,7 @@ class WBStatusViewModel :CustomStringConvertible{
         var size = image.size
         
         //过宽图像处理
-        let maxWidth : CGFloat = 300
+        let maxWidth : CGFloat = 200
         let minWidth : CGFloat = 40
         
         if size.width > maxWidth {
@@ -192,7 +192,12 @@ class WBStatusViewModel :CustomStringConvertible{
         if size.width < minWidth {
             //等比例调整高度
             size.width = minWidth 
-            size.height = size.width * image.size.height / image.size.width
+            size.height = size.width * image.size.height / image.size.width / 4
+        }
+        
+        //过高图片处理
+        if size.height > 200 {
+            size.height = 200
         }
         
         size.height += outterMargin

@@ -46,6 +46,7 @@
 		016211552443735B00581BB6 /* status.sql in Resources */ = {isa = PBXBuildFile; fileRef = 016211532443735B00581BB6 /* status.sql */; };
 		016211562443735B00581BB6 /* MGSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016211542443735B00581BB6 /* MGSQLiteManager.swift */; };
 		01621158244373DF00581BB6 /* WBStatusListDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01621157244373DF00581BB6 /* WBStatusListDAL.swift */; };
+		0162115A2443E52100581BB6 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016211592443E52100581BB6 /* Date+Extensions.swift */; };
 		01628E8C242BD138004A313B /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E83242BD138004A313B /* WBHomeViewController.swift */; };
 		01628E8D242BD138004A313B /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E85242BD138004A313B /* WBDiscoverViewController.swift */; };
 		01628E8E242BD138004A313B /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01628E87242BD138004A313B /* WBProfileViewController.swift */; };
@@ -111,6 +112,7 @@
 		016211532443735B00581BB6 /* status.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = status.sql; sourceTree = "<group>"; };
 		016211542443735B00581BB6 /* MGSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGSQLiteManager.swift; sourceTree = "<group>"; };
 		01621157244373DF00581BB6 /* WBStatusListDAL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusListDAL.swift; sourceTree = "<group>"; };
+		016211592443E52100581BB6 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		01628E83242BD138004A313B /* WBHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
 		01628E85242BD138004A313B /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		01628E87242BD138004A313B /* WBProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				017B2FE6242E5AE1003286E5 /* UILabel+Extensions.swift */,
 				01161E97243392380092541C /* UIImageView+WebImage.swift */,
 				0153DAD82438B7ED002209E0 /* String+Extensions.swift */,
+				016211592443E52100581BB6 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 				01628E99242C5F8E004A313B /* WBMessageViewController.swift in Sources */,
 				01FCB118242BABB900E1524F /* AppDelegate.swift in Sources */,
 				01D19B9A2430946B00AE4C46 /* WeiboCommon.swift in Sources */,
+				0162115A2443E52100581BB6 /* Date+Extensions.swift in Sources */,
 				01161E9A2433A9280092541C /* WBStatusToolBar.swift in Sources */,
 				01031ACA2438E19F0026B334 /* MGEmoticonPackage.swift in Sources */,
 				01D19B92242F9A9E00AE4C46 /* WBNetworkManager+Extension.swift in Sources */,

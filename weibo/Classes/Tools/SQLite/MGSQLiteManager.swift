@@ -9,7 +9,7 @@
 import Foundation
 import FMDB
 //最大数据库缓存时间，以s为单位
-private let maxDBCacheTime = -5 * 24 * 60 * 60
+private let maxDBCacheTime:TimeInterval = -60// -5 * 24 * 60 * 60
 
 
 ///SQLite管理器
@@ -42,8 +42,25 @@ class MGSQLiteManager {
         //注销通知
         NotificationCenter.default.removeObserver(self)
     }
+    
+    ///清理数据库缓存
+    ///注意： 清理完数据库不会变小
+    ///如果要变小 要迁移到新的数据库
     @objc private func clearDBCache(){
         print("清理数据缓存")
+        
+        let dateString = Date.mg_dateString(delta:maxDBCacheTime)
+        print("\(dateString)")
+        
+        // 准备SQL
+        let sql = "DELETE FROM T_Status WHERE creatTime < ? ;"
+        //执行SQL
+        queue.inDatabase { (db) in
+            if db.executeUpdate(sql, withArgumentsIn: [dateString]) == true {
+                print("删除了\(db.changes)条记录")
+            }
+        }
+        
     }
 }
 
