@@ -16,8 +16,13 @@ class WBStatusPicture: NSObject {
             //print("缩略图地址 = \(thumbnail_pic)")
             //更改缩略图地址
             thumbnail_pic = thumbnail_pic?.replacingOccurrences(of: "/thumbnail/", with: "/wap360/")
+            
+            //设置大尺寸图片
+            largePic = thumbnail_pic?.replacingOccurrences(of: "/thumbnail/", with: "/large/")
         }
     }
+    //大尺寸图片
+    @objc var largePic:String?
     
     override var description: String{
         return yy_modelDescription()

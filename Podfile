@@ -11,4 +11,5 @@ pod "FMDB"
 pod "SVProgressHUD"
 pod "pop"
 pod "FMDB"
+pod "YYWebImage"
 end

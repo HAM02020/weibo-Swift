@@ -22,7 +22,14 @@ PODS:
     - SDWebImage/Core (= 5.6.1)
   - SDWebImage/Core (5.6.1)
   - SVProgressHUD (2.2.5)
+  - YYCache (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
   - YYModel (1.0.4)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
 
 DEPENDENCIES:
   - AFNetworking
@@ -31,6 +38,7 @@ DEPENDENCIES:
   - SDWebImage
   - SVProgressHUD
   - YYModel
+  - YYWebImage
 
 SPEC REPOS:
   trunk:
@@ -39,7 +47,10 @@ SPEC REPOS:
     - pop
     - SDWebImage
     - SVProgressHUD
+    - YYCache
+    - YYImage
     - YYModel
+    - YYWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -47,8 +58,11 @@ SPEC CHECKSUMS:
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 2587f7dbaf94f786ada94e9ca457cc91421b8ca0
+PODFILE CHECKSUM: 2a0a731aa9a09a6fd0cfb4d123da5a04b0d0f06f
 
 COCOAPODS: 1.9.1

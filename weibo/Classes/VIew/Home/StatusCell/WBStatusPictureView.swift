@@ -86,8 +86,8 @@ class WBStatusPictureView: UIView {
         if picUrls.count == 4 && selectedIndex > 1{
             selectedIndex -= 1
         }
-        
-        let urls = (picUrls as NSArray).value(forKey: "thumbnail_pic") as! [String]
+        //改成largePic 查看大图
+        let urls = (picUrls as NSArray).value(forKey: "largePic") as! [String]
         
         //处理可见的图像视图数组
         var imageViewList = [UIImageView]()
