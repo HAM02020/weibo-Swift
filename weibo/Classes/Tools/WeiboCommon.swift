@@ -29,6 +29,8 @@ let WBRedirectURI = "http://baidu.com/"
 /// parentImageViews 父视图的图像视图数组，用户展现和解除转场动画参照
 let WBStatusCellBrowserPhotoNotification = "WBStatusCellBrowserPhotoNotification"
 
+let WBStatusCellBrowserPhotoUrlsKey = "WBStatusCellBrowserPhotoUrlsKey"
+
 let WBStatusCellBrowserSelectedIndexKey = "WBStatusCellBrowserSelectedIndexKey"
 
 let WBStatusCellBrowserPhotoImageViewsKey = "WBStatusCellBrowserPhotoImageViewsKey"

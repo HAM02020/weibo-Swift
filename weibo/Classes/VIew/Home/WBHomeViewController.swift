@@ -18,8 +18,30 @@ class WBHomeViewController: WBBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //loadData()
-        print("Home LoadData")
+        
+        //注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(browerPhoto), name: NSNotification.Name(rawValue: WBStatusCellBrowserPhotoNotification), object: nil)
+    }
+    deinit {
+        //注销通知
+        NotificationCenter.default.removeObserver(self)
+    }
+    //浏览照片通知方法
+    @objc private func browerPhoto(n:Notification){
+        //1. 从通知提取参数
+        guard
+            let selectedIndex = n.userInfo?[WBStatusCellBrowserSelectedIndexKey] as? Int,
+            let urls = n.userInfo?[WBStatusCellBrowserPhotoUrlsKey] as? [String],
+            let imageViewList = n.userInfo?[WBStatusCellBrowserPhotoImageViewsKey] as? [UIImageView]
+            else{
+                return
+        }
+        
+        //2. 展现图片浏览控制器
+        let vc = HMPhotoBrowserController.photoBrowser(withSelectedIndex: selectedIndex, urls: urls, parentImageViews: imageViewList)
+        
+        present(vc, animated: true, completion: nil)
+        
     }
     ///加载数据
     override func loadData() {

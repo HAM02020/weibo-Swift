@@ -11,3 +11,5 @@
 
 
 #endif /* Weibo_Bridge_h */
+
+#import "HMPhotoBrowserController.h"

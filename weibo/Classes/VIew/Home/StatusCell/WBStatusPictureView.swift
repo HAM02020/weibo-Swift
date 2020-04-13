@@ -74,7 +74,35 @@ class WBStatusPictureView: UIView {
     
     //MARK: - 监听方法
     @objc func tapImageView(tap:UITapGestureRecognizer) {
-        let iv = tap.view
+        guard
+            let iv = tap.view,
+            let picUrls = viewModel?.picUrls
+        else {
+            return
+        }
+        var selectedIndex = iv.tag
+        
+        //针对4张图处理
+        if picUrls.count == 4 && selectedIndex > 1{
+            selectedIndex -= 1
+        }
+        
+        let urls = (picUrls as NSArray).value(forKey: "thumbnail_pic") as! [String]
+        
+        //处理可见的图像视图数组
+        var imageViewList = [UIImageView]()
+        
+        for iv in subviews {
+            if !iv.isHidden {
+                imageViewList.append(iv as! UIImageView)
+            }
+        }
+        
+        //发送通知
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBStatusCellBrowserPhotoNotification), object: self, userInfo: [WBStatusCellBrowserSelectedIndexKey:selectedIndex
+            ,WBStatusCellBrowserPhotoUrlsKey:urls
+            ,WBStatusCellBrowserPhotoImageViewsKey:imageViewList])
+        
     }
     
 }
