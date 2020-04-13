@@ -17,8 +17,15 @@ class WBStatus: NSObject {
     @objc var id:Int64 = 0
     //微博的内容
     @objc var text : String?
-    //微博创建时间字符串
-    @objc var created_at:String?
+    //微博创建时间字符串 原始
+    @objc var created_at:String?{
+        didSet{
+            createdDate = Date.mg_sinaDate(string: created_at ?? "")
+        }
+    }
+    //经过处理
+    var createdDate:Date?
+    
     //微博来源 客户端 设备
     @objc var source:String? {
         didSet {

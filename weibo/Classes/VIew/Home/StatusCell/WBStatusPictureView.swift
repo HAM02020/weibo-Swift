@@ -57,6 +57,12 @@ class WBStatusPictureView: UIView {
                 
                 //设置图像
                 iv.mg_setImage(urlString: url.thumbnail_pic, placeholderImage: nil)
+                
+                //判断是否是gif
+                iv.subviews[0].isHidden = (((url.thumbnail_pic ?? "") as NSString).pathExtension.lowercased() != "gif")
+                    
+                
+                
                 iv.contentMode = .scaleAspectFill
                 iv.clipsToBounds = true
                 //  显示图像
@@ -149,6 +155,32 @@ extension WBStatusPictureView {
             
             //设置imageView的tag
             iv.tag = i
+            //向图像视图添加gif提示t图像
+            addGifView(iv: iv)
         }
+    }
+    private func addGifView(iv:UIImageView){
+        
+        let gif = UIImageView(image: UIImage(named: "status_gif"))
+        iv.addSubview(gif)
+        
+        //自动布局
+        gif.translatesAutoresizingMaskIntoConstraints = false
+        
+        iv.addConstraint(NSLayoutConstraint(item: gif,
+                                            attribute: .right,
+                                            relatedBy: .equal,
+                                            toItem: iv,
+                                            attribute: .right,
+                                            multiplier: 1.0,
+                                            constant: 0))
+        iv.addConstraint(NSLayoutConstraint(item: gif,
+                                            attribute: .bottom,
+                                            relatedBy: .equal,
+                                            toItem: iv,
+                                            attribute: .bottom,
+                                            multiplier: 1.0,
+                                            constant: 0))
+
     }
 }
