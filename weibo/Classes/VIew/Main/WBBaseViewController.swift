@@ -23,16 +23,16 @@ class WBBaseViewController: UIViewController {
     ///上拉刷新标记
     var isPullup = false
     
-//    ///自定义导航条
-//    var navigationBar:UINavigationBar = UINavigationBar()
-//
-//    lazy var navItem = UINavigationItem()
-
-//    override var title: String? {
-//        didSet {
-//            navItem.title = title
-//        }
-//    }
+    //    ///自定义导航条
+    //    var navigationBar:UINavigationBar = UINavigationBar()
+    //
+    //    lazy var navItem = UINavigationItem()
+    
+    //    override var title: String? {
+    //        didSet {
+    //            navItem.title = title
+    //        }
+    //    }
     override func viewDidLoad() {
         
         if WBNetworkManager.shared().userLogon == true {

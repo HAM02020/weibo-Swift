@@ -9,7 +9,7 @@
 import UIKit
 
 class WBStatusPicture: NSObject {
-
+    
     //大尺寸图片
     @objc var largePic:String?
     ///缩略图地址

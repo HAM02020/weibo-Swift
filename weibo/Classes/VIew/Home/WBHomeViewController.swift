@@ -13,9 +13,9 @@ private let originnalCellId = "originnalCellId"
 private let retweetedCellId = "retweetedCellId"
 
 class WBHomeViewController: WBBaseViewController {
-
+    
     private lazy var listViewModel = WBStatusListViewModel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,9 +58,9 @@ class WBHomeViewController: WBBaseViewController {
             if shouldRefresh {
                 self.tableView?.reloadData()
             }
-
+            
         }
-
+        
         
     }
     ///显示好友
@@ -71,7 +71,7 @@ class WBHomeViewController: WBBaseViewController {
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
-
+    
 }
 ///MARK: - 表格数据源方法
 extension WBHomeViewController {
