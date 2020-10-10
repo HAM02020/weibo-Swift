@@ -305,13 +305,14 @@ extension WBMainViewController {
     ///
     /// - parameter dict 信息字典[clsName,title,image]
     private func controller(dict: [String:Any])->UIViewController {
-        guard let clsName = dict["clsName"] as? String,
-        let title = dict["title"] as? String,
-        let imageName = dict["imageName"] as? String,
-        //利用反射生生成类
-        let cls = NSClassFromString("\(Bundle.main.infoDictionary?["CFBundleName"] as? String ?? "").\(clsName)") as? WBBaseViewController.Type,
-        let visitorDict = dict["visitorInfo"] as? [String:String] else {
-            return UIViewController()
+        guard
+            let clsName = dict["clsName"] as? String,
+            let title = dict["title"] as? String,
+            let imageName = dict["imageName"] as? String,
+            //利用反射生生成类
+            let cls = NSClassFromString("\(Bundle.main.infoDictionary?["CFBundleName"] as? String ?? "").\(clsName)") as? WBBaseViewController.Type,
+            let visitorDict = dict["visitorInfo"] as? [String:String] else {
+                return UIViewController()
         }
         //2. 创建视图控制器
         let vc = cls.init()

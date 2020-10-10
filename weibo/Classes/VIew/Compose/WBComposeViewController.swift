@@ -122,6 +122,7 @@ class WBComposeViewController: UIViewController {
         text += " http://www.baidu.com"
         WBNetworkManager.shared().postStatus(text: text) { (result, isSuccess) in
             
+            print("result = \(result)")
             let message = isSuccess ? "发布成功" : "网络不给力"
             //修改通知样式
             SVProgressHUD.setDefaultStyle(.dark)

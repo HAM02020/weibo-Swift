@@ -67,10 +67,11 @@ extension WBNetworkManager {
         //1. url
         //let urlString = "http://api.sina.com.cn/2/statuses/update.json"
         let urlString = "https://api.weibo.com/2/statuses/share.json"
+        //let urlString = "http://127.0.0.1:8000/users/login"
         //2. 参数字典
         //"source":WBAppKey,
         let params = ["status":text] as [String : AnyObject]
-        
+//        let params = ["email":"1106201802@qq.com","password":"123456"] as [String : AnyObject]
         var name :String?
         var data :Data?
         

@@ -14,14 +14,14 @@ import Foundation
 //let WBRedirectURI = "http://baidu.com/"
 
 ////A01
-let WBAppKey = "4276674222"
-let WBAPPSecret = "610f8119d39ea76957b5fc665d59eb56"
-let WBRedirectURI = "http://baidu.com/"
+//let WBAppKey = "4276674222"
+//let WBAPPSecret = "610f8119d39ea76957b5fc665d59eb56"
+//let WBRedirectURI = "http://127.0.0.1:8080/oauth/callback"
 
 //电竞馆牛顿
-//let WBAppKey = "32755502"
-//let WBAPPSecret = "b2be28311bf46112121e28319edd82b1"
-//let WBRedirectURI = "http://baidu.com/"
+let WBAppKey = "32755502"
+let WBAPPSecret = "b2be28311bf46112121e28319edd82b1"
+let WBRedirectURI = "http://baidu.com/"
 
 //MARK: - 照片浏览通知定义
 /// selectedIndex   选中照片的索引

@@ -1,5 +1,5 @@
 
-CREATE TABLE IF NOT EXISTS "T_Status" (
+CREATE TABLE IF NOT EXISTS "Status" (
   "statusId" INTEGER NOT NULL,
   "userId" INTEGER NOT NULL,
   "status" TEXT,
